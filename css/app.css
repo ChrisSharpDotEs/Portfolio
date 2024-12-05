@@ -1,4 +1,19 @@
 @charset "UTF-8";
+/* ==========================
+   VARIABLES
+   ========================== */
+/* ==========================
+      ROOT VARIABLES
+      ========================== */
+:root {
+  --border-radius-md: 20px;
+  --border-radius-sm: 10px;
+  --bg-primary-light: #e3f7e4;
+}
+
+/* ==========================
+    IMPORTS
+========================== */
 /*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
  * Copyright 2011-2024 The Bootstrap Authors
@@ -11965,12 +11980,9 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.badge.rounded-pill.bg-danger {
-  position: absolute;
-  right: 0px;
-  font-size: 8px;
-}
-
+/* ==========================
+    GLOBAL STYLES
+========================== */
 body {
   min-height: 90vh;
 }
@@ -11979,10 +11991,62 @@ section {
   min-height: 80vh;
 }
 
+li {
+  list-style: none;
+}
+
+td > i.bi {
+  cursor: pointer;
+}
+
+/* ==========================
+        UTILITIES
+========================== */
+.mx-500px {
+  max-width: 500px;
+}
+
+.border-sm {
+  border-radius: 10px;
+}
+
 .mr-2 {
   margin-right: 0.5rem;
 }
 
+.bg-notifications {
+  background-color: rgb(208, 163, 68);
+}
+
+.bg-light-grey {
+  background-color: #e2e2e2;
+}
+
+.bg-primary-light {
+  background-color: var(--bs-info);
+}
+
+.rounded-md {
+  border-radius: var(--border-radius-md);
+}
+
+.bg-unfocus {
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+}
+
+.btn-top-right-blur {
+  border: none;
+  border-top-right-radius: var(--border-radius-md);
+  border-bottom-left-radius: var(--border-radius-sm);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  background-color: rgba(219, 219, 219, 0.11) !important;
+}
+
+/* ==========================
+    LAYOUT STYLES
+========================== */
 #jumbotron-main-image {
   background-image: url("../media/coffee1.jpg");
   background-size: cover;
@@ -12003,16 +12067,23 @@ section {
   min-height: 10rem;
 }
 
-.bg-notifications {
-  background-color: rgb(208, 163, 68);
+.imagen {
+  position: relative;
+  border-radius: var(--border-radius-md);
+  z-index: 1;
+  background-size: cover;
+  min-height: 15rem;
+  min-width: 25rem;
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
-.bg-light-grey {
-  background-color: #e2e2e2;
-}
-
-li {
-  list-style: none;
+/* ==========================
+    COMPONENT STYLES
+========================== */
+.badge.rounded-pill.bg-danger {
+  position: absolute;
+  right: 0px;
+  font-size: 8px;
 }
 
 .nav-list-notification {
@@ -12026,52 +12097,6 @@ li {
   background-color: #f0f0f0;
 }
 
-td > i.bi {
-  cursor: pointer;
-}
-
-:root {
-  --border-radius-md: 20px;
-  --border-radius-sm: 10px;
-  --bg-primary-light: #e3f7e4;
-}
-
-.imagen {
-  position: relative;
-  border-radius: var(--border-radius-md);
-  z-index: 1;
-  background-size: cover;
-  min-height: 15rem;
-  min-width: 25rem;
-  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
-}
-
-.bi-heart-fill {
-  cursor: pointer;
-}
-
-.bg-unfocus {
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
-}
-
-.btn-top-right-blur {
-  border: none;
-  border-top-right-radius: var(--border-radius-md);
-  border-bottom-left-radius: var(--border-radius-sm);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
-  background-color: rgba(219, 219, 219, 0.11) !important;
-}
-
-.bg-primary-light {
-  background-color: var(--bg-primary-light);
-}
-
-.rounded-md {
-  border-radius: var(--border-radius-md);
-}
-
 .classic-loader {
   border: 16px solid #f3f3f3;
   border-radius: 50%;
@@ -12079,6 +12104,33 @@ td > i.bi {
   width: 120px;
   height: 120px;
   animation: spin 2s linear infinite;
+}
+
+.bi-heart-fill {
+  cursor: pointer;
+}
+
+/* ==========================
+    ANIMATIONS
+========================== */
+.fadeup {
+  animation: fadeup 2s ease;
+}
+
+.fadeleft {
+  animation: fadeleft 2s ease;
+}
+
+.faderight {
+  animation: faderight 2s ease;
+}
+
+.delay-1000 {
+  animation-delay: 1s;
+}
+
+.delay-1500 {
+  animation-delay: 1.5s;
 }
 
 @keyframes spin {
@@ -12089,11 +12141,49 @@ td > i.bi {
     transform: rotate(360deg);
   }
 }
+@keyframes fadeup {
+  0% {
+    opacity: 0;
+    transform: translateY(20rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
+@keyframes fadeleft {
+  0% {
+    opacity: 0;
+    transform: translateX(20rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+@keyframes faderight {
+  0% {
+    opacity: 0;
+    transform: translateX(-20rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+/* ==========================
+    MEDIA QUERIES
+========================== */
 @media (min-width: 768px) {
   .rounded-md-left {
     border-top-left-radius: 1.5rem;
     border-bottom-left-radius: 1.5rem;
     border-top-right-radius: 0rem !important;
     border-bottom-right-radius: 0rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .flex-md-reverse {
+    flex-direction: column-reverse;
   }
 }/*# sourceMappingURL=app.css.map */

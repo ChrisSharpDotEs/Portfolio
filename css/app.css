@@ -11990,7 +11990,7 @@ body {
   /* Asegura que el contenido no cause desplazamiento */
 }
 
-I section {
+section {
   min-height: 80vh;
 }
 
@@ -12185,6 +12185,9 @@ td > i.bi {
   }
 }
 @media (max-width: 768px) {
+  .center {
+    max-width: 95%;
+  }
   .flex-md-reverse {
     flex-direction: column-reverse;
   }
@@ -12202,7 +12205,7 @@ td > i.bi {
   position: fixed;
   bottom: 2rem;
   right: 1rem;
-  max-width: 95%;
+  max-width: 45%;
 }
 
 .pic {
@@ -12288,7 +12291,7 @@ td > i.bi {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 60vh;
+  max-height: 60vh;
   z-index: 2;
   box-sizing: border-box;
   border-radius: 1rem;
@@ -12330,7 +12333,7 @@ td > i.bi {
   max-width: 66%;
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.075), 0rem 1rem 1rem -1rem rgba(0, 0, 0, 0.1);
 }
-.chat .messages .message.parker {
+.chat .messages .message.client {
   margin: 1rem 1rem 1rem auto;
   border-radius: 1.125rem 1.125rem 0 1.125rem;
   background: #333;

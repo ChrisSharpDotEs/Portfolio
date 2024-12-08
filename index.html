@@ -8,9 +8,9 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
     <link rel="shortcut icon" href="#" type="image/x-icon">
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="public/css/app.css">
     <script src="assets/js/index.js" type="module"></script>
-    <script src="./assets/js/chatbot.js"></script>
+    <script src="assets/js/chatbot.js"></script>
 </head>
 
 <body class="bg-light">
@@ -33,12 +33,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-primary rounded-pill" href="./login.html">
+                        <a class="btn btn-primary rounded-pill" href="./src/login.html">
                             Log in
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-outline-primary rounded-pill" href="">
+                        <a class="btn btn-outline-primary rounded-pill" href="./src/register.html">
                             Sign in
                         </a>
                     </li>
@@ -50,7 +50,7 @@
         <section class="bg-light my-3 shadow">
             <div class="container p-4">
                 <div class="row flex-md-reverse">
-                    <div class="col-md-6 d-flex flex-column">
+                    <div class="col-md-6 d-flex flex-column faderight">
                         <article class="p-3">
                             <h2 class="display-4 mb-5">
                                 Domina JavaScript y Llega Más Lejos
@@ -69,10 +69,10 @@
                             </div>
                         </article>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 fadeup">
                         <div class="row">
-                            <div id="jumbotron-main-image" class="col-md-12 border-sm my-2 fadeup"></div>
-                            <div class="col-md mr-2 jumbotron-minnor-image mb-2 border-sm fadeleft d-md-block d-none">
+                            <div id="jumbotron-main-image" class="col-md-12 border-sm my-2"></div>
+                            <div class="col-md mr-2 jumbotron-minnor-image mb-2 border-sm d-md-block d-none">
                             </div>
                             <div class="col-md border-sm mb-2 d-md-block d-none bg-warning"></div>
                         </div>
@@ -83,13 +83,13 @@
         <section class="container">
             <article class="d-flex flex-column align-items-center py-5">
                 <h2 class="display-2 text-center mb-5">
-                    Comprehensive Lorem ipsum solutions
+                    Nuestros Servicios: Aprende, Mejora y Transforma
                 </h2>
                 <div class="row justify-content-center">
                     <div class="col-lg-4 col-md-6 mb-3">
-                        <div class="rounded p-3 bg-white shadow-sm" style="min-height: 30rem;">
+                        <div class="rounded p-3 bg-white shadow-sm h-100">
                             <div class="card-body">
-                                <img class="img-fluid rounded" src="media/js.jpg" alt="A family without worries">
+                                <img class="img-fluid rounded" src="public/media/js.jpg" alt="A family without worries">
                                 <div class="py-3">
                                     <h3>JavaScript</h3>
                                     <p>
@@ -127,27 +127,31 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 mb-3">
-                        <div class="rounded p-3 bg-white shadow-sm" style="min-height: 30rem;">
+                        <div class="rounded p-3 bg-white shadow-sm h-100">
                             <div class="card-body">
-                                <img class="img-fluid rounded" src="media/developer.jpg" alt="A family without worries">
+                                <img class="img-fluid rounded" src="public/media/developer.jpg"
+                                    alt="A family without worries">
                                 <div class="py-3">
-                                    <h3>Life Aspernatur</h3>
+                                    <h3>Frameworks</h3>
                                     <p>
-                                        Ensure your voluptas minima quod numquam. Ullam, vero recusandae! are
-                                        financially secure with tailored life insurance
+                                        Aprende a utilizar las tecnologías esenciales que complementan JavaScript, desde
+                                        frameworks modernos hasta herramientas de depuración que los profesionales
+                                        emplean a diario
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 mb-3">
-                        <div class="rounded p-3 bg-white shadow-sm" style="min-height: 30rem;">
+                        <div class="rounded p-3 bg-white shadow-sm h-100">
                             <div class="card-body">
-                                <img class="img-fluid rounded" src="/media/web.jpg" alt="A family without worries">
+                                <img class="img-fluid rounded" src="public/media/web.jpg"
+                                    alt="A family without worries">
                                 <div class="py-3">
-                                    <h3>Home numquam</h3>
+                                    <h3>Construye Proyectos Reales</h3>
                                     <p>
-                                        Ensure your voluptas minima quod numquam.
+                                        Desarrolla aplicaciones prácticas mientras aprendes. Trabaja en proyectos que
+                                        simulan desafíos del mundo real para afianzar tus habilidades de forma efectiva.
                                     </p>
                                 </div>
                             </div>
@@ -155,7 +159,7 @@
                     </div>
                 </div>
                 <div class="text-center my-5">
-                    <button class="btn btn-success">Explore our Ipsum</button>
+                    <button class="btn btn-success p-3 rounded-pill">Explora nuestros cursos.</button>
                 </div>
             </article>
         </section>
@@ -163,41 +167,23 @@
             <div class="row p-4">
                 <article class="col-md-5">
                     <h3 class="display-4 mb-4">
-                        Why choose us for your insurance needs?
+                        ¿Por Qué Elegir Nuestros Cursos?
                     </h3>
                     <p>
-                        With our customer-first approach, tailored solutions, and industry expertise, we ensure you have
-                        peace of mind every step of the way.
+                        Creemos que aprender programación no solo se trata de entender un lenguaje de programación, sino
+                        de adquirir habilidades que te permitan transformar tu carrera y tu forma de pensar como
+                        desarrollador.
                     </p>
                 </article>
                 <article class="col-md-7 p-4">
                     <div class="d-flex gap-4 border shadow rounded-md p-4 mb-4">
-                        <img src="./media/secure.svg" alt="" width="60px">
+                        <img src="public/media/secure.svg" alt="" width="60px">
                         <div>
-                            <h3>Trusted by thousands</h3>
+                            <h3>Enfoque Práctico y Proyectos Reales</h3>
                             <p>
-                                Our reputation is built on trust, with thousands of satisfied clients who rely on us for
-                                protection and support.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="d-flex gap-4 border shadow rounded-md p-4 mb-4">
-                        <img src="./media/secure.svg" alt="" width="60px">
-                        <div>
-                            <h3>Trusted by thousands</h3>
-                            <p>
-                                Our reputation is built on trust, with thousands of satisfied clients who rely on us for
-                                protection and support.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="d-flex gap-4 border shadow rounded-md p-4 mb-4">
-                        <img src="./media/secure.svg" alt="" width="60px">
-                        <div>
-                            <h3>Trusted by thousands</h3>
-                            <p>
-                                Our reputation is built on trust, with thousands of satisfied clients who rely on us for
-                                protection and support.
+                                Nuestros cursos están diseñados para que aprendas mediante la práctica. En lugar de solo
+                                estudiar teoría, trabajarás en proyectos reales que te prepararán para enfrentar los
+                                desafíos del mundo laboral. ¡Es el aprendizaje de JavaScript que realmente necesitas!
                             </p>
                         </div>
                     </div>
@@ -244,7 +230,8 @@
                                                 d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z" />
                                         </svg>
                                     </span>
-                                    <input id="client-chatbox-input" class="form-control" placeholder="Type your message here!" type="text" />
+                                    <input id="client-chatbox-input" class="form-control"
+                                        placeholder="Type your message here!" type="text" />
                                 </div>
                                 <i class="fas fa-microphone"></i>
                             </div>

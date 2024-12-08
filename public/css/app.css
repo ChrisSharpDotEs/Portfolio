@@ -12401,4 +12401,7 @@ td > i.bi {
     width: 100% !important;
     height: 60vh;
   }
+  .w-sm-25 {
+    width: 25% !important;
+  }
 }/*# sourceMappingURL=app.css.map */

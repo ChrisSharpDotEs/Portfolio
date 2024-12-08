@@ -27,7 +27,7 @@ $background: #f7f7f7;
 }
 
 /* IMPORTS */
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
 /* GLOBAL STYLES */
 body {
@@ -499,5 +499,8 @@ td>i.bi {
     .chat {
         width: 100% !important;
         height: 60vh;
+    }
+    .w-sm-25 {
+        width: 25% !important;
     }
 }

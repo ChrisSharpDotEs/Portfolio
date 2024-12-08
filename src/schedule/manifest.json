@@ -2,7 +2,7 @@
     "name": "ScheduleApp",
     "short_name": "App",
     "description": "Una aplicación web progresiva para gestionar el tiempo.",
-    "start_url": "/PortfolioV2/app/schedule/index.html",
+    "start_url": "/Portfolio/src/schedule/index.html",
     "display": "standalone",
     "icons": []
   }

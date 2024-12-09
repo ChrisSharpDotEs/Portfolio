@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Portfolio</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <link rel="stylesheet" href="../../public/css/app.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../../assets/js/index.js" type="module"></script>
+</head>
+
+<body class="bg-light" style="min-height: 100vh;">
+    <div class="d-flex flex-column justify-content-between" style="min-height: 100vh;">
+        <header class="px-4 bg-light">
+            <nav class="d-flex justify-content-between p-3">
+                <div class="text-primary">
+                    <h3>WorldClass</h3>
+                </div>
+                <div class="d-md-flex">
+                    <ul class="nav justify-content-center gap-2">
+                        <li class="nav-item d-md-block d-none">
+                            <a class="nav-link active" href="../../index.html" aria-current="page">Home</a>
+                        </li>
+                        <li class="nav-item d-md-block d-none">
+                            <a class="nav-link" href="#">About Us</a>
+                        </li>
+                        <li class="nav-item d-md-block d-none">
+                            <a class="nav-link" href="">
+                                Examples
+                            </a>
+                        </li>
+                        <li class="nav-item d-md-none d-block">
+                            <button class="btn border-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                    class="bi bi-three-dots" viewBox="0 0 16 16" onclick="openNav()">
+                                    <path
+                                        d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                </svg>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-12 mb-4">
+                    <div class="border rounded bg-light p-3">
+                        <h3>Curso básico de JavaScript</h3>
+                        <p class="p-2">
+
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-12 mb-4">
+                    <div class="border rounded bg-light p-3">
+                        <h3>Curso básico de JavaScript</h3>
+                        <p class="p-2">
+
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-12 mb-4">
+                    <div class="border rounded bg-light p-3">
+                        <h3>Curso básico de JavaScript</h3>
+                        <p class="p-2">
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="bg-primary text-light">
+            <div class="p-5 text-center">
+                Made with love ❤ | CD Industries
+            </div>
+        </footer>
+    </div>
+    <div id="myNav" class="d-md-none d-flex flex-column overlay h-100">
+        <a href="javascript:void(0)" class="align-self-end mx-4 nav-link text-light fs-4"
+            onclick="closeNav()">&times;</a>
+        <div class="text-center">
+            <ul class="nav-list p-0">
+                <li class="nav-item p-3 fs-1">
+                    <a class="text-light nav-link" href="../../index.html">Home</a>
+                </li>
+                <li class="border">
+                </li>
+                <li class="nav-item p-3 fs-1">
+                    <a class="text-light nav-link" href="../../src/login.html">
+                        Log in
+                    </a>
+                </li>
+                <li class="nav-item p-3 fs-1">
+                    <a class="text-light nav-link" href="../../src/register.html">
+                        Sign in
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <span>open</span>
+    <script>
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+    </script>
+</body>
+
+</html>

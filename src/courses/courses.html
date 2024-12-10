@@ -48,28 +48,107 @@
         </header>
         <main class="container">
             <div class="row">
-                <div class="col-md-4 col-sm-6 col-12 mb-4">
-                    <div class="border rounded bg-light p-3">
-                        <h3>Curso básico de JavaScript</h3>
-                        <p class="p-2">
+                <div class="col-md-4">
+                    <div class="border rounded bg-light p-3 mb-3 shadow">
+                        <h3>Filtrar cursos</h3>
+                        <div class="p-2">
+                            <form class="row g-3">
+                                <div class="col-lg-6 col-md-12">
+                                    <label for="courseName" class="form-label">Nombre del Curso</label>
+                                    <input type="text" class="form-control" id="courseName"
+                                        placeholder="Introduce el nombre del curso">
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <label for="category" class="form-label">Categoría</label>
+                                    <select class="form-select" id="category">
+                                        <option selected>Selecciona una categoría</option>
+                                        <option value="programacion">Programación</option>
+                                        <option value="diseño">Diseño</option>
+                                        <option value="marketing">Marketing</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <label for="difficulty" class="form-label">Dificultad</label>
+                                    <select class="form-select" id="difficulty">
+                                        <option selected>Selecciona la dificultad</option>
+                                        <option value="beginner">Principiante</option>
+                                        <option value="intermediate">Intermedio</option>
+                                        <option value="advanced">Avanzado</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <label for="duration" class="form-label">Duración (horas)</label>
+                                    <input type="number" class="form-control" id="duration" placeholder="Ejemplo: 10">
+                                </div>
+                                <div class="col-12">
+                                    <label for="startDate" class="form-label">Fecha de Inicio</label>
+                                    <input type="date" class="form-control" id="startDate">
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalId">Filtrar</button>
+                                    <button type="reset" class="btn btn-secondary">Limpiar</button>
+                                </div>
+                            </form>
 
-                        </p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 col-12 mb-4">
-                    <div class="border rounded bg-light p-3">
-                        <h3>Curso básico de JavaScript</h3>
-                        <p class="p-2">
-
+                <div class="col-md-8">
+                    <div class="border rounded bg-light p-3 mb-3 shadow">
+                        <h3>Curso de JavaScript para principiantes</h3>
+                        <p>Tiempo promedio: 40 horas</p>
+                        <h5>Temas</h5>
+                        <p class="px-2">
+                        <ol>
+                            <li>1. Introducción a JavaScript.</li>
+                            <li>2. Fundamentos del Lenguaje</li>
+                            <li>3. Estructuras de Control</li>
+                            <li>4. Funciones</li>
+                            <li>5. Manipulación del DOM</li>
+                            <li>6. Arrays y Objetos</li>
+                            <li>7. Introducción al Debugging</li>
+                            <li>8. Primeros Pasos con APIs</li>
+                            <li>9. Buenas Prácticas</li>
+                            <li>10. Proyecto final</li>
+                        </ol>
                         </p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-12 mb-4">
-                    <div class="border rounded bg-light p-3">
-                        <h3>Curso básico de JavaScript</h3>
-                        <p class="p-2">
-
-                        </p>
+                        <div class="px-2">
+                            <h5>¿Qué incluye el curso?</h5>
+                            <div class="px-3">
+                                <div class="mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#033043"
+                                        class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                                    </svg>
+                                    Libro con los conceptos indicados en pdf.
+                                </div>
+                                <div class="mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#033043"
+                                        class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                                    </svg>
+                                    Ejercicios de práctica
+                                </div>
+                                <div class="mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#033043"
+                                        class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                                    </svg>
+                                    Tests para probar conocimientos
+                                </div>
+                                <div class="mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#033043"
+                                        class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                                    </svg>
+                                    Tutorías
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -103,6 +182,21 @@
             </ul>
         </div>
     </div>
+    <div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitleId">
+                        Filtros aplicados
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="filterElements" class="container-fluid"></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         function openNav() {
             document.getElementById("myNav").style.width = "100%";
@@ -110,6 +204,67 @@
         function closeNav() {
             document.getElementById("myNav").style.width = "0%";
         }
+    </script>
+    <script>
+        class CourseFilter {
+            constructor(formSelector) {
+                this.form = document.querySelector(formSelector);
+                this.init();
+            }
+
+            init() {
+                this.form.addEventListener('submit', (event) => {
+                    event.preventDefault();
+                    this.handleFilter();
+                });
+
+                this.form.addEventListener('reset', () => {
+                    this.clearFilters();
+                });
+            }
+
+            handleFilter() {
+                const filters = this.getFilters();
+                console.log('Aplicando filtros:', filters);
+                document.getElementById('filterElements').innerHTML = '';
+                document.getElementById('filterElements').append(UIRender.generateCustomModalContent(filters));
+            }
+
+            getFilters() {
+                return {
+                    courseName: this.form.querySelector('#courseName').value.trim(),
+                    category: this.form.querySelector('#category').value,
+                    difficulty: this.form.querySelector('#difficulty').value,
+                    duration: this.form.querySelector('#duration').value,
+                    startDate: this.form.querySelector('#startDate').value,
+                };
+            }
+
+            clearFilters() {
+                console.log('Filtros limpiados');
+                this.form.reset();
+            }
+        }
+        class UIRender {
+            static generateCustomModalContent(data) {
+                let ul = document.createElement('ul');
+                Object.keys(data).forEach(item => {
+                    const li = UIRender.generateListItem(`${item}: ${data[item]}`);
+                    ul.appendChild(li);
+                });
+                return ul;
+            }
+            static generateListItem(text) {
+                let li = document.createElement('li');
+                li.innerHTML = text;
+                return li;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            new CourseFilter('form');
+        });
+
     </script>
 </body>
 

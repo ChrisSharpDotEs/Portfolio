@@ -23,7 +23,11 @@ $background: #f7f7f7;
 :root {
     --border-radius-md: 20px;
     --border-radius-sm: 10px;
-    --bg-primary-light: #e3f7e4;
+    --bg-primary-light: rgb(227, 247, 228);
+    --bs-light-info: rgb(198, 236, 243);
+    --bs-light-danger: rgb(243, 181, 181);
+    --bs-light-warning: rgb(255, 245, 198);
+    --bs-light-success: rgb(181, 243, 186);
 }
 
 /* IMPORTS */
@@ -94,6 +98,18 @@ td>i.bi {
     backdrop-filter: blur(5px);
     background-color: rgba(219, 219, 219, 0.11) !important;
 }
+.bg-light-warning {
+    background-color: var(--bs-light-warning) !important;
+}
+.bg-light-info {
+    background-color: var(--bs-light-info) !important;
+}
+.bg-light-success {
+    background-color: var(--bs-light-success) !important;
+}
+.bg-light-danger {
+    background-color: var(--bs-light-danger) !important;
+}
 
 /* LAYOUT STYLES */
 #jumbotron-main-image {
@@ -108,14 +124,6 @@ td>i.bi {
     height: 10rem;
 }
 
-.custom-bg {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url('../media/dummy.png');
-    min-height: 10rem;
-}
-
 .imagen {
     position: relative;
     border-radius: var(--border-radius-md);
@@ -124,6 +132,15 @@ td>i.bi {
     min-height: 15rem;
     min-width: 25rem;
     box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
+}
+.scrollable-section::-webkit-scrollbar {
+    display: none;
+}
+.scrollable-section {
+    max-height: 70vh;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 /* COMPONENT STYLES */

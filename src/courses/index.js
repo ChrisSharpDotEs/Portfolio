@@ -1,7 +1,7 @@
 class CourseFilter {
     constructor(formSelector) {
         this.form = document.querySelector(formSelector);
-        this.init();
+        this.filters = ['courseName', 'category'];
     }
 
     init() {
@@ -23,13 +23,16 @@ class CourseFilter {
     }
 
     getFilters() {
-        return {
-            courseName: this.form.querySelector('#courseName').value.trim(),
-            category: this.form.querySelector('#category').value,
-            difficulty: this.form.querySelector('#difficulty').value,
-            duration: this.form.querySelector('#duration').value,
-            startDate: this.form.querySelector('#startDate').value,
-        };
+        let result = {};
+        this.filters.forEach(item => {
+            if(item == 'courseName') {
+                result[item] = this.form.querySelector(`#${item}`).value.trim()
+            } else {
+                result[item] = this.form.querySelector(`#${item}`).value
+            }
+        });
+        console.log(result);
+        return result;
     }
 
     clearFilters() {
@@ -69,6 +72,7 @@ const RenderOptions = function (selectId) {
 
 window.addEventListener('DOMContentLoaded', () => {
     //
+    console.log('loaded')
     const categories = [
         {text: 'JavaScript', value: 'js'},
         {text: 'Java', value: 'jv'},
@@ -79,5 +83,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     new RenderOptions('category').init(categories);
 
-    new CourseFilter('form');
+    const courseFilter = new CourseFilter('form');
+    courseFilter.init();
 });

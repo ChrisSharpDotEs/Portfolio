@@ -12065,6 +12065,16 @@ td > i.bi {
   background-color: var(--bs-light-danger) !important;
 }
 
+.bg-js {
+  background: rgb(252, 148, 63);
+  background: linear-gradient(169deg, rgb(252, 249, 63) 41%, rgb(236, 222, 10) 85%, rgb(236, 222, 10) 86%);
+}
+
+.bg-vuejs {
+  background: rgb(63, 236, 78);
+  background: linear-gradient(169deg, rgb(63, 236, 78) 41%, rgb(7, 184, 31) 86%);
+}
+
 /* LAYOUT STYLES */
 #jumbotron-main-image {
   background-image: url("../media/coffee1.jpg");
@@ -12097,6 +12107,19 @@ td > i.bi {
   overflow-y: scroll;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
 }
 
 /* COMPONENT STYLES */

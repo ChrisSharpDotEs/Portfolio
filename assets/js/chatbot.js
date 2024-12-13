@@ -1,6 +1,7 @@
 class Chatbox {
     constructor() {
         this.chat = document.getElementById('chat');
+        this.form = document.getElementById('chat-form');
         this.sendButton = document.getElementById('client-chatbox-send');
         this.input = document.getElementById('client-chatbox-input');
     }
@@ -8,12 +9,18 @@ class Chatbox {
         this.handleEvents();
     }
     handleEvents() {
+        this.form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            this.sendButton.click();
+        });
         this.sendButton.addEventListener('click', async (e) => {
-            const value = this.input.value;
+            const value = this.input.value.trim().toLowerCase();
             this.chat.append(this.userMessageBox(value));
             this.chat.append(this.typing());
-            this.chat.append(this.botResponse(value));
-            this.removetyping();
+            setTimeout(() => {
+                this.chat.append(this.botResponse(value));
+                this.removetyping();
+            }, 2000);
         });
     }
     userMessageBox(message){
@@ -23,7 +30,7 @@ class Chatbox {
         return userMessage;
     }
     botResponse(input) {
-        const saludos = ['Hola', 'Saludos', 'Buenos días', 'Buenas noches'];
+        const saludos = ['hola', 'saludos', 'buenos días', 'buenas noches'];
         const precios = ['precios', 'coste', 'cuánto'];
 
         let message = "Para cualquier aclaración adicional contacte con soporte";

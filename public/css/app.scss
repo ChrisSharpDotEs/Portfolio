@@ -34,20 +34,18 @@ $background: #f7f7f7;
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 /* GLOBAL STYLES */
-body {
-    min-height: 90vh;
-}
 
-html,
-body {
+
+html {
     overflow-x: hidden;
-    /* Desactiva el scroll horizontal */
     width: 100%;
-    /* Asegura que el contenido no cause desplazamiento */
-}
-
-section {
-    min-height: 80vh;
+    body {
+        min-height: 90vh;
+        
+        section {
+            min-height: 80vh;
+        }
+    }
 }
 
 li {
@@ -98,26 +96,6 @@ td>i.bi {
     backdrop-filter: blur(5px);
     background-color: rgba(219, 219, 219, 0.11) !important;
 }
-.bg-light-warning {
-    background-color: var(--bs-light-warning) !important;
-}
-.bg-light-info {
-    background-color: var(--bs-light-info) !important;
-}
-.bg-light-success {
-    background-color: var(--bs-light-success) !important;
-}
-.bg-light-danger {
-    background-color: var(--bs-light-danger) !important;
-}
-.bg-js {
-    background: rgb(252, 148, 63);
-    background: linear-gradient(169deg, rgb(252, 249, 63) 41%, rgba(236, 222, 10, 1) 85%, rgba(236, 222, 10, 1) 86%);
-}
-.bg-vuejs {
-    background: rgb(63, 236, 78);
-    background: linear-gradient(169deg, rgb(63, 236, 78) 41%, rgb(7, 184, 31) 86%);
-}
 
 /* LAYOUT STYLES */
 #jumbotron-main-image {
@@ -141,15 +119,20 @@ td>i.bi {
     min-width: 25rem;
     box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
 }
+
 .scrollable-section::-webkit-scrollbar {
     display: none;
 }
+
 .scrollable-section {
     max-height: 70vh;
     overflow-y: scroll;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
+
 .overlay {
     height: 100%;
     width: 0;
@@ -433,6 +416,7 @@ td>i.bi {
         }
     }
 }
+
 /* ANIMATIONS */
 .fadeup {
     animation: fadeup 2s ease;
@@ -499,6 +483,7 @@ td>i.bi {
         transform: translateX(0rem);
     }
 }
+
 @keyframes typing {
 
     0%,
@@ -529,6 +514,7 @@ td>i.bi {
     .center {
         max-width: 95%;
     }
+
     .flex-md-reverse {
         flex-direction: column-reverse;
     }
@@ -537,6 +523,7 @@ td>i.bi {
         width: 100% !important;
         height: 60vh;
     }
+
     .w-sm-25 {
         width: 25% !important;
     }

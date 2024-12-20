@@ -45,8 +45,8 @@ class CookieController {
         let date = new Date();
         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000 + hours * 60 * 60 * 1000 + minutes * 60 * 1000));
 
-        expires = "; expires=" + date.toUTCString();
-        document.cookie = name + "=" + (value || "") + expires + "; path=/" + ";SameSite=Lax;";
+        expires = ";expires=" + date.toUTCString();
+        document.cookie = name + "=" + (value || "") + expires + ";path=/" + ";SameSite=Lax;";
     }
     existsCookie(name) {
         return document.cookie.includes(name);
@@ -71,6 +71,59 @@ class CookieController {
         });
     }
 }
+const spinner = () => {
+    const canvas = document.getElementById('spinnerCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let startAngle = 0;
+    let endAngle = Math.PI / 4;
+    let angleDelta = 0.05;
+    let rotationSpeed = 0.1;
+
+    function drawSpinner() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      ctx.save();
+      ctx.translate(canvas.width / 2, canvas.height / 2);
+
+      ctx.rotate(startAngle);
+      ctx.beginPath();
+      ctx.arc(0, 0, 40, 0, endAngle, false);
+      ctx.lineWidth = 6;
+      ctx.strokeStyle = '#033043';
+      ctx.stroke();
+
+      ctx.restore();
+
+      
+      startAngle += rotationSpeed;
+
+      
+      endAngle += angleDelta;
+      if (endAngle > Math.PI * 1.5 || endAngle < Math.PI / 6) {
+        angleDelta *= -1;
+      }
+
+      
+      requestAnimationFrame(drawSpinner);
+    }
+
+    drawSpinner();
+}
 window.addEventListener('load', () => {
+    const spinnerContainer = document.getElementById('loader-container');
+    const video = document.getElementsByTagName('video')[0];
+
     let cookie = new CookieController();
+
+    spinner();
+    
+    video.addEventListener('canplay', () => {
+        spinnerContainer.style.display = 'none';
+    });
+
+    
+    video.addEventListener('error', () => {
+        spinnerContainer.style.display = 'none';
+    });
 });

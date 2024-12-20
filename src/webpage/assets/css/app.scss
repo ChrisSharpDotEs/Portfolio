@@ -46,6 +46,16 @@ html {
         section {
             min-height: 80vh;
         }
+        footer {
+            h1, h5 {
+                color: var(--bs-light);
+            }
+            li {
+                a.nav-link {
+                    color: var(--bs-light);
+                }
+            }
+        }
     }
 }
 

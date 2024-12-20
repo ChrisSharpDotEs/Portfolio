@@ -84,10 +84,12 @@
                     <canvas id="spinnerCanvas" width="100" height="100"></canvas>
                     <div class="px-2 text-light">Loading...</div>
                 </section>
-                <video autoplay loop muted playsinline preload="metadata" height="100">
+                <video autoplay loop muted playsinline preload="metadata" aria-hidden="true" height="100" title="Video de fondo para la web">
                     <source src="./assets/videos/presentation.mp4" type="video/mp4">
-                    Tu navegador no soporta el elemento video.
                 </video>
+                <picture>
+                    <img src="imagen-fondo.jpg" alt="Descripción breve del video">
+                </picture>
                 <div class="container text-center contenido text-light">
                     <h1>Texto sobre el video</h1>
                     <p>Agrega aquí cualquier contenido adicional.</p>
@@ -96,61 +98,61 @@
             <section id="aboutus"></section>
             <section id="services" class="bg-primary"></section>
         </main>
-        <footer class="bg-secondary">
+        <footer class="bg-dark">
             <div class="row row-cols-5 my-4 p-5 border-top">
                 <div class="col">
-                    <a href="/" class="d-flex align-items-center gap-3 mb-3 text-muted text-decoration-none">
+                    <a href="/" class="d-flex align-items-center gap-3 mb-3 text-light text-decoration-none">
                         MyBrand
-                        <span class="text-muted">© 2021</span>
+                        <span class="text-light">© 2021</span>
                     </a>
                 </div>
                 <div class="col"></div>
                 <div class="col">
-                    <h5>Section</h5>
+                    <h1 class="fs-5">Section</h1>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">About</a></li>
                     </ul>
                 </div>
                 <div class="col">
-                    <h5>Section</h5>
+                    <h1 class="fs-5">Section</h1>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">About</a></li>
                     </ul>
                 </div>
                 <div class="col">
-                    <h5>Section</h5>
+                    <h1 class="fs-5">Section</h1>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">About</a></li>
                     </ul>
                 </div>
             </div>
         </footer>
     </div>
     <div class="modal-containers">
-        <section aria-hidden="false" aria-labelledby="cookie_consent" class="modal fade" id="cookie-settings" role="dialog"
+        <div aria-hidden="false" aria-labelledby="cookie_consent" class="modal fade" id="cookie-settings" role="dialog"
             tabindex="-1">
             <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content rounded-0">
-                    <section class="modal-header">
-                        <p class="modal-title" id="cookie_consent">
+                    <article class="modal-header">
+                        <h1 class="fs-4 modal-title" id="cookie_consent">
                             Logo
-                        </p>
+                        </h1>
                         <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button">
                         </button>
-                    </section>
-                    <section class="modal-body px-0">
+                    </article>
+                    <article class="modal-body px-0">
                         <div class="row mx-0">
                             <div class="col-md-4 px-0">
                                 <div class="cookie-nav border-bottom px-2 active-border">
@@ -398,8 +400,8 @@
                                 </article>
                             </div>
                         </div>
-                    </section>
-                    <section class="modal-footer">
+                    </article>
+                    <article class="modal-footer">
                         <button class="btn rounded-0 btn-secondary" data-bs-dismiss="modal" id="cookie-consent-choices"
                             type="button">
                             Confirm my choices
@@ -408,10 +410,10 @@
                             type="button">
                             Allow all
                         </button>
-                    </section>
+                    </article>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
 
     <script crossorigin="anonymous" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

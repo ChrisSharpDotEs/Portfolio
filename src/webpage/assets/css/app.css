@@ -11992,6 +11992,12 @@ html body {
 html body section {
   min-height: 80vh;
 }
+html body footer h1, html body footer .h1, html body footer h5, html body footer .h5 {
+  color: var(--bs-light);
+}
+html body footer li a.nav-link {
+  color: var(--bs-light);
+}
 
 li {
   list-style: none;

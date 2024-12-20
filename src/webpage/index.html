@@ -11,9 +11,14 @@
     <link rel="stylesheet" href="./resources/css/app.css">
     <script src="./assets/js/index.js" defer></script>
     <style>
+        #home {
+            min-height: 100vh;
+        }
+
         .video-container {
             position: relative;
             overflow: hidden;
+            margin-top: 2rem;
         }
 
         video {
@@ -26,6 +31,25 @@
             height: 100%;
             z-index: -1;
             object-fit: contain;
+        }
+
+        .fadeup {
+            opacity: 0;
+            transform: translateY(0px);
+            animation: fadeup 1.5s ease forwards;
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeup {
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -64,7 +88,7 @@
             </nav>
         </header>
         <main>
-            <section id="home" class="video-container my-5">
+            <section id="home" class="video-container">
                 <section id="loader-container" class="loader-container">
                     <canvas id="spinnerCanvas" width="100" height="100"></canvas>
                     <div class="px-2 text-light">Loading...</div>
@@ -73,7 +97,7 @@
                     title="Video de fondo para la web">
                     <source src="./resources/media/sunset.mp4" type="video/mp4">
                 </video>
-                <div class="container text-center contenido text-dark">
+                <div class="container text-center contenido text-dark fadeup">
                     <h1>Texto sobre el video</h1>
                     <p>Agrega aquí cualquier contenido adicional.</p>
                 </div>

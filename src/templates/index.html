@@ -12,6 +12,13 @@
     <link rel="stylesheet" href="style.css">
     <script src="../../assets/js/index.js" type="module"></script>
     <script src="./index.js"></script>
+    <style>
+        #meteoapp {
+            background-image: url('../../public/media/coffee1.jpg');
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
 </head>
 
 <body class="bg-light" style="min-height: 100vh;">
@@ -19,7 +26,7 @@
         <a class="nav-link" href="../../index.html">Home</a>
         <a class="nav-link" href="../schedule/index.html">Cronómetro</a>
     </div>
-    <section>
+    <section class="d-none">
         <div class="d-flex gap-3 align-items-center alert alert-warning">
             <div class="fw-bold text-warning">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
@@ -70,6 +77,45 @@
                     <strong>Nota:</strong>
                     <span>Consultanos cualquier duda.</span>
                 </p>
+            </div>
+        </div>
+    </section>
+    <section id="meteoapp" class="d-flex align-items-center justify-content-center">
+        <div class="rounded p-4 text-light" style="backdrop-filter: blur(5px)">
+            <div class="row mb-3">
+                <div class="col-6 px-4">
+                    <h3>Outer Hebrides</h3>
+                    <small>H:24º L:6º</small>
+                </div>
+                <div class="col-6 text-end px-4">
+                    <p class="display-1">12</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 my-3">
+                    <div class="rounded p-4" style="background-color: #6c757d8f !important">
+                        <span>Wind</span>
+                        <h5>5 km/h</h5>
+                    </div>
+                </div>
+                <div class="col-6 my-3">
+                    <div class="rounded p-4" style="background-color: #6c757d8f !important;">
+                        <span>Humidity</span>
+                        <h5>75 - 85%</h5>
+                    </div>
+                </div>
+                <div class="col-6 my-3">
+                    <div class="rounded p-4" style="background-color: #6c757d8f !important;">
+                        <span>UV Index</span>
+                        <h5>0 Low</h5>
+                    </div>
+                </div>
+                <div class="col-6 my-3">
+                    <div class="rounded p-4" style="background-color: #6c757d8f !important;">
+                        <span>Rain</span>
+                        <h5>20%</h5>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

@@ -1,0 +1,107 @@
+/* ==========================
+   VARIABLES
+   ========================== */
+$primary: #033043; // Cambiar el color primario
+$warning: #FDA521; // Cambiar el color secundario
+$success: #086047;
+$info: #94deec;
+$light: #fafaf5;
+$border-radius: 1.5rem;
+$form-check-input-width: 1.25em;
+
+/* Chatbox */
+
+$text-1: #333;
+$text-2: #666;
+$text-3: #999;
+$line: #ccc;
+$time-bg: #eee;
+$background: #f7f7f7;
+
+
+/* ROOT VARIABLES */
+:root {
+    --border-radius-md: 20px;
+    --border-radius-sm: 10px;
+    --bg-primary-light: rgb(227, 247, 228);
+    --bs-light-info: rgb(198, 236, 243);
+    --bs-light-danger: rgb(243, 181, 181);
+    --bs-light-warning: rgb(255, 245, 198);
+    --bs-light-success: rgb(181, 243, 186);
+}
+
+/* IMPORTS */
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+/* GLOBAL STYLES */
+html {
+    overflow-x: hidden;
+    width: 100%;
+
+    body {
+        min-height: 90vh;
+
+        section {
+            min-height: 80vh;
+        }
+
+        footer {
+
+            h1,
+            h5 {
+                color: var(--bs-light);
+            }
+
+            li {
+                a.nav-link {
+                    color: var(--bs-light);
+                }
+            }
+        }
+    }
+}
+
+li {
+    list-style: none;
+}
+
+td>i.bi {
+    cursor: pointer;
+}
+
+/* UTILITIES */
+.mx-500px {
+    max-width: 500px;
+}
+
+.border-sm {
+    border-radius: 10px;
+}
+
+.mr-2 {
+    margin-right: 0.5rem;
+}
+
+.rounded-md {
+    border-radius: var(--border-radius-md);
+}
+
+.bg-unfocus {
+    backdrop-filter: blur(3px);
+}
+
+/* LAYOUT STYLES */
+
+/* COMPONENT STYLES */
+.contenido {
+    position: relative;
+    z-index: 1;
+    top: 10rem;
+}
+
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

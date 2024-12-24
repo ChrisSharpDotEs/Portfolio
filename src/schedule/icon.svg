@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- Fondo degradado -->
+  <defs>
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color: #2196F3; stop-opacity: 1" />
+      <stop offset="100%" style="stop-color: #0D47A1; stop-opacity: 1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Cuadrado con fondo degradado -->
+  <rect x="10" y="10" width="180" height="180" rx="20" ry="20" fill="url(#blueGradient)"/>
+
+  <!-- Texto "Schedule" en blanco -->
+  <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="36" fill="white" text-anchor="middle" alignment-baseline="middle">
+    Schedule
+  </text>
+</svg>

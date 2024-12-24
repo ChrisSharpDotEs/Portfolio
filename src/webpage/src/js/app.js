@@ -2,45 +2,57 @@ import '../scss/app.scss';
 import { Modal } from 'bootstrap';
 
 class CookieController {
-    constructor() {
-        this.cookieContent = document.querySelectorAll('.cookie-content');
-    }
-    init() {
-        if (!this.existsCookie('acepted-cookies')) {
-            const modal = new CookieModal('cookie-settings', this.cookieContent);
-            modal.buildModal();
-            this.confirm();
+    value = {};
+    configs = {
+        expires: { days: 0, hours: 0, minutes: 1 },
+        samesite: 'Lax'
+    };
+    constructor(cookieName, value, path = '', configs) {
+        this.cookieName = cookieName;
+        this.path = path;
+        if (value) {
+            this.value = value;
+        }
+        if (configs) {
+            this.configs = configs;
         }
     }
-    setCookie(name, value, days, hours, minutes) {
-        let expires = "";
+    init() {
+        if (!this.existsCookie()) {
+            this.setCookie(this.value);
+        }
+    }
+    getExpireTime() {
+        const factor = { days: 86400000, hours: 3600000, minutes: 60000 };
+        const customTime = Object.keys(this.configs.expires).map(key =>
+            this.configs.expires[key] * factor[key]).reduce((acc, current) => acc += current, 0);
         let date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000 + hours * 60 * 60 * 1000 + minutes * 60 * 1000));
-
-        expires = "; expires=" + date.toUTCString();
-        document.cookie = name + "=" + (value || "") + expires + "; path=/" + ";SameSite=Lax;";
+        date.setTime(date.getTime() + customTime);
+        return `expires=${date.toUTCString()};`;
     }
-    existsCookie(name) {
-        return document.cookie.includes(name);
+    getSameSite() {
+        return `SameSite=${this.configs.samesite};`;
     }
-    confirm() {
-        let that = this;
-        let choices = document.getElementById('cookie-consent-choices');
-        let allCookies = document.getElementById('cookie-consent-all');
-
-        choices.addEventListener('click', function () {
-            let selectedCookies = [...document.getElementById('cookie-settings')
-                .getElementsByTagName('input')]
-                .filter(item => item.checked).map(item => item.getAttribute('id'));
-
-            that.setCookie('acepted-cookies', JSON.stringify([selectedCookies]), 0, 0, 1);
-        });
-        allCookies.addEventListener('click', function () {
-            let selectedCookies = [...document.getElementById('cookie-settings')
-                .getElementsByTagName('input')].map(item => item.getAttribute('id'));
-
-            that.setCookie('acepted-cookies', selectedCookies, 0, 0, 1);
-        });
+    getPath() {
+        return `path=/${this.path};`;
+    }
+    setValue(value){
+        this.value = value;
+        this.setCookie();
+    }
+    setCookie() {
+        const jsonvalue = JSON.stringify(this.value);
+        const cookieConfig = this.getExpireTime().concat(this.getPath(), this.getSameSite());
+        document.cookie = `${this.cookieName}=${jsonvalue};${cookieConfig}`;
+    }
+    existsCookie() {
+        return document.cookie.includes(this.cookieName);
+    }
+    deleteCooKie() {
+        if(this.existsCookie()) {
+            console.log('cookie borrada');
+            document.cookie = `${this.cookieName}=;expires=Thu, 01 Jan 1970 00:00:00 UTC;${this.getPath()};`;
+        }
     }
 }
 class CookieModal {
@@ -69,45 +81,81 @@ class CookieModal {
             });
         });
     }
+
+}
+class ConsentCookie extends CookieController {
+    constructor(cookieName) {
+        super(cookieName);
+        this.consentModal = new CookieModal('cookie-settings', document.querySelectorAll('.cookie-content'));
+    }
+    /**
+     * sobreescribe el método por defecto
+     */
+    init() {
+        if (!this.existsCookie()) {
+            this.consentModal.buildModal();
+            this.setCookie(this.value);
+            this.confirm();
+        }
+    }
+    confirm() {
+        let that = this;
+        let choices = document.getElementById('cookie-consent-choices');
+        let allCookies = document.getElementById('cookie-consent-all');
+
+        choices.addEventListener('click', function () {
+            let selectedCookies = [...document.getElementById('cookie-settings')
+                .getElementsByTagName('input')]
+                .filter(item => item.checked).map(item => item.getAttribute('id'));
+
+            that.setValue(JSON.stringify([selectedCookies]), 0, 0, 1);
+        });
+        allCookies.addEventListener('click', function () {
+            let selectedCookies = [...document.getElementById('cookie-settings')
+                .getElementsByTagName('input')].map(item => item.getAttribute('id'));
+
+            that.setValue(selectedCookies, 0, 0, 1);
+        });
+    }
 }
 const loader = () => {
     const canvas = document.getElementById('spinnerCanvas');
     const ctx = canvas.getContext('2d');
 
     let startAngle = 0;
-    let endAngle = Math.PI / 4; 
-    let angleDelta = 0.05; 
-    let rotationSpeed = 0.1; 
+    let endAngle = Math.PI / 4;
+    let angleDelta = 0.05;
+    let rotationSpeed = 0.1;
 
     function drawSpinner() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height); 
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      ctx.save(); 
-      ctx.translate(canvas.width / 2, canvas.height / 2); 
+        ctx.save();
+        ctx.translate(canvas.width / 2, canvas.height / 2);
 
-      ctx.rotate(startAngle); 
-      ctx.beginPath();
-      ctx.arc(0, 0, 40, 0, endAngle, false); 
-      ctx.lineWidth = 6;
-      ctx.strokeStyle = '#3498db'; 
-      ctx.stroke();
+        ctx.rotate(startAngle);
+        ctx.beginPath();
+        ctx.arc(0, 0, 40, 0, endAngle, false);
+        ctx.lineWidth = 6;
+        ctx.strokeStyle = '#3498db';
+        ctx.stroke();
 
-      ctx.restore(); 
+        ctx.restore();
 
-      
-      startAngle += rotationSpeed;
 
-      
-      endAngle += angleDelta;
-      if (endAngle > Math.PI * 1.5 || endAngle < Math.PI / 6) {
-        angleDelta *= -1; 
-      }
+        startAngle += rotationSpeed;
 
-      
-      requestAnimationFrame(drawSpinner);
+
+        endAngle += angleDelta;
+        if (endAngle > Math.PI * 1.5 || endAngle < Math.PI / 6) {
+            angleDelta *= -1;
+        }
+
+
+        requestAnimationFrame(drawSpinner);
     }
 
-    drawSpinner(); 
+    drawSpinner();
 }
 window.addEventListener('load', function () {
 
@@ -117,10 +165,10 @@ window.addEventListener('load', function () {
     const spinner = document.getElementById('loader-container');
 
     try {
-        let cookie = new CookieController();
+        let cookie = new ConsentCookie('consent-cookie');
         cookie.init();
         ['canplay', 'error'].forEach(item => video.addEventListener(item, () => spinner.style.display = 'none'));
-    } catch(error) {
+    } catch (error) {
         console.log(error);
     }
 });

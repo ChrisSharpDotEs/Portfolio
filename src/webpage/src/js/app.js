@@ -55,17 +55,27 @@ class CookieController {
         }
     }
 }
-class CookieModal {
-    #myModal;
-    constructor(id, cookieContent) {
-        this.#myModal = new Modal(document.getElementById(id));
-        this.cookieContent = cookieContent;
+class ConsentCookieModal {
+    constructor(id, cookieName) {
+        this.myModal = new Modal(document.getElementById(id));
+        this.cookie = new CookieController(cookieName);
+        this.tabs = document.querySelectorAll('.cookie-content');
+    }
+    /**
+     * sobreescribe el método por defecto
+     */
+    init() {
+        if (!this.cookie.existsCookie()) {
+            this.buildModal();
+            this.cookie.setCookie(this.value);
+            this.confirm();
+        }
     }
     buildModal() {
-        this.#myModal.show();
-        this.addEventHandler();
+        this.myModal.show();
+        this.toggleTabs();
     }
-    addEventHandler() {
+    toggleTabs() {
         document.querySelectorAll('#cookie-settings .border-start').forEach((item, index, array) => {
             item.addEventListener('click', () => {
                 this.cookieContent.forEach(
@@ -81,40 +91,21 @@ class CookieModal {
             });
         });
     }
-
-}
-class ConsentCookie extends CookieController {
-    constructor(cookieName) {
-        super(cookieName);
-        this.consentModal = new CookieModal('cookie-settings', document.querySelectorAll('.cookie-content'));
-    }
-    /**
-     * sobreescribe el método por defecto
-     */
-    init() {
-        if (!this.existsCookie()) {
-            this.consentModal.buildModal();
-            this.setCookie(this.value);
-            this.confirm();
-        }
-    }
     confirm() {
-        let that = this;
         let choices = document.getElementById('cookie-consent-choices');
         let allCookies = document.getElementById('cookie-consent-all');
 
-        choices.addEventListener('click', function () {
+        choices.addEventListener('click', () => {
             let selectedCookies = [...document.getElementById('cookie-settings')
                 .getElementsByTagName('input')]
                 .filter(item => item.checked).map(item => item.getAttribute('id'));
-
-            that.setValue(JSON.stringify([selectedCookies]), 0, 0, 1);
+            this.cookie.setValue(JSON.stringify([selectedCookies]), 0, 0, 1);
         });
-        allCookies.addEventListener('click', function () {
+        allCookies.addEventListener('click', () => {
             let selectedCookies = [...document.getElementById('cookie-settings')
                 .getElementsByTagName('input')].map(item => item.getAttribute('id'));
 
-            that.setValue(selectedCookies, 0, 0, 1);
+            this.cookie.setValue(selectedCookies, 0, 0, 1);
         });
     }
 }
@@ -158,14 +149,13 @@ const loader = () => {
     drawSpinner();
 }
 window.addEventListener('load', function () {
-
     loader();
 
     const video = document.getElementsByTagName('video')[0];
     const spinner = document.getElementById('loader-container');
 
     try {
-        let cookie = new ConsentCookie('consent-cookie');
+        let cookie = new ConsentCookieModal('cookie-settings', 'consent-cookie');
         cookie.init();
         ['canplay', 'error'].forEach(item => video.addEventListener(item, () => spinner.style.display = 'none'));
     } catch (error) {

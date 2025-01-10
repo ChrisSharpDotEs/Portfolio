@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="#" type="image/x-icon">
     <link rel="stylesheet" href="public/css/app.css">
     <script src="./public/js/app.js" type="module"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body class="bg-light">
@@ -23,24 +24,7 @@
                         <a class="nav-link active" href="#" aria-current="page">Home</a>
                     </li>
                     <li class="nav-item d-md-block d-none">
-                        <div class="dropdown open">
-                            <a class="nav-link rounded-0" type="button" id="triggerId" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                Management
-                            </a>
-                            <div class="dropdown-menu rounded-0 bg-light" aria-labelledby="triggerId">
-                                <a class="dropdown-item" href="./src/webpage/index.html">Ejemplo 1</a>
-                                <a class="dropdown-item" href="./src/schedule/index.html">Ejemplo 2</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item d-md-block d-none">
-                        <a class="nav-link" href="#">About Us</a>
-                    </li>
-                    <li class="nav-item d-md-block d-none">
-                        <a class="nav-link" href="src/templates/index.html">
-                            Examples
-                        </a>
+                        <a class="nav-link" href="#services">Our proyect</a>
                     </li>
                     <li class="nav-item d-md-none d-block">
                         <button class="btn border-0">
@@ -80,11 +64,9 @@
                     </div>
                     <div class="col-md-6 fadeup">
                         <div class="row">
-                            <div class="col-md-12 border-sm my-2 bg-image" 
-                                style="background-image: url('./app/img/benijo.webp'); 
+                            <div class="col-md-12 border-sm my-2 bg-image" style="background-image: url('./app/img/benijo.webp'); 
                                     height: 20rem;"></div>
-                            <div class="col-md mr-2 mb-2 border-sm d-md-block d-none bg-image" 
-                                style="background-image: url('./app/img/teide.webp'); 
+                            <div class="col-md mr-2 mb-2 border-sm d-md-block d-none bg-image" style="background-image: url('./app/img/teide.webp'); 
                                     height: 10rem;">
                             </div>
                             <div class="col-md border-sm mb-2 d-md-block d-none bg-warning"></div>
@@ -93,57 +75,85 @@
                 </div>
             </div>
         </section>
-        <section class="container py-5">
-            <div class="text-center">
-                <h1 class="display-2 text-center mb-5">
-                    Find, Buy and Earn
-                </h1>
-            </div>
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <article>
-                        <ul>
-                            <li>Enjoy a Guaranteed 5% Return In Your First Year</li>
-                            <li>Experience Hassle Free Management of Your Investment</li>
-                            <li>Start Earning from Your Investment Immediately</li>
-                            <li>Benefit From Strong Capital Growth Potential</li>
-                            <li>Ability to Use &amp; Enjoy the Property Yourself</li>
-                            <li>Flexible Finance Options with up to 70% Mortgage Available</li>
-                            <li>
-                                Excellent opportunity for non-EU Investors to Gain Residency in Spain
-                                (Investments from €500,000)
-                            </li>
-                        </ul>
-                    </article>
+        <section id="services" class="py-5 bg-primary text-light">
+            <div class="container">
+                <div class="text-center">
+                    <h1 class="display-2 text-center mb-5">
+                        Find, Buy and Earn
+                    </h1>
                 </div>
-                <div class="col-md-6 mb-3"></div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <article class="mb-5">
+                            <ul class="list-group list-group-flush bg-transparent">
+                                <li
+                                    class="list-group-item d-flex align-items-center bg-transparent border-0 text-light">
+                                    <i class="bi bi-check-circle-fill me-2"></i>
+                                    Enjoy a Guaranteed 5% Return In Your First Year
+                                </li>
+                                <li
+                                    class="list-group-item d-flex align-items-center bg-transparent border-0 text-light">
+                                    <i class="bi bi-check-circle-fill me-2"></i>
+                                    Experience Hassle-Free Management of Your Investment
+                                </li>
+                                <li
+                                    class="list-group-item d-flex align-items-center bg-transparent border-0 text-light">
+                                    <i class="bi bi-check-circle-fill me-2"></i>
+                                    Start Earning from Your Investment Immediately
+                                </li>
+                                <li
+                                    class="list-group-item d-flex align-items-center bg-transparent border-0 text-light">
+                                    <i class="bi bi-check-circle-fill me-2"></i>
+                                    Benefit From Strong Capital Growth Potential
+                                </li>
+                                <li
+                                    class="list-group-item d-flex align-items-center bg-transparent border-0 text-light">
+                                    <i class="bi bi-check-circle-fill me-2"></i>
+                                    Ability to Use & Enjoy the Property Yourself
+                                </li>
+                                <li
+                                    class="list-group-item d-flex align-items-center bg-transparent border-0 text-light">
+                                    <i class="bi bi-check-circle-fill me-2"></i>
+                                    Flexible Finance Options with up to 70% Mortgage Available
+                                </li>
+                                <li
+                                    class="list-group-item d-flex align-items-center bg-transparent border-0 text-light">
+                                    <i class="bi bi-check-circle-fill me-2"></i>
+                                    Excellent Opportunity for Non-EU Investors to Gain Residency in Spain (Investments
+                                    from €500,000)
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <img class="img-fluid" src="./app/img/tenerife_palms.jpg" alt="">
+                    </div>
+                </div>
             </div>
         </section>
-        <section id="aboutus" class="bg-primary text-light m-0">
+        <section class="d-flex align-items-center m-0">
             <div class="container py-5">
                 <article class="text-center mb-5">
-                    <h1 class="mb-4">Inspection Visit Packages Designed for Informed Decisions</h1>
+                    <h1 class="mb-4">Explore Our Exclusive Inspection Visit Packages</h1>
                     <p>
-                        Our inspection visit packages immerse you in the local lifestyle and amenities, providing a
-                        subsidized opportunity to experience the authentic taste of Spanish living.
+                        Discover firsthand what living in Spain is all about with our personalized inspection visit
+                        packages, designed to give you a true feel of the lifestyle and community.
                     </p>
                     <p>
-                        This hands-on experience comes with a unique financial advantage: if you decide to purchase,
-                        we’ll refund your entire accommodation cost.
+                        Enjoy a guided experience with local insights, and if you choose to make your dream home a
+                        reality, we’ll reimburse your entire stay.
                     </p>
                     <p>
-                        We’ve crafted this program to ensure your investment decision is both satisfying and
-                        well-informed, allowing you to experience the essence of your future investment with us.
+                        Our goal is to make your investment journey seamless and enjoyable, helping you make a confident
+                        and informed decision.
                     </p>
                 </article>
                 <div class="text-center">
-                    <button class="btn btn-light w-25">
-                        Ask us
+                    <button class="btn btn-primary w-25">
+                        Contact Us
                     </button>
                 </div>
             </div>
-        </section>
-        <section id="contact" class="container py-5">
         </section>
     </main>
     <footer class="bg-primary text-light">

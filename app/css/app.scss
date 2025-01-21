@@ -1,0 +1,61 @@
+/* ==========================
+   VARIABLES
+   ========================== */
+$primary: #033043;
+$warning: #FDA521;
+$success: #086047;
+$info: #94deec;
+$light: #fafaf5;
+$border-radius: 1.5rem;
+$form-check-input-width: 1.25em;
+
+/* ROOT VARIABLES */
+:root {
+    --border-radius-md: 20px;
+    --border-radius-sm: 10px;
+    --bg-primary-light: rgb(227, 247, 228);
+    --bs-light-info: rgb(198, 236, 243);
+    --bs-light-danger: rgb(243, 181, 181);
+    --bs-light-warning: rgb(255, 245, 198);
+    --bs-light-success: rgb(181, 243, 186);
+}
+
+/* IMPORTS */
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+/* GLOBAL STYLES */
+html {
+    overflow-x: hidden;
+    width: 100%;
+
+    body {
+        min-height: 90vh;
+
+        section {
+            min-height: 80vh;
+        }
+    }
+}
+
+/* BACKGROUNDS */
+.btn-facebook {
+    background-color: #1877f2;
+    color: #fff;
+    font-weight: bold;
+}
+
+.btn.btn-facebook:hover {
+    background-color: #1568c3;
+    color: #fff;
+}
+
+.btn-instagram {
+    border: none;
+    background: linear-gradient(45deg, #f58529, #d53369, #3c1053);
+    color: #fff;
+    font-weight: bold;
+}
+.btn.btn-instagram:hover {
+    background: linear-gradient(45deg, #d37222, #ac2954, #2d0c3f);
+    color: #fff;
+}

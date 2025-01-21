@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observación meteorológica</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <link rel="stylesheet" href="../../public/css/app.css">
+    <script src="./index.js" type="module"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm">
+            <div class="container">
+                <a class="navbar-brand" href="#">AgroApp</a>
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" aria-current="page">Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="container my-5">
+            <div class="row">
+                <div class="col">
+                    <div class="px-4 mb-4">
+                        <h1 class="fs-4">Datos meteorológicos</h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 mb-3">
+                            <div class="border p-3">
+                                <canvas class="w-100" style="min-height: 20rem;" id="temperatura"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-3">
+                            <div class="border p-3">
+                                <canvas class="w-100" style="min-height: 20rem;" id="humedad"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-3">
+                            <div class="border p-3">
+                                <canvas class="w-100" style="min-height: 20rem;" id="presion"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-3">
+                            <div class="border p-3">
+                                <canvas class="w-100" style="min-height: 20rem;" id="viento"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+
+</html>

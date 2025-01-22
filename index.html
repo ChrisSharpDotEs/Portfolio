@@ -58,30 +58,41 @@
 
 <body style="min-height: 100vh;" data-bs-theme="auto">
     <div class="rounded p-4 blur text-light meteo-container" role="dialog">
-        <div class="d-flex justify-content-between">
-            <h1 class="fs-4">Güímar</h1>
-            <button type="button" class="btn-close"></button>
+        <div id="spinner-container" class="position-relative">
         </div>
-        <table>
-            <tbody>
-                <tr>
-                    <td class="p-2">Temperatura</td>
-                    <td class="p-2" data-fill="ta"></td>
-                </tr>
-                <tr>
-                    <td class="p-2">Punto de rocío</td>
-                    <td class="p-2" data-fill="tr"></td>
-                </tr>
-                <tr>
-                    <td class="p-2">Humedad relativa</td>
-                    <td class="p-2" data-fill="hr"></td>
-                </tr>
-                <tr>
-                    <td class="p-2">Viento</td>
-                    <td class="p-2" data-fill="v"></td>
-                </tr>
-            </tbody>
-        </table>
+        <div id="data-container">
+            <div class="d-flex justify-content-between">
+                <h1 class="fs-4">Güímar</h1>
+                <button type="button" class="btn-close"></button>
+            </div>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="p-2">Temperatura</td>
+                        <td class="p-2" data-fill="ta"></td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">Punto de rocío</td>
+                        <td class="p-2" data-fill="tr"></td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">Humedad relativa</td>
+                        <td class="p-2" data-fill="hr"></td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">Viento</td>
+                        <td class="p-2" data-fill="v"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <span style="font-size: 12px;">
+                <a href="https://www.aemet.es/es/portada" aria-label="Ir a la página oficial de la AEMET"
+                    target="_blank">
+                    <img src="./app/img/aemet-logo.webp" alt="Logotipo de la AEMET" width="40" height="20">
+                </a>
+                Información proporcionada <br> por AEMET. Último registro a las <span id="last-update"></span> h.
+            </span>
+        </div>
     </div>
     <header class="p-3 bg-black">
         <nav class="navbar navbar-expand-sm navbar-dark">
@@ -134,6 +145,9 @@
                             <p class="fs-3">
                                 Fuga, ducimus maiores? Exercitationem suscipit natus pariatur tempora
                                 expedita, animi nemo.
+                            </p>
+                            <p>
+                                Se está haciendo. Se ese, sos, meneces.
                             </p>
                         </div>
                     </div>
@@ -220,67 +234,129 @@
 
         drawCircularText("Software developer   Software developer   ", 80);
 
+        function $(tag, attributes = {}) {
+            const element = document.createElement(tag);
 
-        const urlSolicitud = 'https://opendata.aemet.es/opendata/api/observacion/convencional/datos/estacion/C439J/?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyaWdlbGRyZWFtc0BnbWFpbC5jb20iLCJqdGkiOiI1Y2VjOGNiOC1mYjY4LTQxYmEtODcyMi03MDVkYmZmOTc4MGIiLCJpc3MiOiJBRU1FVCIsImlhdCI6MTczNTc2NjUxOSwidXNlcklkIjoiNWNlYzhjYjgtZmI2OC00MWJhLTg3MjItNzA1ZGJmZjk3ODBiIiwicm9sZSI6IiJ9.dvm0Nq-gZZoQpfVfs8AVOFuXp06_UTIIL5DOmWtyp8U';
+            for (let key in attributes) {
+                if (key === 'class') {
+                    element.className = attributes[key];
+                } else {
+                    element.setAttribute(key, attributes[key]);
+                }
+            }
 
-        function getMeteoData() {
-            console.log('Obteniendo nuevos datos...');
-            fetch(urlSolicitud)
-                .then(response => response.json())
-                .then(data1 => {
-                    if (data1.estado == 200) {
-                        fetch(data1.datos)
-                            .then(response => response.json())
-                            .then(datos_guimar => {
-                                const data_interes = filterData(datos_guimar);
-                                renderData(data_interes[data_interes.length - 1]);
-                                data_interes.push({ last_update: Date.now() });
-                                localStorage.setItem('aemet-data', JSON.stringify(data_interes));
-                            })
-                            .catch(error => console.log(error));
+            element.append = function (...children) {
+                children.forEach(child => {
+                    if (child instanceof HTMLElement) {
+                        element.appendChild(child);
+                    } else if (typeof child === 'string') {
+                        element.appendChild(document.createTextNode(child));
                     }
                 })
-                .catch(error => console.log(error));
+                return this;
+            };
+
+            return element;
         }
-        
-        let tempData = [];
-
-        if (localStorage.getItem('aemet-data')) {
-            tempData = JSON.parse(localStorage.getItem('aemet-data'));
-
-            if (tempData[tempData.lenght - 1] < Date.now() - 3600000) {
-                console.log("Caso 1.")
-                getMeteoData();
-            } else {
-                console.log("Caso 3.")
-                const datos_guimar = JSON.parse(localStorage.getItem('aemet-data'));
-                const last_data = datos_guimar[datos_guimar.length - 2];
-                renderData(last_data);
+        class Spinner {
+            constructor(id) {
+                this.container = document.getElementById(id);
+                this.spinner = this.#build();
             }
-        } else {
-            console.log("Caso 2.");
-            getMeteoData();
+            #build() {
+                return $('div', { id: 'product-spinner', class: 'd-flex justify-content-center' }).append(
+                    $('div', { class: 'spinner-border', role: 'status' })
+                );
+            }
+            show() {
+                this.container.append(this.spinner);
+            }
+            remove() {
+                this.spinner.remove();
+            }
         }
 
-        function filterData(data) {
-            const datos_interes = data.map(item => {
-                return {
-                    fecha: item.fint.split('T')[0],
-                    hora: item.fint.split('T')[1].split('+')[0].replace('00:00', '00'),
-                    ta: item.ta + ' ºC',
-                    hr: item.hr + ' %',
-                    tr: item.tpr + ' ºC',
-                    presion: item.pres,
-                    v: item.vv + ' m/s'
+        class MeteoApp {
+            static #urlSolicitud = 'https://opendata.aemet.es/opendata/api/observacion/convencional/datos/estacion/C439J/?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyaWdlbGRyZWFtc0BnbWFpbC5jb20iLCJqdGkiOiI1Y2VjOGNiOC1mYjY4LTQxYmEtODcyMi03MDVkYmZmOTc4MGIiLCJpc3MiOiJBRU1FVCIsImlhdCI6MTczNTc2NjUxOSwidXNlcklkIjoiNWNlYzhjYjgtZmI2OC00MWJhLTg3MjItNzA1ZGJmZjk3ODBiIiwicm9sZSI6IiJ9.dvm0Nq-gZZoQpfVfs8AVOFuXp06_UTIIL5DOmWtyp8U';
+            constructor() {
+                this.spinner = new Spinner('spinner-container');
+                this.dataContainer = document.getElementById('data-container');
+                this.last_update_container = document.getElementById('last-update');
+            }
+            async getMeteoData() {
+                this.dataContainer.style.opacity = 0;
+                this.spinner.show();
+                const response = await this.requestData(MeteoApp.#urlSolicitud);
+
+                if (response.estado == 200) {
+                    const second_response = await this.requestData(response.datos);
+                    const data_interes = this.filterData(second_response);
+                    this.renderData(data_interes[data_interes.length - 1]);
+                    data_interes.push({ last_update: Date.now() });
+                    localStorage.setItem('aemet-data', JSON.stringify(data_interes));
                 }
-            });
-            return datos_interes;
+                this.spinner.remove();
+                this.dataContainer.style.opacity = 1;
+            }
+            async requestData(url) {
+                console.log('Obteniendo nuevos datos...');
+                const response = await fetch(url);
+                if (!response.ok) {
+                    return null;
+                }
+                try {
+                    const data = await response.json();
+                    return data;
+                } catch (error) {
+                    console.log(error);
+                    return null;
+                }
+            }
+            renderData(data) {
+                document.querySelectorAll('.meteo-container table td[data-fill]').forEach(item => {
+                    item.innerHTML = data[item.getAttribute('data-fill')];
+                });
+                console.log(data);
+                this.last_update_container.innerHTML = data.hora;
+            }
+            filterData(data) {
+                const datos_interes = data.map(item => {
+                    return {
+                        fecha: item.fint.split('T')[0],
+                        hora: item.fint.split('T')[1].split('+')[0].replace('00:00', '00'),
+                        ta: item.ta + ' ºC',
+                        hr: item.hr + ' %',
+                        tr: item.tpr + ' ºC',
+                        presion: item.pres,
+                        v: item.vv + ' m/s'
+                    }
+                });
+                return datos_interes;
+            }
+            init() {
+                if (!localStorage.getItem('aemet-data')) {
+                    console.log("No hay datos.");
+                    this.getMeteoData();
+                } else {
+                    let tempData = [];
+                    tempData = JSON.parse(localStorage.getItem('aemet-data'));
+                    let index = tempData.length - 1;
+                    if (tempData[index].last_update < Date.now() - 60 * 60 * 1000) {
+                        console.log("Datos obsoletos.")
+                        this.getMeteoData();
+                    } else {
+                        console.log("Aún no hay datos nuevos.");
+                        localStorage.setItem('aemet-data', JSON.stringify(tempData));
+                        const datos_guimar = JSON.parse(localStorage.getItem('aemet-data'));
+                        const last_data = datos_guimar[datos_guimar.length - 2];
+                        this.renderData(last_data);
+                        console.log(last_data);
+                    }
+                }
+            }
         }
-        function renderData(data) {
-            document.querySelectorAll('.meteo-container table td[data-fill]').forEach(item => {
-                item.innerHTML = data[item.getAttribute('data-fill')];
-            });
-        }
+
+        new MeteoApp().init();
     </script>
 </body>
 

@@ -1,68 +1,507 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Tree site</title>
-    <meta content="Find properties in Tenerife" name="description">
-    <link rel="shortcut icon" href="./app/img/tree.svg" type="image/x-icon">
-    <link rel="stylesheet" href="public/css/app.css">
-    <script src="./public/js/index.js" type="module"></script>
+    <title>Portfolio</title>
+    <meta content="Un diseño web personalizado con vídeos" name="description">
+    <meta content="" name="keywords">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <link rel="stylesheet" href="./dist/css/app.css">
+    <script src="./dist/js/index.js" type="module" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <style>.navbar-transparent{position:absolute;width:100%;background:0 0;z-index:1}.loader-container{margin:0 auto}.contenido{position:relative;z-index:1;top:10rem}.btn-blur{backdrop-filter:blur(5px)}video{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:100%;min-height:100%;z-index:-1;object-fit:contain}.swiper{background-color:#ffffff93}.swiper-slide{display:flex;justify-content:center;align-items:center}.dropdown-menu{max-height:0;opacity:0;overflow:hidden;transition:max-height .3s ease-out,opacity .3s ease-out}.dropdown.show .dropdown-menu{max-height:500px;opacity:1}</style>
 </head>
 
-<body style="min-height: 100vh;" data-bs-theme="auto">
-    <main>
-        <section class="d-none bg-primary text-light">
-            <div class="container">
-                <div class="row align-items-center" style="min-height: 90vh;">
-                    <div class="col-md-6">
-                        <div class="p-3">
-                            <h1 class="display-3">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+<body>
+    <div class="d-flex flex-column justify-content-between" style="min-height: 100vh;">
+        <div class="modal-containers">
+            <div id="cookie-settings" aria-hidden="true" aria-labelledby="cookie_consent" class="modal fade" role="dialog"
+                tabindex="-1">
+                <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <article class="modal-header">
+                            <h1 class="fs-4 modal-title" id="cookie_consent">
+                                Logo
                             </h1>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="p-3">
-                            <p class="fs-3">
-                                Fuga, ducimus maiores? Exercitationem suscipit natus pariatur tempora
-                                expedita, animi nemo.
-                            </p>
-                            <p>
-                                Se está haciendo. Se ese, sos, meneces.
-                            </p>
-                        </div>
+                            <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button">
+                            </button>
+                        </article>
+                        <article class="modal-body px-0" style="overflow-y: auto;">
+                            <div class="row mx-0" style="min-height: 30rem;">
+                                <aside class="col-md-4 px-0">
+                                    <div class="cookie-nav px-2 active-border">
+                                        <div class="border-start border-3 border-primary p-2">
+                                            <a class="nav-link my-0">
+                                                Privacy settings
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="cookie-nav px-2">
+                                        <div class="border-start border-3 border-white p-2">
+                                            <a class="nav-link my-0">
+                                                Strictly necessary cookies
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="cookie-nav px-2">
+                                        <div class="border-start border-3 border-white p-2">
+                                            <a class="nav-link my-0">
+                                                Performance cookies
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="cookie-nav px-2">
+                                        <div class="border-start border-3 border-white p-2">
+                                            <a class="nav-link my-0">
+                                                Advertising cookies
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="cookie-nav px-2">
+                                        <div class="border-start border-3 border-white p-2">
+                                            <a class="nav-link my-0">
+                                                Functionality cookies
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="cookie-nav px-2">
+                                        <div class="border-start border-3 border-white p-2">
+                                            <p class="my-0">
+                                                Social Media cookies
+                                            </p>
+                                        </div>
+                                    </div>
+                                </aside>
+                                <div class="col-md-8">
+                                    <article class="cookie-content p-4">
+                                        <h2>
+                                            Your Privacy
+                                        </h2>
+                                        <p>
+                                            When you visit any website, it may store or retrieve information on your
+                                            browser, mostly in the
+                                            form of cookies. This information might be about you, your preferences or
+                                            your
+                                            device and is
+                                            mostly
+                                            used to make the site work as you expect it to. The information does not
+                                            usually
+                                            directly identify
+                                            you,
+                                            but it can give you a more personalized web experience. Because we respect
+                                            your
+                                            right to privacy,
+                                            you can choose not to allow some types of cookies. Click on the different
+                                            category headings to
+                                            find
+                                            out more and change our default settings. However, blocking some types of
+                                            cookies may impact your
+                                            experience of the site and the services we are able to offer.
+                                        </p>
+                                    </article>
+                                    <article class="cookie-content p-4 d-none">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h2 class="w-75">
+                                                Strictly necessary cookies
+                                            </h2>
+                                            <div class="text-primary">
+                                                Always active
+                                            </div>
+                                        </div>
+                                        <div class="my-2">
+                                            <p>
+                                                These cookies are necessary for the website to function and cannot be
+                                                switched off in our
+                                                systems.
+                                                They are usually only set in response to actions made by you which
+                                                amount to
+                                                a request for
+                                                services, such as setting your privacy preferences, logging in or
+                                                filling in
+                                                forms. You can set
+                                                your browser
+                                                to block or alert you about these cookies, but some parts of the site
+                                                will
+                                                not then work. These
+                                                cookies do not store any personally identifiable information.
+                                            </p>
+                                        </div>
+                                    </article>
+                                    <article class="cookie-content p-4 d-none">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h2>
+                                                Performance Cookies
+                                            </h2>
+                                            <div class="text-primary">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input form-check-input-lg"
+                                                        id="performance_cookies" role="switch" type="checkbox" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="my-2">
+                                            <p>
+                                                These cookies allow us to count visits and traffic sources so we can
+                                                measure
+                                                and improve the
+                                                performance of our site. They help us to know which pages are the most
+                                                and
+                                                least popular and see
+                                                how visitors move around the site. All information these cookies collect
+                                                is
+                                                aggregated and
+                                                therefore anonymous. If you do not allow these cookies we will not know
+                                                when
+                                                you have visited
+                                                our site, and will not be able to monitor its performance.
+                                            </p>
+                                        </div>
+                                    </article>
+                                    <article class="cookie-content p-4 d-none">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h2>
+                                                Advertising Cookies
+                                            </h2>
+                                            <div class="text-primary">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input form-check-input-lg"
+                                                        id="advertising_cookies" role="switch" type="checkbox" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="my-2">
+                                            <p>
+                                                {my-company} may also use cookies and similar tools to correlate your
+                                                use of
+                                                the Sites to
+                                                personal
+                                                information obtained about you. For example, if you have asked us to
+                                                provide
+                                                you information
+                                                about our upcoming products, our services or any promotions,
+                                                {my-company}
+                                                may utilize our cookie
+                                                and/or clickstream data about your activities when you engage with us on
+                                                the
+                                                Sites. By
+                                                evaluating this information, {my-company} may more clearly target the
+                                                information provided to
+                                                you
+                                                to the specific items {my-company} thinks you will find interesting,
+                                                based
+                                                on your prior online
+                                                activities and preferences. {my-company} also uses third-party
+                                                advertising
+                                                cookies. {my-company}
+                                                and
+                                                our service providers may use advertising cookies to deliver ads that
+                                                {my-company} believes are
+                                                more relevant to you and your interests.
+                                            </p>
+                                        </div>
+                                    </article>
+                                    <article class="cookie-content p-4 d-none">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h2>
+                                                Functionality Cookies
+                                            </h2>
+                                            <div class="text-primary">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input form-check-input-lg"
+                                                        id="functionality_cookies" role="switch" type="checkbox" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="my-2">
+                                            <p>
+                                                These cookies allow us to remember the choices you make while visiting
+                                                our
+                                                Sites and to provide
+                                                enhanced and more personalized content and features, such as customizing
+                                                a
+                                                certain webpage or
+                                                application page, remembering if {my-company} has asked you to
+                                                participate
+                                                in a promotion and
+                                                for
+                                                other services you request, like watching a video or commenting on a
+                                                blog.
+                                                To permit your
+                                                connection to the Sites, our servers receive and record information
+                                                about
+                                                your computer and
+                                                browser, potentially including your IP address, browser type, and other
+                                                software or hardware
+                                                information. These features help us to improve your visit and assist in
+                                                navigation of the Sites’
+                                                features.
+                                            </p>
+                                        </div>
+                                    </article>
+                                    <article class="cookie-content p-4 d-none">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h2>
+                                                Social Media Cookies
+                                            </h2>
+                                            <div class="text-primary">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input form-check-input-lg"
+                                                        id="social_media_cookies" role="switch" type="checkbox" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="my-2">
+                                            <p>
+                                                {my-company} may work with third-parties to provide services on our
+                                                Sites.
+                                                {my-company} uses
+                                                analytics
+                                                services supported by third-party companies who generate analytics
+                                                cookies.
+                                                {my-company} may not
+                                                have access to these cookies, although {my-company} may use statistical
+                                                information arising from
+                                                the cookies provided by these third-parties to customize content and for
+                                                the
+                                                other purposes
+                                                described above. These companies may also transfer this information to
+                                                other
+                                                parties where
+                                                required to do so by law, or where such other parties process the
+                                                information on their behalf.
+                                            </p>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="modal-footer">
+                            <button class="btn btn-secondary" data-bs-dismiss="modal" id="cookie-consent-choices"
+                                type="button">
+                                Confirm my choices
+                            </button>
+                            <button class="btn btn-primary" data-bs-dismiss="modal" id="cookie-consent-all" type="button">
+                                Allow all
+                            </button>
+                        </article>
                     </div>
                 </div>
             </div>
-            <div class="canvas-container">
-                <canvas id="myCanvas" width="400" height="400"></canvas>
-                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
-                    class="bi bi-arrow-up-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                        d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
-                </svg>
-            </div>
-        </section>
-        <section class="py-4">
-            <div class="container">
-                <div class="row justify-content-center text-center">
-                    <div class="col-md-6">
-                        <h1 class="display-4 mb-4">¡Estamos construyendo algo increíble!</h1>
-                        <p class="lead">Nuestra página web está en proceso de renovación. Pronto tendremos nuevas
-                            funcionalidades y un diseño más moderno.</p>
-                        <img src="./app/img/construction.svg" class="img-fluid" alt="" width="100">
-                        <p>Síguenos en nuestras redes sociales para estar al tanto de las novedades.</p>
-                        <a href="#" class="btn btn-facebook" aria-label=" Ir al perfil oficial de Facebook">Facebook</a>
-                        <a href="#" class="btn btn-instagram"
-                            aria-label=" Ir al perfil oficial de Instagram">Instagram</a>
-                        <p class="mt-3">¡Vuelve pronto!</p>
+        </div>
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-transparent">
+                <div class="container">
+                    <a class="navbar-brand" href="#">MyBrand</a>
+                    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="collapsibleNavId">
+                        <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#" aria-current="page">
+                                    Inicio
+                                    <span class="visually-hidden">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#aboutus">Conócenos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#services">Servicios</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact">Contacto</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
+            </nav>
+        </header>
+        <main>
+            <section id="home" class="overflow-hidden position-relative">
+                <div id="loader-container" class="loader-container">
+                    <canvas id="spinnerCanvas" width="100" height="100"></canvas>
+                    <div class="px-2 text-light">Loading...</div>
+                </div>
+                <video autoplay loop muted playsinline preload="metadata" aria-hidden="true"
+                    title="Video de fondo para la web">
+                    <source src="./src/media/sunset.mp4" type="video/mp4">
+                </video>
+                <div class="container text-center text-dark fadeup position-relative py-5 my-5">
+                    <h1 class="display-1">
+                        Crafting Your Dream Website Inside & Out
+                    </h1>
+                    <p>
+                        Transforming interiors with professionalized design, turning your vision into a reality
+                        both indoors and outdoors.
+                    </p>
+                    <div class="d-flex align-items-center justify-content-center gap-3 my-5">
+                        <button class="btn btn-dark w-25">Design your website</button>
+                        <button class="btn btn-light w-25">See examples</button>
+                    </div>
+                    <div class="py-4">
+                        <p class="text-light">Over 200 unique websites already made</p>
+                        <div class="container">
+                            <div class="swiper p-3 rounded">
+                                <div class="swiper-wrapper">
+                                    <div class="slider"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="aboutus" class="d-flex align-items-center container">
+                <div class="py-5">
+                    <div class="row">
+                        <div class="col-md-7 align-content-center">
+                            <div class="p-3">
+                                <h1 class="fs-1">
+                                    Bringing Timeless Elegance and Natural
+                                    Beauty to Your Website
+                                </h1>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="py-3">
+                                <p>
+                                    creating Websites that blend classic elegance with the senerity of nature, for your company
+                                    that feels both refined and harmonious
+                                </p>
+                            </div>
+                            <div class="py-3">
+                                <button class="btn btn-dark">
+                                    Get your own desing
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-7 align-content-center">
+                            <div class="py-3">
+                                <img class="rounded img-fluid" src="./app/img/coffee1.webp"
+                                    alt="Descripción de la imagen" loading="lazy" >
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="my-3">
+                                <img class="rounded img-fluid" src="./app/img/teide.webp"
+                                    alt="Descripción de la imagen" loading="lazy" >
+                            </div>
+                            <div class="my-3">
+                                <img class="rounded img-fluid" src="./app/img/benijo.webp" 
+                                    alt="A nice place" loading="lazy" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="services" class="bg-warning-light">
+                <div class="container">
+                    <div class="py-5">
+                        <h1 class="display-4 text-center py-4">
+                            See How We've Transformed websites into Beautiful Works of Art.
+                        </h1>
+                        <p class="fs-4 text-center">
+                            Hear from our satisfied clients about how we've 
+                            transformed their websites with creativity, precision, and care.
+                        </p>
+                    </div>
+                    <div class="py-5">
+                        <div class="row align-items-center">
+                            <div class="col-md-6 mb-3">
+                                <div class="p-4 bg-light rounded" style="height: 30em;">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis voluptates,
+                                    asperiores ducimus ipsam eaque dolorum non doloribus eius excepturi repellat
+                                    consequuntur. Quo magni totam facere nostrum pariatur soluta temporibus magnam?
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="p-4 bg-light rounded mb-2" style="height: 15em;">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore labore sit ad
+                                    pariatur exercitationem! Qui consectetur, temporibus atque deleniti reiciendis
+                                    expedita fuga eveniet natus tempore iure quibusdam nam perferendis veniam.
+                                </div>
+                                <div class="p-4 bg-light rounded mb-2" style="height: 15em;">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore labore sit ad
+                                    pariatur exercitationem! Qui consectetur, temporibus atque deleniti reiciendis
+                                    expedita fuga eveniet natus tempore iure quibusdam nam perferendis veniam.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="bg-dark p-4">
+            <div class="row">
+                <div class="col-md-3 col-12">
+                    <a href="/" class="d-flex align-items-center gap-3 mb-3 text-light text-decoration-none">
+                        MyBrand
+                        <span class="text-light">© 2021</span>
+                    </a>
+                </div>
+                <div class="col-md-2 col-12"></div>
+                <div class="col-md-2 col-6 mb-3">
+                    <h1 class="fs-5">Section</h1>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-6 mb-3">
+                    <h1 class="fs-5">Section</h1>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-6 mb-3">
+                    <h1 class="fs-5">Section</h1>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">About</a></li>
+                    </ul>
+                </div>
             </div>
-        </section>
-    </main>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            spaceBetween: 1, // Espacio entre los elementos en píxeles
+            breakpoints: {
+                640: {
+                    slidesPerView: 1, // En dispositivos móviles muestra un slide
+                },
+                1024: {
+                    slidesPerView: 3, // En escritorio muestra tres slides
+                },
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
 </body>
 
 </html>

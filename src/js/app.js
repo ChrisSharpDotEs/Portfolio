@@ -61,19 +61,12 @@ class ConsentCookieModal {
         this.cookie = new CookieController(cookieName);
         this.tabs = document.querySelectorAll('.cookie-content');
     }
-    /**
-     * sobreescribe el método por defecto
-     */
     init() {
-        if (!this.cookie.existsCookie()) {
-            this.buildModal();
-            this.cookie.setCookie(this.value);
+        if (true || !this.cookie.existsCookie()) {
+            this.myModal.show();
+            this.toggleTabs();
             this.confirm();
         }
-    }
-    buildModal() {
-        this.myModal.show();
-        this.toggleTabs();
     }
     toggleTabs() {
         document.querySelectorAll('#cookie-settings .border-start').forEach((item, index, array) => {
@@ -104,7 +97,6 @@ class ConsentCookieModal {
         allCookies.addEventListener('click', () => {
             let selectedCookies = [...document.getElementById('cookie-settings')
                 .getElementsByTagName('input')].map(item => item.getAttribute('id'));
-
             this.cookie.setValue(selectedCookies, 0, 0, 1);
         });
     }

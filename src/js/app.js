@@ -91,7 +91,7 @@ class ConsentCookieModal {
         choices.addEventListener('click', () => {
             let selectedCookies = [...document.getElementById('cookie-settings')
                 .getElementsByTagName('input')]
-                .filter(item => item.checked).map(item => item.getAttribute('id'));
+                .filter(item => item.checked).map(item => item.getAttribute('id')); 
             this.cookie.setValue(JSON.stringify([selectedCookies]), 0, 0, 1);
         });
         allCookies.addEventListener('click', () => {

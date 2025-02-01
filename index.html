@@ -11,71 +11,13 @@
     <link rel="stylesheet" href="./dist/css/app.css">
     <script src="./dist/js/index.js" type="module" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
-    <style>
-        .navbar-transparent {
-            position: absolute;
-            width: 100%;
-            background: 0 0;
-            z-index: 1
-        }
-
-        .loader-container {
-            margin: 0 auto
-        }
-
-        .contenido {
-            position: relative;
-            z-index: 1;
-            top: 10rem
-        }
-
-        .btn-blur {
-            backdrop-filter: blur(5px)
-        }
-
-        video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            min-width: 100%;
-            min-height: 100%;
-            z-index: -1;
-            object-fit: contain
-        }
-
-        .swiper {
-            background-color: #ffffff93
-        }
-
-        .swiper-slide {
-            display: flex;
-            justify-content: center;
-            align-items: center
-        }
-
-        .dropdown-menu {
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            transition: max-height .3s ease-out, opacity .3s ease-out
-        }
-
-        .dropdown.show .dropdown-menu {
-            max-height: 500px;
-            opacity: 1
-        }
-        .overflow-y-scroll {
-            overflow-y: scroll;
-        }
-    </style>
 </head>
 
 <body>
     <div class="w-100 p-2 bg-warning text-center text-light fw-bold" style="z-index: 2;">
         La página se encuentra bajo desarrollo y pruebas.
     </div>
-    <div class="d-flex flex-column justify-content-between" style="min-height: 100vh;">
+    <div class="d-flex flex-column justify-content-between">
         <div class="modal-containers">
             <div id="cookie-settings" aria-hidden="true" aria-labelledby="cookie_consent" class="modal fade"
                 role="dialog" tabindex="-1">
@@ -295,50 +237,50 @@
                 </div>
             </div>
         </div>
-        <header>
-            <nav class="navbar navbar-expand-sm navbar-transparent">
-                <div class="container">
-                    <a class="navbar-brand" href="#">MyBrand</a>
-                    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="collapsibleNavId">
-                        <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#" aria-current="page">
-                                    Inicio
-                                    <span class="visually-hidden">(current)</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#aboutus">Conócenos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#services">Servicios</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#contact">Contacto</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
         <main>
             <section id="home" class="overflow-hidden position-relative">
+                <header class="bg-transparent">
+                    <nav class="navbar navbar-expand-sm navbar-transparent">
+                        <div class="container">
+                            <a class="navbar-brand" href="#">MyBrand</a>
+                            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                                <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#" aria-current="page">
+                                            Inicio
+                                            <span class="visually-hidden">(current)</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#aboutus">Conócenos</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#services">Servicios</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#contact">Contacto</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </header>
                 <div id="loader-container" class="loader-container">
                     <canvas id="spinnerCanvas" width="100" height="100"></canvas>
                     <div class="px-2 text-light">Loading...</div>
                 </div>
-                <video autoplay loop muted playsinline preload="metadata" aria-hidden="true"
+                <video class="position-absolute" autoplay loop muted playsinline preload="metadata" aria-hidden="true"
                     title="Video de fondo para la web">
                     <source src="./src/media/sunset.mp4" type="video/mp4">
                 </video>
                 <div class="container text-center text-dark fadeup position-relative py-5 my-5">
                     <h1 class="display-1">
-                        Creando el sitio web de tus sueños por dentro y por fuera
+                        Creamos el sitio web de tus sueños
                     </h1>
                     <p>
                         Creamos o transformamos tu web personal con diseño profesionalizado, convirtiendo tu visión en

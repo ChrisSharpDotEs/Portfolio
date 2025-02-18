@@ -38,6 +38,16 @@ html {
 
         section {
             min-height: 100vh;
+            video {
+                position: absolute;
+                top: 10rem;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                min-width: 100%;
+                min-height: 100%;
+                z-index: -1;
+                object-fit: contain
+            }
         }
 
         footer {
@@ -84,17 +94,6 @@ html {
     backdrop-filter: blur(5px)
 }
 
-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -1;
-    object-fit: contain
-}
-
 .swiper {
     background-color: #ffffff93
 }
@@ -118,6 +117,9 @@ video {
 }
 .overflow-y-scroll {
     overflow-y: scroll;
+}
+.blur {
+    backdrop-filter: blur(5px);
 }
 @keyframes fadeup {
     0% {

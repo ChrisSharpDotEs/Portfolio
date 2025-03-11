@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+.modal-container { @apply fixed z-10 inset-0 overflow-y-auto hidden; }
+.modal-center { @apply flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0; }
+.modal-backdrop { @apply fixed inset-0 bg-gray-500 bg-gray-500/30 transition-opacity; }
+.modal-align { @apply hidden sm:inline-block sm:align-middle sm:h-screen; }
+.modal-content { @apply inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full; }
+.modal-body { @apply bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4; }
+.modal-footer { @apply bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse; }
+.modal-close-button { @apply w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto; }
+.modal-secondary-button { @apply mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:w-auto; }
+
+.navbar { @apply bg-amber-600 p-4; }
+.navbar-container { @apply container mx-auto flex justify-between items-center; }
+.navbar-links { @apply hidden md:flex space-x-4; }
+.navbar-item { @apply text-white hover:text-white px-3 py-2 rounded-md text-lg font-bold; }
+.mobile-menu { @apply overflow-hidden max-h-0 md:hidden; }
+
+button { @apply cursor-pointer transition-all; }
+.card { @apply bg-white shadow-lg rounded-lg overflow-hidden; }
+.navbar-item {
+    position: relative;
+}
+
+.navbar-item::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s;
+}
+
+.navbar-item:hover::after {
+    width: 100%;
+}
+
+.navbar-item:hover::after,
+.navbar-item.active::after {
+    width: 100%;
+}
+
+.slider-container {
+    overflow: hidden;
+    position: relative;
+    height: calc(100vh - 64px);
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    min-height: 90vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.slider-nav button {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.transition-height {
+    transition: max-height 0.3s ease-in-out;
+}
+
+.max-h-0 {
+    max-height: 0;
+}
+
+.max-h-full {
+    max-height: 1000px;
+}
+
+.marquee {
+    animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}

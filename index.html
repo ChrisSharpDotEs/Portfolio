@@ -15,31 +15,78 @@
 </head>
 
 <body>
-    <div class="modal-container" aria-labelledby="modal-title" role="dialog" aria-modal="true" id="miModal">
+    <div class="modal-container hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true" id="miModal">
         <div class="modal-center">
             <div class="modal-backdrop" aria-hidden="true"></div>
-            <span class="modal-align" aria-hidden="true">&#8203;</span>
             <div class="modal-content">
                 <div class="modal-body">
-                    <div class="sm:flex sm:items-start">
-                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                            <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
-                                Título del Modal
-                            </h3>
-                            <div class="mt-2">
-                                <p class="text-sm text-gray-500">
-                                    Contenido del modal. Puedes agregar aquí cualquier elemento HTML que necesites.
-                                </p>
-                            </div>
+                    <ul class="flex justify-around gap-4">
+                        <li class="-mb-px mr-1">
+                            <a id="tab1-btn"
+                                class="inline-block py-2 px-4 text-amber-500 hover:text-amber-800 font-semibold"
+                                href="#">
+                                Consentimiento
+                            </a>
+                        </li>
+                        <li class="mr-1 hidden">
+                            <a id="tab2-btn"
+                                class="inline-block py-2 px-4 text-amber-500 hover:text-amber-800 font-semibold"
+                                href="#">Detalles</a>
+                        </li>
+                        <li class="mr-1">
+                            <a id="tab3-btn"
+                                class="inline-block py-2 px-4 text-amber-500 hover:text-amber-800 font-semibold"
+                                href="#">Acerca de las cookies</a>
+                        </li>
+                    </ul>
+                    <div class="mt-4">
+                        <div id="tab1-content" class="p-4 mh-80">
+                            <p>
+                                Esta página web usa cookies
+                                Las cookies de este sitio web se usan para personalizar el contenido y los anuncios,
+                                ofrecer funciones de redes sociales y analizar el tráfico. Además, compartimos
+                                información sobre el uso que haga del sitio web con nuestros partners de redes sociales,
+                                publicidad y análisis web, quienes pueden combinarla con otra información que les haya
+                                proporcionado o que hayan recopilado a partir del uso que haya hecho de sus servicios.
+                            </p>
+                        </div>
+                        <div id="tab2-content" class="p-4 mh-80 hidden">
+                        </div>
+                        <div id="tab3-content" class="p-4 mh-80 hidden overflow-y-scroll h-100">
+                            <p class="mb-4">
+                                Las cookies son pequeños archivos de texto que las páginas web pueden utilizar para
+                                hacer más eficiente la experiencia del usuario.
+                            </p>
+                            <p class="mb-4">
+                                La ley afirma que podemos almacenar cookies en su dispositivo si son estrictamente
+                                necesarias para el funcionamiento de esta página. Para todos los demás tipos de cookies
+                                necesitamos su permiso. Esto significa que las cookies que están categorizadas como
+                                necesarias se tratan con base en RGPD Art. 6(1)(f). El resto de cookies, es decir,
+                                aquellas de las categorías de preferencias y marketing, son tratadas con base en RGPD
+                                Art. 6(1)(a).
+                            </p>
+                            <p class="mb-4">
+                                Esta página utiliza tipos diferentes de cookies. Algunas cookies son colocadas por
+                                servicios de terceros que aparecen en nuestras páginas.
+                                <br><br>
+                                En cualquier momento puede cambiar o retirar su consentimiento desde la Declaración de
+                                cookies en nuestro sitio web.
+                                <br><br>
+                                Obtenga más información sobre quiénes somos, cómo puede contactarnos y cómo procesamos
+                                los datos personales en nuestra Política de privacidad.
+                                <br><br>
+                                Al contactarnos respecto a su consentimiento, por favor, indique el ID y la fecha de su
+                                consentimiento.
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="modal-close-button">
-                        Cerrar
+                    <button type="button" class="btn-danger" data-modal="close">
+                        Denegar
                     </button>
-                    <button type="button" class="modal-secondary-button">
-                        Acción secundaria (opcional)
+                    <button type="button" class="btn-primary" data-modal="accept">
+                        Aceptar todas
                     </button>
                 </div>
             </div>
@@ -82,13 +129,14 @@
                 <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-amber-800">
                     Creamos el sitio web de tus sueños
                 </h1>
-                <p class="text-gray-500 text-lg">
-                    Creamos o transformamos tu web personal con diseño profesionalizado, convirtiendo tu visión en una
+                <p class="text-gray-800 text-lg">
+                    Creamos tu web personal con diseño profesionalizado, convirtiendo tu visión en una
                     realidad.
                 </p>
                 <div class="flex items-center justify-center gap-3 mt-12 mb-12">
                     <button class="bg-amber-600 text-white py-2 px-4 rounded hover:bg-amber-700">Contáctanos</button>
-                    <button class="bg-white text-gray-900 py-2 px-4 rounded hover:bg-amber-100">Mira nuestros ejemplos</button>
+                    <button class="bg-white text-gray-900 py-2 px-4 rounded hover:bg-amber-100">Mira nuestros
+                        ejemplos</button>
                 </div>
                 <div class="py-4">
                     <p class="text-white">Más de 200 webs realizadas y clientes satisfechos</p>

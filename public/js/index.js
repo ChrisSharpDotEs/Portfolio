@@ -37,14 +37,24 @@ const MobileViewHandler = function () {
 class Modal {
     constructor(modalId) {
         this.modal = document.getElementById(modalId);
-        this.cerrarModalBtn = this.modal.querySelector('button');
-        this.abrirModal = this.abrirModal.bind(this);
-        this.cerrarModal = this.cerrarModal.bind(this);
-        this.manejarClicFueraModal = this.manejarClicFueraModal.bind(this);
+        const ahora = new Date();
+        ahora.setTime(ahora.getTime() + (1 * 60 * 60 * 1000));
+        const fechaExpiracion = ahora.toUTCString();
+        if (this.modal) {
+            this.cerrarModalBtn = this.modal.querySelector('button[data-modal="close"');
+            this.abrirModal = this.abrirModal.bind(this);
+            this.cerrarModal = this.cerrarModal.bind(this);
+            this.manejarClicFueraModal = this.manejarClicFueraModal.bind(this);
+            document.cookie = `accepted-cookies=false;expires=${fechaExpiracion};path=/;SameSite=Lax;`
+        } else {
+            throw Error("No se encuentra el modal.");
+        }
     }
     initOnLoad() {
-        this.abrirModal();
-        this.handleEvents();
+        if(document.cookie.includes('accepted-cookies')){
+            this.abrirModal();
+            this.handleEvents();
+        }
     }
     initButtonModal(abrirModalBtnId) {
         this.abrirModalBtn = document.getElementById(abrirModalBtnId);
@@ -58,11 +68,9 @@ class Modal {
     abrirModal() {
         this.modal.classList.remove('hidden');
     }
-
     cerrarModal() {
         this.modal.classList.add('hidden');
     }
-
     manejarClicFueraModal(event) {
         if (event.target === this.modal) {
             this.cerrarModal();
@@ -70,13 +78,26 @@ class Modal {
     }
 }
 
+function cookieManager() {
+    const tabs = ['tab1-btn', 'tab2-btn', 'tab3-btn'].map(item => document.getElementById(item));
+    const contents = ['tab1-content', 'tab2-content', 'tab3-content'].map(item => document.getElementById(item));
+
+    tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => {
+            contents.forEach(item => item.classList.add('hidden'));
+            contents[index].classList.remove('hidden')
+        });
+    });
+}
+
 function init() {
     const miModal = new Modal('miModal');
     miModal.initOnLoad();
-    
+
     NavbarHighlighter();
     Swiper();
     MobileViewHandler();
+    cookieManager();
 }
 
-window.addEventListener('DOMContentLoaded', init);
+window.addEventListener('load', init);

@@ -23,9 +23,13 @@ class UIManager {
         this.config = config;
     }
     init() {
-        config.forEach(item => {
-            this[item];
-        });
+        this.config.forEach(metodo => {
+            if (typeof this[metodo] === "function") {
+                metodo[metodo]();
+            } else {
+                console.log(`El método ${metodo} no existe.`);
+            }
+        })
     }
     navbarToggler() {
         const navbarItems = document.querySelectorAll(".navbar-item");
@@ -122,6 +126,7 @@ function init() {
     miModal.init();
 
     const uiManager = new UIManager(['navbarToggler', 'menuHandler']);
+    uiManager.init();
 
     Swiper();
 }

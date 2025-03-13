@@ -25,7 +25,7 @@ class UIManager {
     init() {
         this.config.forEach(metodo => {
             if (typeof this[metodo] === "function") {
-                metodo[metodo]();
+                this[metodo]();
             } else {
                 console.log(`El método ${metodo} no existe.`);
             }

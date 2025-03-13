@@ -38,7 +38,7 @@ class Modal {
     constructor(modalId) {
         this.modal = document.getElementById(modalId);
         const ahora = new Date();
-        ahora.setTime(ahora.getTime() + (1 * 60 * 60 * 1000));
+        ahora.setTime(ahora.getTime() + (1 * 60 * 1000));
         const fechaExpiracion = ahora.toUTCString();
         if (this.modal) {
             this.cerrarModalBtn = this.modal.querySelector('button[data-modal="close"');
@@ -51,7 +51,7 @@ class Modal {
         }
     }
     initOnLoad() {
-        if(document.cookie.includes('accepted-cookies')){
+        if(!document.cookie.includes('accepted-cookies')){
             this.abrirModal();
             this.handleEvents();
         }

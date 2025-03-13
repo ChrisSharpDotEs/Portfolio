@@ -51,7 +51,8 @@ class Modal {
         }
     }
     initOnLoad() {
-        if(!document.cookie.includes('accepted-cookies')){
+        //TODO corregir
+        if(document.cookie.includes('accepted-cookies')){
             this.abrirModal();
             this.handleEvents();
         }

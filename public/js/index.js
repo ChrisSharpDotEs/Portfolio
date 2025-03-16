@@ -1,4 +1,4 @@
-const Swiper = function () {
+const SwiperCustomized = function () {
     const slider = document.querySelector(".slider");
     const slides = document.querySelectorAll(".slide");
     const prevButton = document.getElementById("prev");
@@ -17,7 +17,7 @@ const Swiper = function () {
 class UIManager {
     constructor(config) {
         if (UIManager.instance) {
-            return UIManager.instance; 
+            return UIManager.instance;
         }
         UIManager.instance = this;
         this.config = config;
@@ -101,7 +101,7 @@ class CookieModal extends Modal {
         document.cookie = `accepted-cookies=false;expires=${fechaExpiracion};path=/;SameSite=Lax;`
     }
     init() {
-        if(!document.cookie.includes('accepted-cookies')){
+        if (!document.cookie.includes('accepted-cookies')) {
             this.#setCookie();
             this.initOnLoad();
         }
@@ -110,7 +110,7 @@ class CookieModal extends Modal {
     #cookieManager() {
         const tabs = ['tab1-btn', 'tab2-btn', 'tab3-btn'].map(item => document.getElementById(item));
         const contents = ['tab1-content', 'tab2-content', 'tab3-content'].map(item => document.getElementById(item));
-    
+
         tabs.forEach((tab, index) => {
             tab.addEventListener('click', () => {
                 contents.forEach(item => item.classList.add('hidden'));
@@ -119,7 +119,7 @@ class CookieModal extends Modal {
         });
     }
 
-} 
+}
 
 function init() {
     const miModal = new CookieModal('miModal');
@@ -128,7 +128,17 @@ function init() {
     const uiManager = new UIManager(['navbarToggler', 'menuHandler']);
     uiManager.init();
 
-    Swiper();
+    const swiper = new Swiper('.mySwiper', {
+        loop: true,
+        speed: 5000,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+        },
+        slidesPerView: 5,
+        spaceBetween: 10,
+        allowTouchMove: false,
+    });
 }
 
 window.addEventListener('load', init);

@@ -48,43 +48,6 @@ button { @apply cursor-pointer transition-all; }
     width: 100%;
 }
 
-.slider-container {
-    overflow: hidden;
-    position: relative;
-    height: calc(100vh - 64px);
-}
-
-.slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    height: 100%;
-}
-
-.slide {
-    min-width: 100%;
-    box-sizing: border-box;
-    min-height: 90vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-.slider-nav {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-}
-
-.slider-nav button {
-    background-color: rgba(255, 255, 255, 0.5);
-    border: none;
-    padding: 0.5rem;
-    cursor: pointer;
-}
-
 .transition-height {
     transition: max-height 0.3s ease-in-out;
 }
@@ -99,6 +62,37 @@ button { @apply cursor-pointer transition-all; }
 
 .marquee {
     animation: marquee 20s linear infinite;
+}
+
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    animation: scroll-left 20s linear infinite;
+}
+
+.slide {
+    width: 160px;
+    height: 100px;
+    background-color: #f0f0f0;
+    margin: 10px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 @keyframes marquee {

@@ -13,6 +13,13 @@
     <link rel="shortcut icon" href="./public/icons/sunflower.svg" type="image/x-icon">
     <link rel="stylesheet" href="./public/css/app.css">
     <script src="./public/js/index.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+        .slide {
+            background-color: unset;
+        }
+    </style>
 </head>
 
 <body>
@@ -144,33 +151,33 @@
                 </div>
             </div>
         </section>
-        <section class="slider-container hidden">
-            <div class="slider">
-                <div class="slide flex items-center justify-center bg-red-500 text-white text-2xl"
-                    style="background-image: url('https://images.pexels.com/photos/4551832/pexels-photo-4551832.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+        <section class="slider-container">
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper bg-white">
+                <div class="swiper-slide slide">
+                  <img src="./public/img/tech.avif" alt="Imagen 1" class="inline-block h-40">
                 </div>
-                <div class="slide flex items-center justify-center bg-blue-500 text-white text-2xl"
-                    style="background-image: url('https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                <div class="swiper-slide slide">
+                  <img src="./public/img/tech1.jpg" alt="Imagen 2" class="inline-block h-40">
                 </div>
-                <div class="slide flex items-center justify-center bg-green-500 text-white text-2xl"
-                    style="background-image: url('https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg');">
-                    Slide 3</div>
-            </div>
-            <div class="slider-nav">
-                <button id="prev" class="text-black">&lt;</button>
-                <button id="next" class="text-black">&gt;</button>
-            </div>
-        </section>
-        <section>
-            <div class="overflow-hidden relative w-full h-40 bg-white">
-                <div class="flex justify-around">
-                    <img src="./public/img/tech.avif" alt="Imagen 1" class="inline-block h-40">
-                    <img src="./public/img/tech1.jpg" alt="Imagen 2" class="inline-block h-40">
-                    <img src="./public/img/tech2.jpg" alt="Imagen 3" class="inline-block h-40">
-                    <img src="./public/img/tech3.webp" alt="Imagen 4" class="inline-block h-40">
+                <div class="swiper-slide slide">
+                  <img src="./public/img/tech2.jpg" alt="Imagen 3" class="inline-block h-40">
                 </div>
+                <div class="swiper-slide slide">
+                  <img src="./public/img/tech3.webp" alt="Imagen 4" class="inline-block h-40">
+                </div>
+                <div class="swiper-slide slide">
+                  <img src="./public/img/tech4.webp" alt="tech 4" class="inline-block h-40">
+                </div>
+                <div class="swiper-slide slide">
+                  <img src="./public/img/tech5.webp" alt="tech 4" class="inline-block h-40">
+                </div>
+                <div class="swiper-slide slide">
+                  <img src="./public/img/foxtech.jpg" alt="tech 4" class="inline-block h-40">
+                </div>
+              </div>
             </div>
-        </section>
+          </section>
         <section class="bg-gray-100 py-32">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">

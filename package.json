@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "npx @tailwindcss/cli -i ./resources/input.css -o ./public/css/app.css --watch",
+    "build-css": "npx postcss ./public/css/app.css --use cssnano --output ./public/css/app.min.css",
+    "tail-build": "npx @tailwindcss/cli -i ./resources/input.css -o ./public/css/app.css --watch",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,5 +18,11 @@
     "@tailwindcss/cli": "^4.0.12",
     "swiper": "^11.2.5",
     "tailwindcss": "^4.0.12"
+  },
+  "devDependencies": {
+    "cssnano": "^7.0.6",
+    "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.1",
+    "vite": "^6.2.0"
   }
 }

@@ -1,7 +1,19 @@
-import { defineConfig } from 'vite'
-import tailwindcss from '@tailwindcss/vite'
+// vite.config.js
+import { defineConfig } from 'vite';
+import { resolve } from 'path';
+
 export default defineConfig({
-    plugins: [
-        tailwindcss(),
-    ],
-})
+    build: {
+        rollupOptions: {
+            input: {
+                index: resolve(__dirname, 'resources/index.js'),
+            },
+            output: {
+                entryFileNames: 'index.min.js',
+            },
+        },
+        outDir: 'public/js',
+        emptyOutDir: false, 
+        assetsDir: ''
+    },
+});

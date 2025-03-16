@@ -1,3 +1,6 @@
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
+
 class UIManager {
     constructor(config) {
         if (UIManager.instance) {
@@ -112,7 +115,7 @@ function init() {
     const uiManager = new UIManager(['navbarToggler', 'menuHandler']);
     uiManager.init();
 
-    const swiper = new Swiper('.mySwiper', {
+    const swiper = new Swiper('#mySwiper', {
         loop: true,
         speed: 5000,
         autoplay: {

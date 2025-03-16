@@ -11,10 +11,9 @@
     <meta property="og:image" content="">
     <title>Mi portfolio</title>
     <link rel="shortcut icon" href="./public/icons/sunflower.svg" type="image/x-icon">
-    <link rel="stylesheet" href="./public/css/app.css">
-    <script src="./public/js/index.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="./public/css/app.min.css">
+    <link rel="stylesheet" href="./public/css/index-BbeY2ej-.css">
+    <script src="./public/js/index.min.js" type="module"></script>
     <style>
         .slide {
             background-color: unset;
@@ -105,8 +104,8 @@
             <div class="navbar-container">
                 <a href="#" class="text-white text-lg font-semibold">Logo</a>
                 <div class="navbar-links">
-                    <a href="#" class="navbar-item">Inicio</a>
-                    <a href="#services" class="navbar-item">Servicios</a>
+                    <a href="index.html" class="navbar-item">Inicio</a>
+                    <a href="notfound.html" class="navbar-item">Servicios</a>
                     <a href="blog.html" class="navbar-item">Blog</a>
                     <a href="#contact" class="navbar-item">Contacto</a>
                 </div>
@@ -121,9 +120,9 @@
                 </div>
             </div>
             <div id="mobile-menu" class="mobile-menu">
-                <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Inicio</a>
-                <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Servicios</a>
-                <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Contacto</a>
+                <a href="index.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Inicio</a>
+                <a href="notfound.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Servicios</a>
+                <a href="blog.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Contacto</a>
             </div>
         </nav>
     </header>
@@ -143,42 +142,107 @@
                 </p>
                 <div class="flex items-center justify-center gap-3 mt-12 mb-12">
                     <button class="bg-amber-700 text-white py-2 px-4 rounded hover:bg-amber-800">Contáctanos</button>
-                    <button class="bg-white text-gray-900 py-2 px-4 rounded hover:bg-amber-100">Mira nuestros
-                        ejemplos</button>
+                    <a class="bg-white text-gray-900 py-2 px-4 rounded hover:bg-amber-100"
+                        href="blog.html">
+                        Mira nuestros
+                        ejemplos
+                    </a>
                 </div>
                 <div class="py-4">
                     <p class="text-white">Más de 200 webs realizadas y clientes satisfechos</p>
                 </div>
             </div>
         </section>
-        <section class="slider-container">
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper bg-white">
-                    <div class="swiper-slide slide h-100">
-                        <img src="./public/img/tech3.webp" alt="Imagen 1" class="inline-block">
+        <section class="bg-white py-20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                  Servicios Web Profesionales
+                </h2>
+                <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+                  Soluciones integrales para tu presencia online.
+                </p>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-lg p-6">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                    Interfaz Gráfica
+                  </h3>
+                  <p class="text-gray-600">
+                    Las últimas tendencias en diseño gráfico. Interfaz profesional e intuitiva para una rápida navegación con imágenes WebP.
+                  </p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-6">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                    Programación Global
+                  </h3>
+                  <p class="text-gray-600">
+                    Estamos atentos a las novedades en desarrollo web y programación de empresas de software a nivel mundial.
+                  </p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-6">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                    Actualizaciones
+                  </h3>
+                  <p class="text-gray-600">
+                    Actualización y mejoras periódicas. Servicios de mantenimiento web a su medida para crecer.
+                  </p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-6">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                    Contenido Original
+                  </h3>
+                  <p class="text-gray-600">
+                    Corrección de contenidos de baja calidad. Google penaliza a las páginas web donde tales contenidos son encontrados.
+                  </p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-6">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                    Aplicaciones Seguras
+                  </h3>
+                  <p class="text-gray-600">
+                    La seguridad es una parte importante de cualquier proyecto, sobre todo en el comercio electrónico.
+                  </p>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-6">
+                  <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                    Corrección de Errores
+                  </h3>
+                  <p class="text-gray-600">
+                    Solución de errores en la lectura del lenguaje de programación por parte de los navegadores web.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        <section id="trusted-companies" class="slider-container">
+            <div id="mySwiper" class="swiper">
+                <div class="swiper-wrapper bg-white items-center">
+                    <div class="swiper-slide slide">
+                        <img src="./public/img/tech3.webp" alt="Imagen 1">
                     </div>
-                    <div class="swiper-slide slide h-100">
-                        <img src="./public/img/foxtech.webp" alt="tech 4" class="inline-block">
+                    <div class="swiper-slide slide">
+                        <img src="./public/img/foxtech.webp" alt="tech 4">
                     </div>
-                    <div class="swiper-slide slide h-100">
-                        <img src="./public/img/tech1.webp" alt="Imagen 2" class="inline-block">
+                    <div class="swiper-slide slide">
+                        <img src="./public/img/tech1.webp" alt="Imagen 2">
                     </div>
-                    <div class="swiper-slide slide h-100">
-                        <img src="./public/img/tech4.webp" alt="tech 4" class="inline-block">
+                    <div class="swiper-slide slide">
+                        <img src="./public/img/tech4.webp" alt="tech 4">
                     </div>
-                    <div class="swiper-slide slide h-100">
-                        <img src="./public/img/tech2.webp" alt="Imagen 3" class="inline-block">
+                    <div class="swiper-slide slide">
+                        <img src="./public/img/tech2.webp" alt="Imagen 3">
                     </div>
-                    <div class="swiper-slide slide h-100">
-                        <img src="./public/img/tech3.webp" alt="Imagen 4" class="inline-block">
+                    <div class="swiper-slide slide">
+                        <img src="./public/img/tech3.webp" alt="Imagen 4">
                     </div>
-                    <div class="swiper-slide slide h-100">
-                        <img src="./public/img/tech5.webp" alt="tech 4" class="inline-block">
+                    <div class="swiper-slide slide">
+                        <img src="./public/img/tech5.webp" alt="tech 4">
                     </div>
                 </div>
             </div>
         </section>
-        <section class="bg-gray-100 py-32">
+        <section id="news-feed" class="bg-gray-100 py-32">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
                     <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
@@ -227,7 +291,7 @@
                 </div>
             </div>
         </section>
-        <section class="bg-white py-32">
+        <section id="recomendations" class="bg-white py-32">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
                     <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
@@ -277,25 +341,6 @@
                 </div>
             </div>
         </section>
-        <section class="bg-gray-100 py-32">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
-                    <div class="md:col-span-1 mx-auto text-center md:text-left border border-10 border-orange-400 p-4">
-                        <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Columna Izquierda</h2>
-                        <p class="mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
-                            Este es el texto de la columna izquierda. Ocupa menos espacio que la columna derecha.
-                        </p>
-                    </div>
-                    <div class="md:col-span-4 mx-auto">
-                        <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Columna Derecha</h2>
-                        <p class="mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
-                            Este es el texto de la columna derecha. Ocupa más espacio que la columna izquierda. Aquí
-                            puedes incluir contenido más extenso y detallado.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
     <footer class="bg-gray-800 text-gray-400 py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -322,7 +367,6 @@
             </div>
         </div>
     </footer>
-
 </body>
 
 </html>

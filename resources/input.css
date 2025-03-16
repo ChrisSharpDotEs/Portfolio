@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import 'swiper/css';
 
 .modal-container { @apply fixed z-10 inset-0 overflow-y-auto; }
 .modal-center { @apply flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:p-0; }
@@ -20,6 +21,9 @@
 
 button { @apply cursor-pointer transition-all; }
 .card { @apply bg-white shadow-lg rounded-lg overflow-hidden; }
+.slide > img {
+    max-height: 150px;    
+}
 .navbar-item {
     position: relative;
 }

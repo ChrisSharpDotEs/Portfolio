@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descripción concisa de la página.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Mi portfolio">
+    <meta property="og:description" content="A small project for future pages">
+    <meta property="og:image" content="">
+    <title>Mi portfolio</title>
+    <link rel="shortcut icon" href="./public/icons/sunflower.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./public/css/app.min.css">
+    <script src="./public/js/index.min.js" type="module"></script>
+    <style>
+        .slide {
+            background-color: unset;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="modal-container hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true" id="miModal">
+        <div class="modal-center">
+            <div class="modal-backdrop" aria-hidden="true"></div>
+            <div class="modal-content">
+                <div class="modal-body">
+                    <ul class="flex justify-around gap-4">
+                        <li class="-mb-px mr-1">
+                            <a id="tab1-btn"
+                                class="inline-block py-2 px-4 text-amber-500 hover:text-amber-800 font-semibold"
+                                href="#">
+                                Consentimiento
+                            </a>
+                        </li>
+                        <li class="mr-1 hidden">
+                            <a id="tab2-btn"
+                                class="inline-block py-2 px-4 text-amber-500 hover:text-amber-800 font-semibold"
+                                href="#">Detalles</a>
+                        </li>
+                        <li class="mr-1">
+                            <a id="tab3-btn"
+                                class="inline-block py-2 px-4 text-amber-500 hover:text-amber-800 font-semibold"
+                                href="#">Acerca de las cookies</a>
+                        </li>
+                    </ul>
+                    <div class="mt-4">
+                        <div id="tab1-content" class="p-4 mh-80">
+                            <p>
+                                Esta página web usa cookies
+                                Las cookies de este sitio web se usan para personalizar el contenido y los anuncios,
+                                ofrecer funciones de redes sociales y analizar el tráfico. Además, compartimos
+                                información sobre el uso que haga del sitio web con nuestros partners de redes sociales,
+                                publicidad y análisis web, quienes pueden combinarla con otra información que les haya
+                                proporcionado o que hayan recopilado a partir del uso que haya hecho de sus servicios.
+                            </p>
+                        </div>
+                        <div id="tab2-content" class="p-4 mh-80 hidden">
+                        </div>
+                        <div id="tab3-content" class="p-4 mh-80 hidden overflow-y-scroll h-100">
+                            <p class="mb-4">
+                                Las cookies son pequeños archivos de texto que las páginas web pueden utilizar para
+                                hacer más eficiente la experiencia del usuario.
+                            </p>
+                            <p class="mb-4">
+                                La ley afirma que podemos almacenar cookies en su dispositivo si son estrictamente
+                                necesarias para el funcionamiento de esta página. Para todos los demás tipos de cookies
+                                necesitamos su permiso. Esto significa que las cookies que están categorizadas como
+                                necesarias se tratan con base en RGPD Art. 6(1)(f). El resto de cookies, es decir,
+                                aquellas de las categorías de preferencias y marketing, son tratadas con base en RGPD
+                                Art. 6(1)(a).
+                            </p>
+                            <p class="mb-4">
+                                Esta página utiliza tipos diferentes de cookies. Algunas cookies son colocadas por
+                                servicios de terceros que aparecen en nuestras páginas.
+                                <br><br>
+                                En cualquier momento puede cambiar o retirar su consentimiento desde la Declaración de
+                                cookies en nuestro sitio web.
+                                <br><br>
+                                Obtenga más información sobre quiénes somos, cómo puede contactarnos y cómo procesamos
+                                los datos personales en nuestra Política de privacidad.
+                                <br><br>
+                                Al contactarnos respecto a su consentimiento, por favor, indique el ID y la fecha de su
+                                consentimiento.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-danger" data-modal="close">
+                        Denegar
+                    </button>
+                    <button type="button" class="btn-primary" data-modal="accept">
+                        Aceptar todas
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <a href="#" class="text-white text-lg font-semibold">Logo</a>
+                <div class="navbar-links">
+                    <a href="index.html" class="navbar-item">Inicio</a>
+                    <a href="notfound.html" class="navbar-item">Servicios</a>
+                    <a href="blog.html" class="navbar-item">Blog</a>
+                    <a href="#contact" class="navbar-item">Contacto</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-button" class="text-white focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="mobile-menu">
+                <a href="index.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Inicio</a>
+                <a href="notfound.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Servicios</a>
+                <a href="blog.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Contacto</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="modal-container hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true" id="miModal">
+            <div class="modal-center">
+                <div class="modal-backdrop" aria-hidden="true"></div>
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <ul class="flex justify-around gap-4">
+                            <li class="-mb-px mr-1">
+                                <a id="tab1-btn"
+                                    class="inline-block py-2 px-4 text-amber-500 hover:text-amber-800 font-semibold"
+                                    href="#">
+                                    Consentimiento
+                                </a>
+                            </li>
+                            <li class="mr-1 hidden">
+                                <a id="tab2-btn"
+                                    class="inline-block py-2 px-4 text-amber-500 hover:text-amber-800 font-semibold"
+                                    href="#">Detalles</a>
+                            </li>
+                            <li class="mr-1">
+                                <a id="tab3-btn"
+                                    class="inline-block py-2 px-4 text-amber-500 hover:text-amber-800 font-semibold"
+                                    href="#">Acerca de las cookies</a>
+                            </li>
+                        </ul>
+                        <div class="mt-4">
+                            <div id="tab1-content" class="p-4 mh-80">
+                                <p>
+                                    Esta página web usa cookies
+                                    Las cookies de este sitio web se usan para personalizar el contenido y los anuncios,
+                                    ofrecer funciones de redes sociales y analizar el tráfico. Además, compartimos
+                                    información sobre el uso que haga del sitio web con nuestros partners de redes
+                                    sociales,
+                                    publicidad y análisis web, quienes pueden combinarla con otra información que les
+                                    haya
+                                    proporcionado o que hayan recopilado a partir del uso que haya hecho de sus
+                                    servicios.
+                                </p>
+                            </div>
+                            <div id="tab2-content" class="p-4 mh-80 hidden">
+                            </div>
+                            <div id="tab3-content" class="p-4 mh-80 hidden overflow-y-scroll h-100">
+                                <p class="mb-4">
+                                    Las cookies son pequeños archivos de texto que las páginas web pueden utilizar para
+                                    hacer más eficiente la experiencia del usuario.
+                                </p>
+                                <p class="mb-4">
+                                    La ley afirma que podemos almacenar cookies en su dispositivo si son estrictamente
+                                    necesarias para el funcionamiento de esta página. Para todos los demás tipos de
+                                    cookies
+                                    necesitamos su permiso. Esto significa que las cookies que están categorizadas como
+                                    necesarias se tratan con base en RGPD Art. 6(1)(f). El resto de cookies, es decir,
+                                    aquellas de las categorías de preferencias y marketing, son tratadas con base en
+                                    RGPD
+                                    Art. 6(1)(a).
+                                </p>
+                                <p class="mb-4">
+                                    Esta página utiliza tipos diferentes de cookies. Algunas cookies son colocadas por
+                                    servicios de terceros que aparecen en nuestras páginas.
+                                    <br><br>
+                                    En cualquier momento puede cambiar o retirar su consentimiento desde la Declaración
+                                    de
+                                    cookies en nuestro sitio web.
+                                    <br><br>
+                                    Obtenga más información sobre quiénes somos, cómo puede contactarnos y cómo
+                                    procesamos
+                                    los datos personales en nuestra Política de privacidad.
+                                    <br><br>
+                                    Al contactarnos respecto a su consentimiento, por favor, indique el ID y la fecha de
+                                    su
+                                    consentimiento.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn-danger" data-modal="close">
+                            Denegar
+                        </button>
+                        <button type="button" class="btn-primary" data-modal="accept">
+                            Aceptar todas
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="bg-gray-100 min-h-screen flex items-center justify-center">
+            <div class="container mx-auto px-4 py-8">
+                <div class="text-center">
+                    <h1 class="text-6xl font-extrabold text-amber-700 mb-4 animate-pulse">404</h1>
+                    <p class="text-2xl text-gray-700 mb-8">¡Oops! Parece que te has perdido.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="/"
+                            class="bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-6 rounded-full transition duration-300 ease-in-out">
+                            Volver al Inicio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-gray-800 text-gray-400 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <h3 class="text-lg font-semibold text-gray-200">Nombre de la Empresa</h3>
+                    <p class="mt-2 text-sm">© 2023 Nombre de la Empresa. Todos los derechos reservados.</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-gray-300">Inicio</a>
+                    <a href="#" class="text-gray-400 hover:text-gray-300">Sobre Nosotros</a>
+                    <a href="#" class="text-gray-400 hover:text-gray-300">Servicios</a>
+                    <a href="#" class="text-gray-400 hover:text-gray-300">Contacto</a>
+                </div>
+                <div class="mt-4 md:mt-0 flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-gray-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-envelope" viewBox="0 0 16 16">
+                            <path
+                                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

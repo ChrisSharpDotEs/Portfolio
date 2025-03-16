@@ -1,19 +1,3 @@
-const SwiperCustomized = function () {
-    const slider = document.querySelector(".slider");
-    const slides = document.querySelectorAll(".slide");
-    const prevButton = document.getElementById("prev");
-    const nextButton = document.getElementById("next");
-    let index = 0;
-
-    function showSlide(i) {
-        index = (i + slides.length) % slides.length;
-        slider.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    prevButton.addEventListener("click", () => showSlide(index - 1));
-    nextButton.addEventListener("click", () => showSlide(index + 1));
-};
-
 class UIManager {
     constructor(config) {
         if (UIManager.instance) {
@@ -135,9 +119,9 @@ function init() {
             delay: 0,
             disableOnInteraction: false,
         },
-        slidesPerView: 5,
+        slidesPerView: 4,
         spaceBetween: 10,
-        allowTouchMove: false,
+        allowTouchMove: true
     });
 }
 

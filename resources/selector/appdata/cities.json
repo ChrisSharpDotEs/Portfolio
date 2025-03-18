@@ -1,0 +1,141 @@
+{
+    "Canarias": {
+      "provincias": [
+        {
+          "nombre": "Las Palmas de Gran Canaria",
+          "islas": [
+            {
+              "nombre": "Gran Canaria",
+              "municipios": [
+                "Las Palmas de Gran Canaria",
+                "Telde",
+                "Santa Lucía de Tirajana",
+                "Arucas",
+                "San Bartolomé de Tirajana",
+                "Ingenio",
+                "Gáldar",
+                "Agüimes",
+                "Mogán",
+                "Santa Brígida",
+                "Teror",
+                "Valsequillo",
+                "Vega de San Mateo",
+                "Firgas",
+                "Moya",
+                "Santa María de Guía",
+                "Tejeda",
+                "Artenara",
+                "La Aldea de San Nicolás"
+              ]
+            },
+            {
+              "nombre": "Fuerteventura",
+              "municipios": [
+                "Puerto del Rosario",
+                "Antigua",
+                "La Oliva",
+                "Pájara",
+                "Tuineje",
+                "Betancuria"
+              ]
+            },
+            {
+              "nombre": "Lanzarote",
+              "municipios": [
+                "Arrecife",
+                "Haría",
+                "San Bartolomé",
+                "Teguise",
+                "Tías",
+                "Tinajo",
+                "Yaiza"
+              ]
+            },
+            {
+              "nombre": "La Graciosa",
+              "municipios": [
+                "Teguise de La Graciosa"
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Santa Cruz de Tenerife",
+          "islas": [
+            {
+              "nombre": "Tenerife",
+              "municipios": [
+                "Santa Cruz de Tenerife",
+                "San Cristóbal de La Laguna",
+                "Arona",
+                "Adeje",
+                "La Orotava",
+                "Los Realejos",
+                "Granadilla de Abona",
+                "Puerto de la Cruz",
+                "Candelaria",
+                "Güímar",
+                "Icod de los Vinos",
+                "Tacoronte",
+                "El Rosario",
+                "El Tanque",
+                "San Miguel de Abona",
+                "La Victoria de Acentejo",
+                "La Matanza de Acentejo",
+                "El Sauzal",
+                "Santa Úrsula",
+                "Tegueste",
+                "Santiago del Teide",
+                "Vilaflor de Chasna",
+                "Buenavista del Norte",
+                "Los Silos",
+                "Garachico",
+                "Fasnia",
+                "Arico",
+                "Arafo"
+              ]
+            },
+            {
+              "nombre": "La Palma",
+              "municipios": [
+                "Santa Cruz de La Palma",
+                "Los Llanos de Aridane",
+                "El Paso",
+                "Breña Alta",
+                "Breña Baja",
+                "Tazacorte",
+                "Puntallana",
+                "San Andrés y Sauces",
+                "Barlovento",
+                "Garafía",
+                "Fuencaliente de La Palma",
+                "Villa de Mazo",
+                "Puntagorda",
+                "Tijarafe"
+              ]
+            },
+            {
+              "nombre": "La Gomera",
+              "municipios": [
+                "San Sebastián de La Gomera",
+                "Alajeró",
+                "Agulo",
+                "Hermigua",
+                "Valle Gran Rey",
+                "Vallehermoso"
+              ]
+            },
+            {
+              "nombre": "El Hierro",
+              "municipios": [
+                "Valverde",
+                "La Frontera",
+                "El Pinar de El Hierro"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+  

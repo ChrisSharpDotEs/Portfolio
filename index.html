@@ -18,6 +18,23 @@
         .slide {
             background-color: unset;
         }
+
+        .circle {
+            width: 40vw;
+            height: 40vw;
+            max-width: 60vw;
+            max-height: 60vw;
+            border-radius: 50%;
+            margin: 0 auto;
+            background-image: url('public/img/developer.webp');
+        }
+
+        @media (max-width: 760px) {
+            .circle {
+                width: 60vw;
+                height: 60vw;
+            }
+        }
     </style>
 </head>
 
@@ -105,12 +122,10 @@
                 <a href="index.html" class="text-white text-lg font-semibold">Logo</a>
                 <div class="navbar-links">
                     <a href="index.html" class="navbar-item">Inicio</a>
-                    <a href="notfound.html" class="navbar-item">Servicios</a>
-                    <a href="blog.html" class="navbar-item">Blog</a>
-                    <a href="#contact" class="navbar-item">Contacto</a>
+                    <a href="blog.html" class="navbar-item">Apps</a>
                 </div>
                 <div class="md:hidden">
-                    <button id="menu-button" class="text-white focus:outline-none">
+                    <button id="menu-button" class="text-white focus:outline-none" aria-label="Abrir menú">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -121,31 +136,32 @@
             </div>
             <div id="mobile-menu" class="mobile-menu">
                 <a href="index.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Inicio</a>
-                <a href="notfound.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Servicios</a>
-                <a href="blog.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Blog</a>
-                <a href="blog.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Contacto</a>
+                <a href="blog.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Apps</a>
             </div>
         </nav>
     </header>
     <main>
-        <section class="h-screen flex justify-center items-center"
-            style="background-image: url('./public/img/office.webp'); background-position-y: 0rem;">
-            <div class="container mx-auto text-center text-gray-900 relative">
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-200">
-                    Creamos el sitio web de tus sueños
-                </h1>
-                <p class="text-gray-200 text-lg">
-                    Creamos tu web personal con diseño profesionalizado, convirtiendo tu visión en una
-                    realidad.
-                </p>
-                <div class="flex items-center justify-center gap-3 mt-12 mb-12">
-                    <a class="bg-white text-gray-900 py-2 px-4 rounded hover:bg-amber-100" href="blog.html">
-                        Mira nuestros
-                        ejemplos
-                    </a>
-                </div>
-                <div class="py-4">
-                    <p class="text-gray-100">Más de 200 webs realizadas y clientes satisfechos</p>
+        <section class="min-h-screen flex justify-center items-center bg-[#fffdf5] text-gray-800">
+            <div class="grid md:grid-cols-2 grid-cols-1 gap-4 mx-4 py-32">
+                <article>
+                    <div class="py-4">
+                        <a class="rounded-full btn-primary" href="blog.html" style="max-width: 50%;">
+                            Explora mis apps
+                        </a>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-medium col-span-2 mt-5 mb-10">
+                        Desarrollador web apasionado por la tecnología.
+                    </h1>
+                    <p class="text-lg text-gray-500">
+                        Transformando ideas en aplicaciones web de alto rendimiento con enfoque en la simplicidad y la
+                        eficiencia.
+                    </p>
+                </article>
+                <div>
+                    <div class="flex items-start justify-center">
+                        <div class="circle bg-amber-500 bg-cover bg-center">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -159,7 +175,7 @@
                         Soluciones integrales para tu presencia online.
                     </p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="bg-gray-50 rounded-lg p-6">
                         <h3 class="text-xl font-semibold text-gray-800 mb-4">
                             Interfaz Gráfica
@@ -180,23 +196,6 @@
                     </div>
                     <div class="bg-gray-50 rounded-lg p-6">
                         <h3 class="text-xl font-semibold text-gray-800 mb-4">
-                            Actualizaciones
-                        </h3>
-                        <p class="text-gray-600">
-                            Actualización y mejoras periódicas. Servicios de mantenimiento web a su medida para crecer.
-                        </p>
-                    </div>
-                    <div class="bg-gray-50 rounded-lg p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-4">
-                            Contenido Original
-                        </h3>
-                        <p class="text-gray-600">
-                            Corrección de contenidos de baja calidad. Google penaliza a las páginas web donde tales
-                            contenidos son encontrados.
-                        </p>
-                    </div>
-                    <div class="bg-gray-50 rounded-lg p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-4">
                             Aplicaciones Seguras
                         </h3>
                         <p class="text-gray-600">
@@ -207,47 +206,25 @@
                 </div>
             </div>
         </section>
-        <section id="trusted-companies" class="slider-container">
-            <div id="mySwiper" class="swiper">
-                <div class="swiper-wrapper bg-white items-center">
-                    <div class="swiper-slide slide">
-                        <img src="./public/img/tech3.webp" alt="Imagen 1">
-                    </div>
-                    <div class="swiper-slide slide">
-                        <img src="./public/img/foxtech.webp" alt="tech 4">
-                    </div>
-                    <div class="swiper-slide slide">
-                        <img src="./public/img/tech1.webp" alt="Imagen 2">
-                    </div>
-                    <div class="swiper-slide slide">
-                        <img src="./public/img/tech4.webp" alt="tech 4">
-                    </div>
-                    <div class="swiper-slide slide">
-                        <img src="./public/img/tech2.webp" alt="Imagen 3">
-                    </div>
-                    <div class="swiper-slide slide">
-                        <img src="./public/img/tech3.webp" alt="Imagen 4">
-                    </div>
-                    <div class="swiper-slide slide">
-                        <img src="./public/img/tech5.webp" alt="tech 4">
-                    </div>
-                </div>
-            </div>
-        </section>
         <section id="presentation" class="bg-gray-800 py-32 mt-32">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-                    <article class="p-6">
+                    <article class="p-6 block">
                         <h3 class="text-4xl font-semibold text-gray-200 mb-4">
-                            Conoce nuestros proyectos
+                            Conoce mis proyectos
                         </h3>
                         <p class="text-gray-300">
-                            Las últimas tendencias en diseño gráfico. Interfaz profesional e intuitiva para una rápida
-                            navegación con imágenes WebP.
+                            Aquí podrás ver algunas de mis aplicaciones. En el futuro habrán más 😉.
                         </p>
+                        <div class="py-4 my-5">
+                            <a href="blog.html"
+                                class="px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 focus:outline-none">
+                                Ver ejemplos
+                            </a>
+                        </div>
                     </article>
-                    <div class="bg-gray-50 rounded-lg p-2">
-                        <img src="./public/img/benijo.webp" alt="" class="rounded-lg">
+                    <div class="bg-gray-50 rounded-lg">
+                        <img src="./public/img/circled.jpg" alt="" class="rounded-lg">
                     </div>
                 </div>
             </div>
@@ -259,7 +236,7 @@
                         Últimas Noticias
                     </h2>
                     <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
-                        Mantente informado con nuestras últimas actualizaciones y artículos.
+                        Mantente informado con nuestras últimas actualizaciones y artículos. (En progreso)
                     </p>
                 </div>
                 <div class="mt-10">
@@ -301,11 +278,11 @@
                 </div>
             </div>
         </section>
-        <section id="quality" class="bg-green-700 py-32 text-white">
+        <section id="quality" class="bg-amber-700 py-32 text-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <article class="text-center p-6 rounded-md">
                     <div class="grid place-items-center mb-8">
-                        <img src="./public/icons/leaf.svg" alt="A leaf" width="60">
+                        <img src="./public/icons/leaf.svg" alt="A leaf" width="80">
                     </div>
                     <h4 class="text-3xl font-extrabold sm:text-4xl">
                         Compromiso con la calidad
@@ -324,14 +301,13 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="text-center md:text-left mb-4 md:mb-0">
-                    <h3 class="text-lg font-semibold text-gray-200">Nombre de la Empresa</h3>
-                    <p class="mt-2 text-sm">© 2023 Nombre de la Empresa. Todos los derechos reservados.</p>
+                    <h3 class="text-lg font-semibold text-gray-200">Mi portafolio</h3>
+                    <p class="mt-2 text-sm">© 2023 Mi portafolio. Todos los derechos reservados.</p>
                 </div>
                 <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-gray-300">Inicio</a>
-                    <a href="#" class="text-gray-400 hover:text-gray-300">Sobre Nosotros</a>
-                    <a href="#" class="text-gray-400 hover:text-gray-300">Servicios</a>
-                    <a href="#" class="text-gray-400 hover:text-gray-300">Contacto</a>
+                    <a href="index.html" class="text-gray-400 hover:text-gray-300">Inicio</a>
+                    <a href="notfound.html" class="text-gray-400 hover:text-gray-300">Acerca de</a>
+                    <a href="notfound.html" class="text-gray-400 hover:text-gray-300">Contacto</a>
                 </div>
                 <div class="mt-4 md:mt-0 flex space-x-4">
                     <a href="#" class="text-gray-400 hover:text-gray-300">

@@ -1,32 +1,90 @@
 @import "tailwindcss";
 @import 'swiper/css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.modal-container { @apply fixed z-10 inset-0 overflow-y-auto; }
-.modal-center { @apply flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:p-0; }
-.modal-backdrop { @apply fixed inset-0 bg-gray-500 bg-gray-500/60 transition-opacity; }
-.modal-align { @apply flex items-center justify-center h-screen; }
-.modal-content { @apply inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle w-full sm:max-w-4xl; }
-.modal-body { @apply bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4; }
-.modal-footer { @apply px-4 py-3 sm:px-6 sm:flex sm:flex-row gap-3; }
+@layer components {
+    .btn {
+        @apply w-full inline-flex justify-center rounded-full border shadow-sm px-4 py-2 text-base font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 sm:ml-3 sm:w-auto;
+    }
 
-.btn-danger { @apply w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto; }
-.btn-secondary { @apply mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:w-auto; }
-.btn-primary { @apply mt-3 w-full inline-flex justify-center rounded-md border border-amber-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-amber-700 hover:bg-amber-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 sm:mt-0 sm:w-auto; }
+    .btn-primary {
+        @apply border-amber-300 bg-white text-amber-700 hover:bg-amber-50 focus:ring-amber-500;
+    }
 
-.navbar { @apply bg-amber-700 p-4; }
-.navbar-container { @apply container mx-auto flex justify-between items-center; }
-.navbar-links { @apply hidden md:flex space-x-4; }
-.navbar-item { @apply text-white hover:text-white px-3 py-2 rounded-md text-lg font-bold; }
-.mobile-menu { @apply overflow-hidden max-h-0 md:hidden; }
+    .btn-secondary {
+        @apply border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:ring-indigo-500;
+    }
 
-button { @apply cursor-pointer transition-all; }
-.card { @apply bg-white shadow-lg rounded-lg overflow-hidden; }
-.slide > img {
-    max-height: 150px;    
+    .btn-danger {
+        @apply border-transparent bg-red-600 text-white hover:bg-red-700 focus:ring-red-500;
+    }
 }
+.modal-container {
+    @apply fixed z-10 inset-0 overflow-y-auto;
+}
+
+.modal-center {
+    @apply flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:p-0;
+}
+
+.modal-backdrop {
+    @apply fixed inset-0 bg-gray-500 bg-gray-500/60 transition-opacity;
+}
+
+.modal-align {
+    @apply flex items-center justify-center h-screen;
+}
+
+.modal-content {
+    @apply inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle w-full sm:max-w-4xl;
+}
+
+.modal-body {
+    @apply bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4;
+}
+
+.modal-footer {
+    @apply px-4 py-3 sm:px-6 sm:flex sm:flex-row gap-3;
+}
+
+.navbar {
+    @apply bg-amber-700 p-4;
+}
+
+.navbar-container {
+    @apply container mx-auto flex justify-between items-center;
+}
+
+.navbar-links {
+    @apply hidden md:flex space-x-4;
+}
+
+.navbar-item {
+    @apply text-white hover:text-white px-3 py-2 rounded-md text-lg font-bold;
+}
+
+.mobile-menu {
+    @apply overflow-hidden max-h-0 md:hidden;
+}
+
+button {
+    @apply cursor-pointer transition-all;
+}
+
+.card {
+    @apply bg-white shadow-lg rounded-lg overflow-hidden;
+}
+
+.slide>img {
+    max-height: 150px;
+}
+
 .navbar-item {
     position: relative;
 }
+
 .mh-80 {
     max-height: 50vh;
 }

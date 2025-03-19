@@ -37,7 +37,6 @@ class UIManager {
         });
     }
 }
-
 class Modal {
     constructor(modalId) {
         this.modal = document.getElementById(modalId);
@@ -76,7 +75,6 @@ class Modal {
         }
     }
 }
-
 class CookieModal extends Modal {
     constructor(modalId) {
         super(modalId);
@@ -107,8 +105,74 @@ class CookieModal extends Modal {
     }
 
 }
+class CountUp {
+    constructor(elemento, valorFinal, opciones = {}) {
+        this.elemento = elemento;
+        this.valorFinal = valorFinal;
+        this.opciones = {
+            duration: opciones.duration || 2,
+            separator: opciones.separator || ',',
+            decimal: opciones.decimal || '.',
+            startVal: opciones.startVal || 0,
+            decimals: opciones.decimals || 0,
+            callback: opciones.callback || null,
+        };
+        this.valorActual = this.opciones.startVal;
+        this.frameRate = 30;
+        this.totalFrames = this.opciones.duration * this.frameRate;
+        this.frame = 0;
+    }
+
+    start() {
+        this.animar();
+    }
+
+    animar() {
+        if (this.frame < this.totalFrames) {
+            this.frame++;
+            const progreso = this.frame / this.totalFrames;
+            this.valorActual = this.opciones.startVal + (this.valorFinal - this.opciones.startVal) * progreso;
+            this.actualizarValor();
+            setTimeout(() => this.animar(), 1000 / this.frameRate);
+        } else {
+            this.valorActual = this.valorFinal;
+            this.actualizarValor();
+            if (this.opciones.callback) {
+                this.opciones.callback();
+            }
+        }
+    }
+
+    actualizarValor() {
+        let valorFormateado = this.valorActual.toLocaleString(undefined, {
+            minimumFractionDigits: this.opciones.decimals,
+            maximumFractionDigits: this.opciones.decimals,
+        });
+
+        if (this.opciones.separator !== ',') {
+            valorFormateado = valorFormateado.replace(/,/g, this.opciones.separator);
+        }
+        if (this.opciones.decimal !== '.') {
+            valorFormateado = valorFormateado.replace(/\./g, this.opciones.decimal);
+        }
+
+        this.elemento.textContent = valorFormateado;
+    }
+}
 
 function init() {
+    const elementoContador = document.getElementById('miContador');
+
+    const opciones = {
+        duration: 2,
+        separator: ',',
+        decimal: '.',
+    };
+
+    const miContador = new CountUp(elementoContador, 1000, opciones);
+
+    miContador.start();
+    
     const miModal = new CookieModal('miModal');
     miModal.init();
 

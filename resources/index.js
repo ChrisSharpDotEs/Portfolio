@@ -36,6 +36,13 @@ class UIManager {
             mobileMenu.classList.toggle("max-h-full");
         });
     }
+    toggler() {
+        const toggler = document.querySelector('button[data-tw-toggle="theme"]');
+        toggler.addEventListener('click', function () {
+            document.documentElement.classList.toggle('dark');
+            console.log('clicked');
+        })
+    }
 }
 class Modal {
     constructor(modalId) {
@@ -161,35 +168,41 @@ class CountUp {
 }
 
 function init() {
-    const elementoContador = document.getElementById('miContador');
+    document.documentElement.classList.toggle('dark');
 
-    const opciones = {
-        duration: 2,
-        separator: ',',
-        decimal: '.',
-    };
+    try {
+        const elementoContador = document.getElementById('miContador');
 
-    const miContador = new CountUp(elementoContador, 1000, opciones);
+        const opciones = {
+            duration: 2,
+            separator: ',',
+            decimal: '.',
+        };
 
-    miContador.start();
-    
-    const miModal = new CookieModal('miModal');
-    miModal.init();
+        const miContador = new CountUp(elementoContador, 1000, opciones);
 
-    const uiManager = new UIManager(['navbarToggler', 'menuHandler']);
-    uiManager.init();
+        miContador.start();
 
-    const swiper = new Swiper('#mySwiper', {
-        loop: true,
-        speed: 5000,
-        autoplay: {
-            delay: 0,
-            disableOnInteraction: false,
-        },
-        slidesPerView: 4,
-        spaceBetween: 10,
-        allowTouchMove: true
-    });
+        const miModal = new CookieModal('miModal');
+        miModal.init();
+
+        const uiManager = new UIManager(['navbarToggler', 'menuHandler']);
+        uiManager.init();
+
+        const swiper = new Swiper('#mySwiper', {
+            loop: true,
+            speed: 5000,
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
+            },
+            slidesPerView: 4,
+            spaceBetween: 10,
+            allowTouchMove: true
+        });
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 window.addEventListener('load', init);

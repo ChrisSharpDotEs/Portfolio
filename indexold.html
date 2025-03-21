@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descripción concisa de la página.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Mi portfolio">
+    <meta property="og:description" content="A small project for future pages">
+    <meta property="og:image" content="">
+    <title>Mi portfolio</title>
+    <link rel="shortcut icon" href="./public/icons/sunflower.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./public/css/app.css">
+    <link rel="stylesheet" href="./public/css/index-BbeY2ej-.css">
+    <script src="./public/js/index.min.js" type="module"></script>
+    <style>
+        .slide {
+            background-color: unset;
+        }
+
+        .circle {
+            width: 40vw;
+            height: 40vw;
+            max-width: 60vw;
+            max-height: 60vw;
+            border-radius: 50%;
+            margin: 0 auto;
+            background-image: url('public/img/developer.webp');
+        }
+
+        @media (max-width: 760px) {
+            .circle {
+                width: 60vw;
+                height: 60vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="modal-container hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true" id="miModal">
+        <div class="modal-center">
+            <div class="modal-backdrop" aria-hidden="true"></div>
+            <div class="modal-content">
+                <div class="modal-body">
+                    <ul class="flex justify-around gap-4">
+                        <li class="-mb-px mr-1">
+                            <a id="tab1-btn"
+                                class="inline-block py-2 px-4 text-amber-500 hover:text-amber-800 font-semibold"
+                                href="#">
+                                Consentimiento
+                            </a>
+                        </li>
+                        <li class="mr-1 hidden">
+                            <a id="tab2-btn"
+                                class="inline-block py-2 px-4 text-amber-500 hover:text-amber-800 font-semibold"
+                                href="#">Detalles</a>
+                        </li>
+                        <li class="mr-1">
+                            <a id="tab3-btn"
+                                class="inline-block py-2 px-4 text-amber-500 hover:text-amber-800 font-semibold"
+                                href="#">Acerca de las cookies</a>
+                        </li>
+                    </ul>
+                    <div class="mt-4">
+                        <div id="tab1-content" class="p-4 mh-80">
+                            <p>
+                                Esta página web usa cookies
+                                Las cookies de este sitio web se usan para personalizar el contenido y los anuncios,
+                                ofrecer funciones de redes sociales y analizar el tráfico. Además, compartimos
+                                información sobre el uso que haga del sitio web con nuestros partners de redes sociales,
+                                publicidad y análisis web, quienes pueden combinarla con otra información que les haya
+                                proporcionado o que hayan recopilado a partir del uso que haya hecho de sus servicios.
+                            </p>
+                        </div>
+                        <div id="tab2-content" class="p-4 mh-80 hidden">
+                        </div>
+                        <div id="tab3-content" class="p-4 mh-80 hidden overflow-y-scroll h-100">
+                            <p class="mb-4">
+                                Las cookies son pequeños archivos de texto que las páginas web pueden utilizar para
+                                hacer más eficiente la experiencia del usuario.
+                            </p>
+                            <p class="mb-4">
+                                La ley afirma que podemos almacenar cookies en su dispositivo si son estrictamente
+                                necesarias para el funcionamiento de esta página. Para todos los demás tipos de cookies
+                                necesitamos su permiso. Esto significa que las cookies que están categorizadas como
+                                necesarias se tratan con base en RGPD Art. 6(1)(f). El resto de cookies, es decir,
+                                aquellas de las categorías de preferencias y marketing, son tratadas con base en RGPD
+                                Art. 6(1)(a).
+                            </p>
+                            <p class="mb-4">
+                                Esta página utiliza tipos diferentes de cookies. Algunas cookies son colocadas por
+                                servicios de terceros que aparecen en nuestras páginas.
+                                <br><br>
+                                En cualquier momento puede cambiar o retirar su consentimiento desde la Declaración de
+                                cookies en nuestro sitio web.
+                                <br><br>
+                                Obtenga más información sobre quiénes somos, cómo puede contactarnos y cómo procesamos
+                                los datos personales en nuestra Política de privacidad.
+                                <br><br>
+                                Al contactarnos respecto a su consentimiento, por favor, indique el ID y la fecha de su
+                                consentimiento.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-modal="close">
+                        Denegar
+                    </button>
+                    <button type="button" class="btn btn-primary" data-modal="accept">
+                        Aceptar todas
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <a href="index.html" class="text-white text-lg font-semibold">Logo</a>
+                <div class="navbar-links">
+                    <a href="index.html" class="navbar-item">Inicio</a>
+                    <a href="blog.html" class="navbar-item">Apps</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-button" class="text-white focus:outline-none" aria-label="Abrir menú">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="mobile-menu">
+                <a href="index.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Inicio</a>
+                <a href="blog.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Apps</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="min-h-screen flex justify-center items-center bg-[#fffdf5] text-gray-800">
+            <div class="grid md:grid-cols-2 grid-cols-1 gap-4 mx-4 py-12 ">
+                <article>
+                    <div class="py-4">
+                        <a class="btn btn-primary" href="blog.html" style="max-width: 50%;">
+                            Explora mis apps
+                        </a>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-medium col-span-2 mt-5 mb-10">
+                        Desarrollador web apasionado por la tecnología.
+                    </h1>
+                    <p class="text-lg text-gray-500">
+                        Transformando ideas en aplicaciones web de alto rendimiento con enfoque en la simplicidad y la
+                        eficiencia.
+                    </p>
+                    <div class="block md:block hidden py-4">
+                        <div class="flex flex-row items-center gap-2 text-2xl">
+                            <div class="px-3 overflow-x-hidden">
+                                <div class="lg:inline-block hidden rounded-full w-32 h-32 bg-gray-800"></div>
+                                <div class="lg:inline-block hidden rounded-full w-32 h-32 bg-orange-800 relative left-[-5rem] z-1"></div>
+                                <div class="lg:inline-block hidden rounded-full w-32 h-32 bg-amber-600 relative left-[-10rem] z-2"></div>
+                            </div>
+                            <div class="">+<span id="miContador"></span></div>
+                        </div>
+                    </div>
+                </article>
+                <div>
+                    <div class="flex items-start justify-center">
+                        <div class="circle bg-amber-500 bg-cover bg-center">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-white py-20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                        Servicios Web Profesionales
+                    </h2>
+                    <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+                        Soluciones integrales para tu presencia online.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                            Interfaz Gráfica
+                        </h3>
+                        <p class="text-gray-600">
+                            Las últimas tendencias en diseño gráfico. Interfaz profesional e intuitiva para una rápida
+                            navegación con imágenes WebP.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                            Programación Global
+                        </h3>
+                        <p class="text-gray-600">
+                            Estamos atentos a las novedades en desarrollo web y programación de empresas de software a
+                            nivel mundial.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                            Aplicaciones Seguras
+                        </h3>
+                        <p class="text-gray-600">
+                            La seguridad es una parte importante de cualquier proyecto, sobre todo en el comercio
+                            electrónico.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="presentation" class="bg-gray-800 py-32 mt-32">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                    <article class="p-6 block">
+                        <h3 class="text-4xl font-semibold text-gray-200 mb-4">
+                            Conoce mis proyectos
+                        </h3>
+                        <p class="text-gray-300">
+                            Aquí podrás ver algunas de mis aplicaciones. En el futuro habrán más 😉.
+                        </p>
+                        <div class="py-4 my-5">
+                            <a href="blog.html"
+                                class="px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 focus:outline-none">
+                                Ver ejemplos
+                            </a>
+                        </div>
+                    </article>
+                    <div class="bg-gray-50 rounded-lg">
+                        <img src="./public/img/circled.jpg" alt="" class="rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="news-feed" class="bg-gray-100 py-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                        Últimas Noticias
+                    </h2>
+                    <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+                        Mantente informado con nuestras últimas actualizaciones y artículos. (En progreso)
+                    </p>
+                </div>
+                <div class="mt-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <article class="card">
+                            <img class="w-full h-56 object-cover"
+                                src="https://images.pexels.com/photos/4551832/pexels-photo-4551832.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                alt="Noticia 1">
+                            <div class="p-4">
+                                <h3 class="text-lg font-semibold text-gray-900">Título de la Noticia 1</h3>
+                                <p class="mt-2 text-gray-600">Breve descripción de la noticia 1. Mantente al tanto de
+                                    las últimas novedades.</p>
+                                <a href="#" class="mt-4 inline-block text-blue-500 hover:text-blue-700">Leer más</a>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img class="w-full h-56 object-cover"
+                                src="https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                alt="Noticia 2">
+                            <div class="p-4">
+                                <h3 class="text-lg font-semibold text-gray-900">Título de la Noticia 2</h3>
+                                <p class="mt-2 text-gray-600">Breve descripción de la noticia 2. Entérate de lo que está
+                                    sucediendo.</p>
+                                <a href="#" class="mt-4 inline-block text-blue-500 hover:text-blue-700">Leer más</a>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img class="w-full h-56 object-cover"
+                                src="https://images.pexels.com/photos/1112007/pexels-photo-1112007.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                alt="Noticia 3">
+                            <div class="p-4">
+                                <h3 class="text-lg font-semibold text-gray-900">Título de la Noticia 3</h3>
+                                <p class="mt-2 text-gray-600">Breve descripción de la noticia 3. No te pierdas ningún
+                                    detalle.</p>
+                                <a href="#" class="mt-4 inline-block text-blue-500 hover:text-blue-700">Leer más</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="quality" class="bg-amber-700 py-32 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <article class="text-center p-6 rounded-md">
+                    <div class="grid place-items-center mb-8">
+                        <img src="./public/icons/leaf.svg" alt="A leaf" width="80">
+                    </div>
+                    <h4 class="text-3xl font-extrabold sm:text-4xl">
+                        Compromiso con la calidad
+                    </h4>
+                    <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-100 sm:mt-4">
+                        El sistema de control de calidad se diseñó teniendo en cuenta cada una de las áreas centrales
+                        identificadas, las necesidades de nuestros clientes y el reconocimiento por parte de todo el
+                        equipo de que las buenas prácticas de control de calidad contribuyen a una mejor experiencia y
+                        a un mejor rendimiento operativo.
+                    </p>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-gray-800 text-gray-400 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <h3 class="text-lg font-semibold text-gray-200">Mi portafolio</h3>
+                    <p class="mt-2 text-sm">© 2023 Mi portafolio. Todos los derechos reservados.</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="index.html" class="text-gray-400 hover:text-gray-300">Inicio</a>
+                    <a href="notfound.html" class="text-gray-400 hover:text-gray-300">Acerca de</a>
+                    <a href="notfound.html" class="text-gray-400 hover:text-gray-300">Contacto</a>
+                </div>
+                <div class="mt-4 md:mt-0 flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-gray-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-envelope" viewBox="0 0 16 16">
+                            <path
+                                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -21,6 +21,7 @@
         @apply border-transparent bg-red-600 text-white hover:bg-red-700 focus:ring-red-500;
     }
 }
+
 .modal-container {
     @apply fixed z-10 inset-0 overflow-y-auto;
 }

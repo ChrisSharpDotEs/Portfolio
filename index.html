@@ -12,8 +12,25 @@
     <title>Mi portfolio</title>
     <link rel="shortcut icon" href="./public/icons/sunflower.svg" type="image/x-icon">
     <link rel="stylesheet" href="./public/css/app.css">
-    <link rel="stylesheet" href="./public/css/index-BbeY2ej-.css">
+    <link rel="stylesheet" href="./public/css/styles.css">
     <script src="./public/js/index.min.js" type="module"></script>
+    <style>
+        .img-hover {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .img-hover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .img-hover:hover img {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 
 <body>
@@ -46,10 +63,10 @@
         </nav>
     </header>
     <main>
-        <section class="flex flex-col justify-center items-center px-4 min-h-screen py-16 border">
-            <div class="max-w-7xl mx-auto grid gap-6 grid-cols-1 md:grid-cols-2">
+        <section class="flex flex-col justify-center items-center px-4 min-h-screen py-16">
+            <div class="max-w-7xl mx-auto grid gap-6 grid-cols-1 md:grid-cols-2 items-center">
                 <div class="p-6 fade-in">
-                    <h3 class="text-6xl font-semibold text-gray-800 mb-12">
+                    <h3 class="lg:text-6xl md:text-5xl text-4xl font-semibold text-gray-800 mb-12">
                         We believe in the power of creativity, strategy, and technology to drive business success.
                     </h3>
                     <p class="mt-2 text-gray-400">
@@ -76,13 +93,8 @@
                         Started </a> </div>
             </div>
         </section>
-        <section class="container grid md:grid-cols-3 grid-cols-1 gap-3 mx-auto px-4">
-            <div class="border">a</div>
-            <div class="border">b</div>
-            <div class="border">c</div>
-        </section>
         <section class="flex items-center min-h-screen">
-            <div class="max-w-(--breakpoint-xl) mx-auto px-5 pb-16">
+            <div class="max-w-(--breakpoint-xl) mx-auto px-5 pb-32">
                 <article class="mt-16 text-center">
                     <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight"> Pricing </h1>
                     <p class="text-lg mt-4 text-slate-600">
@@ -277,19 +289,19 @@
                     rooftop terrace.
                 </p>
             </article>
-            <article class="py-16 px-32">
-                <div class="border grid md:grid-cols-3 grid-cols-1">
-                    <div class="p-4 border-r">
+            <article class="py-16 lg:px-32 md:px-12 px-4">
+                <div class="grid md:grid-cols-3 grid-cols-1 w-full">
+                    <div class="border border-white py-12 px-4">
                         <div class="mx-auto w-8 h-8 md:w-12 md:h-12 lg:w-24 lg:h-24 bg-gray-500 rounded-full mb-4">
                         </div>
                         <p class="text-center text-lg text-gray-200">3 Bars and restaurants</p>
                     </div>
-                    <div class="p-4 border-r">
+                    <div class="border border-white py-12 px-4">
                         <div class="mx-auto w-8 h-8 md:w-12 md:h-12 lg:w-24 lg:h-24 bg-gray-500 rounded-full mb-4">
                         </div>
                         <p class="text-center text-lg text-gray-200">3 Bars and restaurants</p>
                     </div>
-                    <div class="p-4 border-r">
+                    <div class="border border-white py-12 px-4">
                         <div class="mx-auto w-8 h-8 md:w-12 md:h-12 lg:w-24 lg:h-24 bg-gray-500 rounded-full mb-4">
                         </div>
                         <p class="text-center text-lg text-gray-200">3 Bars and restaurants</p>
@@ -297,50 +309,117 @@
                 </div>
             </article>
         </section>
-        <section class="min-h-screen py-12 px-16">
+        <section class="min-h-screen pt-36 pb-4 px-16">
+            <article class="px-4 mb-12">
+                <h3 class="text-4xl text-gray-800">Book a room</h3>
+            </article>
             <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
-                <div class="border p-4">
+                <div class="p-4 pt-2">
                     <div class="p-3 mb-36">
-                        <div class="border p-12 mb-1"></div>
-                        <div class="flex justify-between p-2">
-                            <h3 class="text-2xl">Suite metropolitan</h3>
-                            <p>2 people</p>
-                        </div>
-                    </div>
-                    <div class="p-3">
-                        <div class="border p-12 mb-1"></div>
-                        <div class="flex justify-between p-2">
-                            <h3 class="text-2xl">Suite metropolitan</h3>
-                            <p>2 people</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="border px-4 py-36">
-                    <div class="p-3 mb-36">
-                        <div class="border p-12 mb-1"></div>
-                        <div class="flex justify-between p-2">
-                            <h3 class="text-2xl">Suite metropolitan</h3>
-                            <p>2 people</p>
-                        </div>
-                    </div>
-                    <div class="p-3">
                         <div
-                            class="flex items-center justify-center rounded-md border p-12 mb-1 relative group bg-blue-500 cursor-pointer">
+                            class="flex items-center justify-center relative group cursor-pointer img-hover rounded-lg">
+                            <img class="rounded-lg cursor-pointer" src="./public/img/benijo.webp" alt="Benijo suite">
                             <button
                                 class="absolute opacity-0 group-hover:opacity-100 bg-white text-blue-500 font-bold px-4 py-2 rounded-full transition duration-300 ease-in-out">
                                 ¡Llámanos!
                             </button>
                         </div>
+                        <div class="flex justify-between items-end p-2">
+                            <h3 class="text-2xl">Suite metropolitan</h3>
+                            <div class="flex items-end">
+                                <span class="px-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20">
+                                        <path
+                                            d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
+                                    </svg>
+                                </span>
+                                <span>2 people</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex justify-between p-2">
-                        <h3 class="text-2xl">Suite metropolitan</h3>
-                        <p>2 people</p>
+                    <div class="p-3 mb-36">
+                        <div
+                            class="flex items-center justify-center relative group cursor-pointer img-hover rounded-lg">
+                            <img class="rounded-lg cursor-pointer" src="./public/img/coffee1.webp" alt="Benijo suite">
+                            <button
+                                class="absolute opacity-0 group-hover:opacity-100 bg-white text-blue-500 font-bold px-4 py-2 rounded-full transition duration-300 ease-in-out">
+                                ¡Llámanos!
+                            </button>
+                        </div>
+                        <div class="flex justify-between items-end p-2">
+                            <h3 class="text-2xl">Suite metropolitan</h3>
+                            <div class="flex items-end">
+                                <span class="px-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20">
+                                        <path
+                                            d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
+                                    </svg>
+                                </span>
+                                <span>2 people</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-4 pt-36 pb-4">
+                    <div class="p-3 mb-36">
+                        <div
+                            class="flex items-center justify-center relative group cursor-pointer img-hover rounded-lg">
+                            <img class="rounded-lg cursor-pointer" src="./public/img/teide.webp" alt="Benijo suite">
+                            <button
+                                class="absolute opacity-0 group-hover:opacity-100 bg-white text-blue-500 font-bold px-4 py-2 rounded-full transition duration-300 ease-in-out">
+                                ¡Llámanos!
+                            </button>
+                        </div>
+                        <div class="flex justify-between items-end p-2">
+                            <h3 class="text-2xl">Suite metropolitan</h3>
+                            <div class="flex items-end">
+                                <span class="px-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20">
+                                        <path
+                                            d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
+                                    </svg>
+                                </span>
+                                <span>2 people</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3 mb-36">
+                        <div
+                            class="flex items-center justify-center relative group cursor-pointer img-hover rounded-lg">
+                            <img class="rounded-lg cursor-pointer" src="./public/img/benijo.webp" alt="Benijo suite">
+                            <button
+                                class="absolute opacity-0 group-hover:opacity-100 bg-white text-blue-500 font-bold px-4 py-2 rounded-full transition duration-300 ease-in-out">
+                                ¡Llámanos!
+                            </button>
+                        </div>
+                        <div class="flex justify-between items-end p-2">
+                            <h3 class="text-2xl">Suite metropolitan</h3>
+                            <div class="flex items-end">
+                                <span class="px-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20">
+                                        <path
+                                            d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
+                                    </svg>
+                                </span>
+                                <span>2 people</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             </div>
         </section>
     </main>
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Mi Sitio Web. Todos los derechos reservados.</p>
+            <div class="mt-4">
+                <a href="#" class="text-white hover:text-gray-400 mx-2">Términos de servicio</a>
+                <a href="#" class="text-white hover:text-gray-400 mx-2">Política de privacidad</a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 
 </html>

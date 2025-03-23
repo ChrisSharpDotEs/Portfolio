@@ -29,13 +29,38 @@
             transform: scale(1.1);
         }
     </style>
+    <style>
+        .fade-in-out {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .fade-in-out.active {
+            opacity: 1;
+        }
+
+        .slide-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) translateY(-100%);
+            opacity: 0;
+            transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+        }
+
+        .slide-text.active {
+            transform: translate(-50%, -50%);
+            opacity: 1;
+        }
+    </style>
 </head>
 
 <body>
     <header>
         <nav class="bg-transparent text-gray-800 p-4 shadow-lg">
             <div class="container mx-auto flex md:justify-start justify-between gap-4 items-center">
-                <a href="#" class="text-xl font-bold hover:text-gray-300 transition duration-300 ml-4">Mi Sitio</a>
+                <a href="#" class="text-xl font-bold hover:text-gray-300 transition duration-300 ml-4 mx-12">Mi
+                    Sitio</a>
                 <div class="hidden md:flex space-x-6">
                     <a href="#" class="hover:text-gray-300 transition duration-300">Inicio</a>
                     <a href="#" class="hover:text-gray-300 transition duration-300">Acerca de</a>
@@ -52,7 +77,7 @@
                     </button>
                 </div>
             </div>
-            <div id="mobile-menu" class="hidden md:hidden">
+            <div id="mobile-menu" class="md:hidden max-h-0 hidden">
                 <a href="#" class="block px-4 py-2 text-sm hover:text-gray-300">Inicio</a>
                 <a href="#" class="block px-4 py-2 text-sm hover:text-gray-300">Acerca de</a>
                 <a href="#" class="block px-4 py-2 text-sm hover:text-gray-300">Servicios</a>
@@ -61,6 +86,23 @@
         </nav>
     </header>
     <main>
+        <section class="min-h-screen relative">
+            <img src="./public/img/benijo.webp" alt="Imagen 1"
+                class="absolute inset-0 w-full h-full object-cover fade-in-out active">
+            <img src="./public/img/developer.webp" alt="Imagen 2"
+                class="absolute inset-0 w-full h-full object-cover fade-in-out">
+            <img src="./public/img/teide.webp" alt="Imagen 3"
+                class="absolute inset-0 w-full h-full object-cover fade-in-out">
+            <img src="./public/img/office.webp" alt="Imagen 4"
+                class="absolute inset-0 w-full h-full object-cover fade-in-out">
+            <div class=" min-h-screen">
+                <p class="text-4xl text-gray-800 font-bold slide-text active">Texto 1</p>
+                <p class="text-4xl text-gray-800 font-bold slide-text">Texto 2</p>
+                <p class="text-4xl text-gray-800 font-bold slide-text">Texto 3</p>
+                <p class="text-4xl text-gray-800 font-bold slide-text">Texto 4</p>
+                <p class="text-4xl text-gray-800 font-bold slide-text">Texto 5</p>
+            </div>
+        </section>
         <section class="flex flex-col justify-center items-center px-4 min-h-screen py-16">
             <div class="max-w-7xl mx-auto grid gap-6 grid-cols-1 md:grid-cols-2 items-center">
                 <div class="p-6 fade-in">
@@ -72,7 +114,7 @@
                         revamp your digital presence.
                     </p>
                 </div>
-                <div class="h-64 bg-gradient-to-r from-pink-200 via-rose-100 to-purple-200 p-6 rounded fade-up">
+                <div class="bg-gradient-to-r from-pink-200 via-rose-100 to-purple-200 rounded fade-up h-[50vh]">
                 </div>
             </div>
         </section>
@@ -87,8 +129,10 @@
                     architecture.
                 </p>
                 <div class="flex mt-5"> <a href="#"
-                        class="rounded-sm text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-5 py-2.5 bg-white text-black   border-2 border-transparent">Get
-                        Started </a> </div>
+                        class="rounded-sm text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-5 py-2.5 bg-white text-black border-2 border-transparent">
+                        Get Started
+                    </a>
+                </div>
             </div>
         </section>
         <section class="flex items-center min-h-screen">
@@ -309,7 +353,7 @@
         </section>
         <section class="min-h-screen pt-36 pb-4 md:px-16 px-4">
             <article class="px-4 mb-12">
-                <h3 class="text-4xl text-gray-800">Book a room</h3>
+                <h3 class="text-4xl text-gray-800 fade-up">Book a room</h3>
             </article>
             <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
                 <div class="p-4 pt-2">
@@ -318,7 +362,7 @@
                             class="flex items-center justify-center relative group cursor-pointer img-hover rounded-lg">
                             <img class="rounded-lg cursor-pointer" src="./public/img/benijo.webp" alt="Benijo suite">
                             <a href="#"
-                                class="absolute opacity-0 group-hover:opacity-100 bg-gray-800 hover:bg-gray-700 text-gray-100 font-bold px-4 py-2 rounded-full transition duration-300 ease-in-out">
+                                class="absolute opacity-0 group-hover:opacity-100 btn btn-primary transition duration-300 ease-in-out">
                                 ¡Llámanos!
                             </a>
                         </div>
@@ -417,7 +461,30 @@
             </div>
         </div>
     </footer>
+    <script>
+        const images = document.querySelectorAll('.fade-in-out');
+        const texts = document.querySelectorAll('.slide-text');
+        let currentIndex = 0;
 
+        function showImage(index) {
+            images.forEach((img, i) => {
+                if (i === index) {
+                    img.classList.add('active');
+                    texts[i].classList.add('active');
+                } else {
+                    img.classList.remove('active');
+                    texts[i].classList.remove('active');
+                }
+            });
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        setInterval(nextImage, 5000);
+    </script>
 </body>
 
 </html>

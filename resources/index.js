@@ -32,6 +32,7 @@ class UIManager {
         const mobileMenu = document.getElementById("mobile-menu");
 
         menuButton.addEventListener("click", () => {
+            mobileMenu.classList.toggle('hidden');
             mobileMenu.classList.toggle("max-h-0");
             mobileMenu.classList.toggle("max-h-full");
         });
@@ -130,6 +131,20 @@ class CountUp {
         this.frame = 0;
     }
 
+    static initDefault() {
+        const elementoContador = document.getElementById('miContador');
+
+        const opciones = {
+            duration: 2,
+            separator: ',',
+            decimal: '.',
+        };
+
+        const miContador = new CountUp(elementoContador, 1000, opciones);
+
+        miContador.start();
+    }
+
     start() {
         this.animar();
     }
@@ -171,35 +186,27 @@ function init() {
     document.documentElement.classList.toggle('dark');
 
     try {
-        const elementoContador = document.getElementById('miContador');
-
-        const opciones = {
-            duration: 2,
-            separator: ',',
-            decimal: '.',
-        };
-
-        const miContador = new CountUp(elementoContador, 1000, opciones);
-
-        miContador.start();
-
-        const miModal = new CookieModal('miModal');
-        miModal.init();
+        if(document.getElementById('miModal')) {
+            const miModal = new CookieModal('miModal');
+            miModal.init();
+        }
 
         const uiManager = new UIManager(['navbarToggler', 'menuHandler']);
         uiManager.init();
 
-        const swiper = new Swiper('#mySwiper', {
-            loop: true,
-            speed: 5000,
-            autoplay: {
-                delay: 0,
-                disableOnInteraction: false,
-            },
-            slidesPerView: 4,
-            spaceBetween: 10,
-            allowTouchMove: true
-        });
+        if (document.getElementById('mySwiper')) {
+            const swiper = new Swiper('#mySwiper', {
+                loop: true,
+                speed: 5000,
+                autoplay: {
+                    delay: 0,
+                    disableOnInteraction: false,
+                },
+                slidesPerView: 4,
+                spaceBetween: 10,
+                allowTouchMove: true
+            });
+        }
     } catch (error) {
         console.log(error);
     }

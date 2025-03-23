@@ -4,13 +4,24 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --primary-color: theme('colors.gray.800');
+    --primary-hover-color: theme('colors.gray.700');
+    --secondary-color: theme('colors.gray.500');
+    --secondary-hover-color: theme('colors.gray.400');
+    --accent-color: theme('colors.gray.500');
+    --light-color: theme('colors.gray.100');
+    --light-hover-color: theme('colors.gray.200');
+    --dark-color: theme('colors.gray.800');
+}
+
 @layer components {
     .btn {
         @apply w-full inline-flex justify-center rounded-full border shadow-sm px-4 py-2 text-base font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 sm:ml-3 sm:w-auto;
     }
 
     .btn-primary {
-        @apply border-amber-300 bg-white text-amber-700 hover:bg-amber-50 focus:ring-amber-500;
+        @apply border-[var(--primary-color)] bg-[var(--light-color)] hover:bg-[var(--light-hover-color)] text-[var(--dark-color)] focus:ring-[var(--primary-color)];
     }
 
     .btn-secondary {

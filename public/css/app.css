@@ -10,8 +10,6 @@
     --color-red-600: oklch(0.577 0.245 27.325);
     --color-red-700: oklch(0.505 0.213 27.518);
     --color-orange-800: oklch(0.47 0.157 37.304);
-    --color-amber-50: oklch(0.987 0.022 95.277);
-    --color-amber-300: oklch(0.879 0.169 91.605);
     --color-amber-500: oklch(0.769 0.188 70.08);
     --color-amber-600: oklch(0.666 0.179 58.318);
     --color-amber-700: oklch(0.555 0.163 48.998);
@@ -255,6 +253,9 @@
   .sticky {
     position: sticky;
   }
+  .inset-0 {
+    inset: calc(var(--spacing) * 0);
+  }
   .left-\[-5rem\] {
     left: -5rem;
   }
@@ -296,6 +297,9 @@
   }
   .mx-4 {
     margin-inline: calc(var(--spacing) * 4);
+  }
+  .mx-12 {
+    margin-inline: calc(var(--spacing) * 12);
   }
   .mx-auto {
     margin-inline: auto;
@@ -348,9 +352,6 @@
   .-mb-px {
     margin-bottom: -1px;
   }
-  .mb-1 {
-    margin-bottom: calc(var(--spacing) * 1);
-  }
   .mb-3 {
     margin-bottom: calc(var(--spacing) * 3);
   }
@@ -365,9 +366,6 @@
   }
   .mb-12 {
     margin-bottom: calc(var(--spacing) * 12);
-  }
-  .mb-36 {
-    margin-bottom: calc(var(--spacing) * 36);
   }
   .ml-4 {
     margin-left: calc(var(--spacing) * 4);
@@ -408,11 +406,14 @@
   .h-56 {
     height: calc(var(--spacing) * 56);
   }
-  .h-64 {
-    height: calc(var(--spacing) * 64);
-  }
   .h-100 {
     height: calc(var(--spacing) * 100);
+  }
+  .h-\[50vh\] {
+    height: 50vh;
+  }
+  .h-full {
+    height: 100%;
   }
   .max-h-0 {
     max-height: calc(var(--spacing) * 0);
@@ -574,25 +575,11 @@
     border-style: var(--tw-border-style);
     border-width: 2px;
   }
-  .border-r {
-    border-right-style: var(--tw-border-style);
-    border-right-width: 1px;
-  }
-  .border-b {
-    border-bottom-style: var(--tw-border-style);
-    border-bottom-width: 1px;
-  }
   .border-\[\#D8DEE9\] {
     border-color: #D8DEE9;
   }
   .border-black {
     border-color: var(--color-black);
-  }
-  .border-gray-100 {
-    border-color: var(--color-gray-100);
-  }
-  .border-gray-800 {
-    border-color: var(--color-gray-800);
   }
   .border-transparent {
     border-color: transparent;
@@ -683,9 +670,6 @@
   .p-8 {
     padding: calc(var(--spacing) * 8);
   }
-  .p-12 {
-    padding: calc(var(--spacing) * 12);
-  }
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
   }
@@ -700,12 +684,6 @@
   }
   .px-6 {
     padding-inline: calc(var(--spacing) * 6);
-  }
-  .px-16 {
-    padding-inline: calc(var(--spacing) * 16);
-  }
-  .px-32 {
-    padding-inline: calc(var(--spacing) * 32);
   }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
@@ -737,17 +715,11 @@
   .py-32 {
     padding-block: calc(var(--spacing) * 32);
   }
-  .py-36 {
-    padding-block: calc(var(--spacing) * 36);
-  }
   .pt-2 {
     padding-top: calc(var(--spacing) * 2);
   }
   .pt-4 {
     padding-top: calc(var(--spacing) * 4);
-  }
-  .pt-12 {
-    padding-top: calc(var(--spacing) * 12);
   }
   .pt-32 {
     padding-top: calc(var(--spacing) * 32);
@@ -914,11 +886,6 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
-  .transition-transform {
-    transition-property: transform, translate, scale, rotate;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
   .duration-300 {
     --tw-duration: 300ms;
     transition-duration: 300ms;
@@ -934,16 +901,6 @@
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
         opacity: 100%;
-      }
-    }
-  }
-  .hover\:scale-110 {
-    &:hover {
-      @media (hover: hover) {
-        --tw-scale-x: 110%;
-        --tw-scale-y: 110%;
-        --tw-scale-z: 110%;
-        scale: var(--tw-scale-x) var(--tw-scale-y);
       }
     }
   }
@@ -1032,11 +989,6 @@
       padding-inline: calc(var(--spacing) * 6);
     }
   }
-  .sm\:px-12 {
-    @media (width >= 40rem) {
-      padding-inline: calc(var(--spacing) * 12);
-    }
-  }
   .sm\:text-4xl {
     @media (width >= 40rem) {
       font-size: var(--text-4xl);
@@ -1113,12 +1065,6 @@
       justify-content: flex-start;
     }
   }
-  .md\:border-r {
-    @media (width >= 48rem) {
-      border-right-style: var(--tw-border-style);
-      border-right-width: 1px;
-    }
-  }
   .md\:px-12 {
     @media (width >= 48rem) {
       padding-inline: calc(var(--spacing) * 12);
@@ -1132,11 +1078,6 @@
   .md\:px-20 {
     @media (width >= 48rem) {
       padding-inline: calc(var(--spacing) * 20);
-    }
-  }
-  .md\:px-32 {
-    @media (width >= 48rem) {
-      padding-inline: calc(var(--spacing) * 32);
     }
   }
   .md\:py-12 {
@@ -1446,6 +1387,16 @@
     transform: rotate(360deg);
   }
 }
+:root {
+  --primary-color: oklch(0.278 0.033 256.848);
+  --primary-hover-color: oklch(0.373 0.034 259.733);
+  --secondary-color: oklch(0.551 0.027 264.364);
+  --secondary-hover-color: oklch(0.707 0.022 261.325);
+  --accent-color: oklch(0.551 0.027 264.364);
+  --light-color: oklch(0.967 0.003 264.542);
+  --light-hover-color: oklch(0.928 0.006 264.531);
+  --dark-color: oklch(0.278 0.033 256.848);
+}
 @layer components {
   .btn {
     display: inline-flex;
@@ -1482,16 +1433,16 @@
     }
   }
   .btn-primary {
-    border-color: var(--color-amber-300);
-    background-color: var(--color-white);
-    color: var(--color-amber-700);
+    border-color: var(--primary-color);
+    background-color: var(--light-color);
+    color: var(--dark-color);
     &:hover {
       @media (hover: hover) {
-        background-color: var(--color-amber-50);
+        background-color: var(--light-hover-color);
       }
     }
     &:focus {
-      --tw-ring-color: var(--color-amber-500);
+      --tw-ring-color: var(--primary-color);
     }
   }
   .btn-secondary {
@@ -1904,21 +1855,6 @@ button {
 @property --tw-ease {
   syntax: "*";
   inherits: false;
-}
-@property --tw-scale-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
 }
 @keyframes pulse {
   50% {

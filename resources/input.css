@@ -89,6 +89,10 @@ button {
     @apply bg-white shadow-lg rounded-lg overflow-hidden;
 }
 
+.bg-image {
+    background-image: url('../img/coffee1.webp');
+}
+
 .slide>img {
     max-height: 150px;
 }

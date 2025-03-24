@@ -14,7 +14,17 @@
     <link rel="stylesheet" href="./public/css/app.css">
     <link rel="stylesheet" href="./public/css/styles.css">
     <script src="./public/js/index.min.js" type="module"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <style>
+        * {
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+        }
+
         .img-hover {
             overflow: hidden;
             position: relative;
@@ -28,8 +38,7 @@
         .img-hover:hover img {
             transform: scale(1.1);
         }
-    </style>
-    <style>
+
         .fade-in-out {
             opacity: 0;
             transition: opacity 1s ease-in-out;
@@ -38,69 +47,66 @@
         .fade-in-out.active {
             opacity: 1;
         }
-
-        .slide-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) translateY(-100%);
-            opacity: 0;
-            transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-        }
-
-        .slide-text.active {
-            transform: translate(-50%, -50%);
-            opacity: 1;
-        }
     </style>
 </head>
 
 <body>
-    <header>
-        <nav class="bg-transparent text-gray-800 p-4 shadow-lg">
-            <div class="container mx-auto flex md:justify-start justify-between gap-4 items-center">
-                <a href="#" class="text-xl font-bold hover:text-gray-300 transition duration-300 ml-4 mx-12">Mi
-                    Sitio</a>
-                <div class="hidden md:flex space-x-6">
-                    <a href="#" class="hover:text-gray-300 transition duration-300">Inicio</a>
-                    <a href="#" class="hover:text-gray-300 transition duration-300">Acerca de</a>
-                    <a href="#" class="hover:text-gray-300 transition duration-300">Servicios</a>
-                    <a href="#" class="hover:text-gray-300 transition duration-300">Contacto</a>
-                </div>
-                <div class="md:hidden">
-                    <button id="menu-button" class="focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16m-7 6h7"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            <div id="mobile-menu" class="md:hidden max-h-0 hidden">
-                <a href="#" class="block px-4 py-2 text-sm hover:text-gray-300">Inicio</a>
-                <a href="#" class="block px-4 py-2 text-sm hover:text-gray-300">Acerca de</a>
-                <a href="#" class="block px-4 py-2 text-sm hover:text-gray-300">Servicios</a>
-                <a href="#" class="block px-4 py-2 text-sm hover:text-gray-300">Contacto</a>
-            </div>
-        </nav>
-    </header>
     <main>
-        <section class="min-h-screen relative">
-            <img src="./public/img/benijo.webp" alt="Imagen 1"
-                class="absolute inset-0 w-full h-full object-cover fade-in-out active">
-            <img src="./public/img/developer.webp" alt="Imagen 2"
-                class="absolute inset-0 w-full h-full object-cover fade-in-out">
-            <img src="./public/img/teide.webp" alt="Imagen 3"
-                class="absolute inset-0 w-full h-full object-cover fade-in-out">
-            <img src="./public/img/office.webp" alt="Imagen 4"
-                class="absolute inset-0 w-full h-full object-cover fade-in-out">
-            <div class=" min-h-screen">
-                <p class="text-4xl text-gray-800 font-bold slide-text active">Sliders</p>
-                <p class="text-4xl text-gray-800 font-bold slide-text">Texto 2</p>
-                <p class="text-4xl text-gray-800 font-bold slide-text">Texto 3</p>
-                <p class="text-4xl text-gray-800 font-bold slide-text">Texto 4</p>
-                <p class="text-4xl text-gray-800 font-bold slide-text">Texto 5</p>
+        <section class="bg-image object-cover">
+            <div class="bg-gradient-to-r from-gray-900 to-[#1d1d1d87]">
+                <header>
+                    <nav class="bg-transparent text-gray-100 p-4 shadow-lg">
+                        <div class="container mx-auto flex md:justify-start justify-between gap-4 items-center">
+                            <a href="#"
+                                class="text-xl font-bold hover:text-gray-300 transition duration-300 ml-4 mx-12">Mi
+                                Sitio</a>
+                            <div class="hidden md:flex space-x-6">
+                                <a href="#" class="hover:text-gray-300 transition duration-300">Inicio</a>
+                                <a href="#" class="hover:text-gray-300 transition duration-300">Acerca de</a>
+                                <a href="#" class="hover:text-gray-300 transition duration-300">Servicios</a>
+                                <a href="#" class="hover:text-gray-300 transition duration-300">Contacto</a>
+                            </div>
+                            <div class="md:hidden">
+                                <button id="menu-button" class="focus:outline-none">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="mobile-menu" class="md:hidden max-h-0 hidden transition-all duration-500">
+                            <a href="#" class="block px-4 py-2 text-sm hover:text-gray-300">Inicio</a>
+                            <a href="#" class="block px-4 py-2 text-sm hover:text-gray-300">Acerca de</a>
+                            <a href="#" class="block px-4 py-2 text-sm hover:text-gray-300">Servicios</a>
+                            <a href="#" class="block px-4 py-2 text-sm hover:text-gray-300">Contacto</a>
+                        </div>
+                    </nav>
+                </header>
+                <div class="flex items-end min-h-[90vh]">
+                    <article class="p-6 rounded-lg shadow-md md:w-1/2">
+                        <h2 class="text-6xl mb-4 text-gray-100">
+                            Smart solution for stronger future
+                        </h2>
+                        <p class="text-lg text-gray-200 mb-12">
+                            ¡Hola! Te doy la bienvenida a este pedacito dedicado a la creatividad. Aquí podrás ver
+                            algunas plantillas para diseño web realizados en TailwindCSS.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="hidden min-h-screen relative">
+            <div>
+                <img src="./public/img/benijo.webp" alt="Imagen 1"
+                    class="absolute inset-0 w-full h-full object-cover fade-in-out active">
+                <img src="./public/img/developer.webp" alt="Imagen 2"
+                    class="absolute inset-0 w-full h-full object-cover fade-in-out">
+                <img src="./public/img/teide.webp" alt="Imagen 3"
+                    class="absolute inset-0 w-full h-full object-cover fade-in-out">
+                <img src="./public/img/office.webp" alt="Imagen 4"
+                    class="absolute inset-0 w-full h-full object-cover fade-in-out">
             </div>
         </section>
         <section class="flex flex-col justify-center items-center px-4 min-h-screen py-16">
@@ -115,6 +121,18 @@
                     </p>
                 </div>
                 <div class="bg-gradient-to-r from-pink-200 via-rose-100 to-purple-200 rounded fade-up h-[50vh]">
+                </div>
+            </div>
+        </section>
+        <section class="min-h-screen px-4">
+            <div class="grid md:grid-cols-2 grid-cols-1 gap-2">
+                <div>
+                    <img src="./public/img/benijo.webp" alt="" class="rounded-lg mb-4 h-[400px] object-cover">
+                    <span class="text-lg">Lorem ipsum</span>
+                </div>
+                <div>
+                    <img src="./public/img/img_abstract.webp" alt="" class="rounded-lg mb-4 h-[400px] object-cover">
+                    <span class="text-lg">Lorem ipsum</span>
                 </div>
             </div>
         </section>
@@ -463,17 +481,14 @@
     </footer>
     <script>
         const images = document.querySelectorAll('.fade-in-out');
-        const texts = document.querySelectorAll('.slide-text');
         let currentIndex = 0;
 
         function showImage(index) {
             images.forEach((img, i) => {
                 if (i === index) {
                     img.classList.add('active');
-                    texts[i].classList.add('active');
                 } else {
                     img.classList.remove('active');
-                    texts[i].classList.remove('active');
                 }
             });
         }

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descripción concisa de la página.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Mi portfolio">
+    <meta property="og:description" content="A small project for future pages">
+    <meta property="og:image" content="">
+    <title>Mi portfolio</title>
+    <link rel="shortcut icon" href="./public/icons/sunflower.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./public/css/app.css">
+    <link rel="stylesheet" href="./public/css/styles.css">
+    <script src="./resources/index.js" type="module"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <main>
+        <section class="container mx-auto px-4 py-8 min-h-screen bg-gray-200">
+            <h1 class="text-3xl font-bold mb-6 text-center mb-4">Acordeón Simple + accesibilidad web</h1>
+            <div class="flex flex-col gap-3">
+                <div class="rounded-lg">
+                    <button id="accordion-header"
+                        class="w-full text-left px-4 py-2 bg-blue-500 text-white font-semibold rounded focus:outline-none"
+                        data-accordion="content1" aria-expanded="false" aria-controls="section1">
+                        Sección 1
+                    </button>
+                    <div id="content1"
+                        class="overflow-hidden transition-all duration-500 ease-in-out px-4 bg-white max-h-0 shadow rounded-lg"
+                        role="region" aria-labelledby="accordion-header">
+                        Este es el contenido de la sección 1.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="my-4">
+        <footer class="bg-gray-800 text-white py-8">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Secciones del footer -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Sección 1 -->
+                    <div>
+                        <h5 class="font-bold text-lg mb-4">Compañía</h5>
+                        <ul>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Acerca de</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Carreras</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                        </ul>
+                    </div>
+                    <!-- Sección 2 -->
+                    <div>
+                        <h5 class="font-bold text-lg mb-4">Soporte</h5>
+                        <ul>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Preguntas frecuentes</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Contáctanos</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Términos y condiciones</a></li>
+                        </ul>
+                    </div>
+                    <!-- Sección 3 -->
+                    <div>
+                        <h5 class="font-bold text-lg mb-4">Productos</h5>
+                        <ul>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Servicios</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Precios</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Integraciones</a></li>
+                        </ul>
+                    </div>
+                    <!-- Sección 4 -->
+                    <div>
+                        <h5 class="font-bold text-lg mb-4">Suscríbete</h5>
+                        <p class="text-gray-400 mb-4">Recibe las últimas novedades directamente en tu correo.</p>
+                        <form action="#">
+                            <input type="email" placeholder="Tu correo electrónico"
+                                class="w-full px-4 py-2 rounded bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring focus:ring-blue-500">
+                            <button type="submit"
+                                class="mt-2 w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded">
+                                Suscribirse
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Línea divisoria -->
+                <div class="mt-8 border-t border-gray-700 pt-6 text-center">
+                    <p class="text-gray-400">&copy; 2025 Tu Compañía. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div class="my-4">
+        <footer class="bg-gray-900 text-gray-400 py-8">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Logo y breve descripción -->
+                <div class="flex flex-col lg:flex-row justify-between items-center lg:items-start">
+                    <div class="mb-6 lg:mb-0">
+                        <a href="#" class="text-xl font-bold text-white">MiCompañía</a>
+                        <p class="mt-2 max-w-md">
+                            Construimos soluciones digitales que conectan y empoderan a las personas. Transformando
+                            ideas en realidades.
+                        </p>
+                    </div>
+
+                    <!-- Navegación rápida -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 lg:gap-8">
+                        <div>
+                            <h5 class="font-semibold text-white mb-3">Enlaces</h5>
+                            <ul>
+                                <li><a href="#" class="hover:text-white">Inicio</a></li>
+                                <li><a href="#" class="hover:text-white">Sobre Nosotros</a></li>
+                                <li><a href="#" class="hover:text-white">Servicios</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-white mb-3">Recursos</h5>
+                            <ul>
+                                <li><a href="#" class="hover:text-white">Preguntas Frecuentes</a></li>
+                                <li><a href="#" class="hover:text-white">Blog</a></li>
+                                <li><a href="#" class="hover:text-white">Soporte</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-white mb-3">Legal</h5>
+                            <ul>
+                                <li><a href="#" class="hover:text-white">Términos</a></li>
+                                <li><a href="#" class="hover:text-white">Política de Privacidad</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Línea divisoria -->
+                <div
+                    class="mt-8 border-t border-gray-700 pt-6 flex flex-col-reverse md:flex-row justify-between items-center">
+                    <p class="text-sm">&copy; 2025 MiCompañía. Todos los derechos reservados.</p>
+
+                    <!-- Iconos de redes sociales -->
+                    <!-- Iconos de redes sociales con tooltips -->
+                    <div class="flex space-x-4 mb-4 md:mb-0">
+                        <!-- Facebook -->
+                        <a href="#" class="relative group">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 text-gray-200 hover:text-white"
+                                viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M20 12.05C19.9813 10.5255 19.5273 9.03809 18.6915 7.76295C17.8557 6.48781 16.673 5.47804 15.2826 4.85257C13.8921 4.2271 12.3519 4.01198 10.8433 4.23253C9.33473 4.45309 7.92057 5.10013 6.7674 6.09748C5.61422 7.09482 4.77005 8.40092 4.3343 9.86195C3.89856 11.323 3.88938 12.8781 4.30786 14.3442C4.72634 15.8103 5.55504 17.1262 6.69637 18.1371C7.83769 19.148 9.24412 19.8117 10.75 20.05V14.38H8.75001V12.05H10.75V10.28C10.7037 9.86846 10.7483 9.45175 10.8807 9.05931C11.0131 8.66687 11.23 8.30827 11.5161 8.00882C11.8022 7.70936 12.1505 7.47635 12.5365 7.32624C12.9225 7.17612 13.3368 7.11255 13.75 7.14003C14.3498 7.14824 14.9482 7.20173 15.54 7.30003V9.30003H14.54C14.3676 9.27828 14.1924 9.29556 14.0276 9.35059C13.8627 9.40562 13.7123 9.49699 13.5875 9.61795C13.4627 9.73891 13.3667 9.88637 13.3066 10.0494C13.2464 10.2125 13.2237 10.387 13.24 10.56V12.07H15.46L15.1 14.4H13.25V20C15.1399 19.7011 16.8601 18.7347 18.0985 17.2761C19.3369 15.8175 20.0115 13.9634 20 12.05Z"
+                                    fill="currentColor" />
+                            </svg>
+                            <!-- Tooltip -->
+                            <span
+                                class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-black text-white text-xs py-1 px-2 rounded">
+                                Facebook
+                            </span>
+                        </a>
+                        <a href="#" class="relative group">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                class="w-10 text-gray-200 hover:text-white" fill="currentColor">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
+                                    fill="currentColor" />
+                                <path
+                                    d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z"
+                                    fill="#0F0F0F" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z"
+                                    fill="currentColor" />
+                            </svg>
+                            <span
+                                class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-black text-white text-xs py-1 px-2 rounded">
+                                Instagram
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div class="my-4">
+        <footer class="relative overflow-hidden text-white py-8">
+            <div class="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 animate-gradient">
+            </div>
+            <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 z-2">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <h5 class="font-bold text-lg mb-4">Compañía</h5>
+                        <ul>
+                            <li><a href="#" class="text-gray-200 hover:border-b">Acerca de</a></li>
+                            <li><a href="#" class="text-gray-200 hover:border-b">Carreras</a></li>
+                            <li><a href="#" class="text-gray-200 hover:border-b">Blog</a></li>
+                        </ul>
+                    </div>
+                    <!-- Sección 2 -->
+                    <div>
+                        <h5 class="font-bold text-lg mb-4">Enlaces útiles</h5>
+                        <ul>
+                            <li><a href="#" class="text-gray-200 hover:border-b">Soporte</a></li>
+                            <li><a href="#" class="text-gray-200 hover:border-b">Preguntas frecuentes</a></li>
+                            <li><a href="#" class="text-gray-200 hover:border-b">Política de privacidad</a></li>
+                        </ul>
+                    </div>
+                    <!-- Sección 3 -->
+                    <div>
+                        <h5 class="font-bold text-lg mb-4">Contáctanos</h5>
+                        <ul>
+                            <li><a href="#" class="text-gray-200 hover:border-b">contacto@ejemplo.com</a></li>
+                            <li><a href="#" class="text-gray-200 hover:border-b">+123 456 789</a></li>
+                            <li><a href="#" class="text-gray-200 hover:border-b">Ubicación</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-8 border-t border-gray-200 pt-6 text-center">
+                    <p class="text-white">&copy; 2025 Tu Compañía. Todos los derechos reservados.</p>
+                </div>
+            </div>
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+        </footer>
+    </div>
+    <section class="bg-gray-100 flex items-center justify-center min-h-screen">
+        <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-lg">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Formulario Completo</h2>
+            <form action="#" method="GET">
+                <!-- Input de texto -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium mb-2" for="nombre">Texto:</label>
+                    <input type="text" id="nombre" name="nombre"
+                        class="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                </div>
+
+                <!-- Input de contraseña -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium mb-2" for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password"
+                        class="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                </div>
+
+                <!-- Input numérico -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium mb-2" for="edad">Número:</label>
+                    <input type="number" id="edad" name="edad"
+                        class="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                </div>
+
+                <!-- Input de rango -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium mb-2" for="rango">Rango:</label>
+                    <input type="range" id="rango" name="rango" min="0" max="100" class="w-full" />
+                </div>
+
+                <!-- Input de fecha -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium mb-2" for="fecha">Fecha:</label>
+                    <input type="date" id="fecha" name="fecha"
+                        class="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                </div>
+
+                <!-- Input de correo -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium mb-2" for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email"
+                        class="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                </div>
+
+                <!-- Input de color -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium mb-2" for="color">Color:</label>
+                    <input type="color" id="color" name="color" class="w-full h-10" />
+                </div>
+
+                <!-- Input de archivo -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium mb-2" for="archivo">Archivo:</label>
+                    <input type="file" id="archivo" name="archivo" class="w-full" />
+                </div>
+                <!-- Textarea -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium mb-2" for="comentarios">Comentarios:</label>
+                    <textarea id="comentarios" name="comentarios" rows="4"
+                        class="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+
+                <!-- Radio Buttons -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium mb-2">Género:</label>
+                    <div class="flex items-center">
+                        <input type="radio" id="hombre" name="genero" value="hombre"
+                            class="mr-2 focus:ring-2 focus:ring-blue-500" />
+                        <label for="hombre" class="text-gray-700">Hombre</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="mujer" name="genero" value="mujer"
+                            class="mr-2 focus:ring-2 focus:ring-blue-500" />
+                        <label for="mujer" class="text-gray-700">Mujer</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio" id="otro" name="genero" value="otro"
+                            class="mr-2 focus:ring-2 focus:ring-blue-500" />
+                        <label for="otro" class="text-gray-700">Otro</label>
+                    </div>
+                </div>
+
+                <!-- Select -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium mb-2" for="pais">País:</label>
+                    <select id="pais" name="pais"
+                        class="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="es">España</option>
+                        <option value="mx">México</option>
+                        <option value="ar">Argentina</option>
+                        <option value="us">Estados Unidos</option>
+                    </select>
+                </div>
+
+                <!-- Multiple Select -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium mb-2" for="idiomas">Idiomas que hablas:</label>
+                    <select id="idiomas" name="idiomas" multiple
+                        class="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="es">Español</option>
+                        <option value="en">Inglés</option>
+                        <option value="fr">Francés</option>
+                        <option value="de">Alemán</option>
+                    </select>
+                </div>
+
+                <!-- Multiple Checkboxes -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium mb-2">Intereses:</label>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="deporte" name="intereses" value="deporte"
+                            class="mr-2 rounded focus:ring-2 focus:ring-blue-500" />
+                        <label for="deporte" class="text-gray-700">Deporte</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="musica" name="intereses" value="musica"
+                            class="mr-2 rounded focus:ring-2 focus:ring-blue-500" />
+                        <label for="musica" class="text-gray-700">Música</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="lectura" name="intereses" value="lectura"
+                            class="mr-2 rounded focus:ring-2 focus:ring-blue-500" />
+                        <label for="lectura" class="text-gray-700">Lectura</label>
+                    </div>
+                </div>
+                <!-- Teléfono -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium mb-2" for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono"
+                        class="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                </div>
+                <div class="mb-4">
+                    <label for="phone-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone
+                        number:</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 start-0 top-0 flex items-center ps-3.5 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 19 18">
+                                <path
+                                    d="M18 13.446a3.02 3.02 0 0 0-.946-1.985l-1.4-1.4a3.054 3.054 0 0 0-4.218 0l-.7.7a.983.983 0 0 1-1.39 0l-2.1-2.1a.983.983 0 0 1 0-1.389l.7-.7a2.98 2.98 0 0 0 0-4.217l-1.4-1.4a2.824 2.824 0 0 0-4.218 0c-3.619 3.619-3 8.229 1.752 12.979C6.785 16.639 9.45 18 11.912 18a7.175 7.175 0 0 0 5.139-2.325A2.9 2.9 0 0 0 18 13.446Z" />
+                            </svg>
+                        </div>
+                        <input type="text" id="phone-input" aria-describedby="helper-text-explanation"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required />
+                    </div>
+                    <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">Select a phone
+                        number that matches the format.</p>
+
+                </div>
+
+                <!-- Hora -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium mb-2" for="hora">Hora:</label>
+                    <input type="time" id="hora" name="hora"
+                        class="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                </div>
+
+                <!-- URL -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium mb-2" for="url">URL:</label>
+                    <input type="url" id="url" name="url"
+                        class="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                </div>
+                <!-- Buscar -->
+                <div class="mb-4">
+                    <label for="default-search"
+                        class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                        </div>
+                        <input type="search" id="default-search"
+                            class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Search Mockups, Logos..." required />
+                        <button type="submit"
+                            class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <div class="flex">
+                        <label for="search-dropdown"
+                            class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Your Email</label>
+                        <button id="dropdown-button" data-dropdown-toggle="dropdown"
+                            class="shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
+                            type="button">All categories <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 4 4 4-4" />
+                            </svg></button>
+                        <div id="dropdown"
+                            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdown-button">
+                                <li>
+                                    <button type="button"
+                                        class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Mockups</button>
+                                </li>
+                                <li>
+                                    <button type="button"
+                                        class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Templates</button>
+                                </li>
+                                <li>
+                                    <button type="button"
+                                        class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Design</button>
+                                </li>
+                                <li>
+                                    <button type="button"
+                                        class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logos</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="relative w-full">
+                            <input type="search" id="search-dropdown"
+                                class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+                                placeholder="Search Mockups, Logos, Design Templates..." required />
+                            <button type="submit"
+                                class="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-blue-700 rounded-e-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 20 20">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                </svg>
+                                <span class="sr-only">Search</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+
+                    <label class="inline-flex items-center cursor-pointer">
+                        <input type="checkbox" value="" class="sr-only peer">
+                        <div
+                            class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600">
+                        </div>
+                        <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Toggle me</span>
+                    </label>
+
+                </div>
+                <div class="mb-4 flex gap-3">
+                    <!-- Botón de envío -->
+                    <button type="submit"
+                        class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                        disabled>
+                        Enviar
+                    </button>
+                    <button type="reset"
+                        class="bg-gray-500 text-white px-4 py-2 rounded-lg shadow hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+                        Limpiar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section class="grid md:grid-cols-2 grid-cols-1 gap-4 mb-4">
+        <div
+            class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px]">
+            <div class="h-[32px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[17px] top-[72px] rounded-s-lg">
+            </div>
+            <div class="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[17px] top-[124px] rounded-s-lg">
+            </div>
+            <div class="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[17px] top-[178px] rounded-s-lg">
+            </div>
+            <div class="h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -end-[17px] top-[142px] rounded-e-lg">
+            </div>
+            <div class="rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-800">
+                <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-1-light.png"
+                    class="dark:hidden w-[272px] h-[572px]" alt="">
+                <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-1-dark.png"
+                    class="hidden dark:block w-[272px] h-[572px]" alt="">
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <div
+                class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]">
+                <div class="rounded-lg overflow-hidden h-[156px] md:h-[278px] bg-white dark:bg-gray-800">
+                    <img src="https://flowbite.s3.amazonaws.com/docs/device-mockups/laptop-screen.png"
+                        class="dark:hidden h-[156px] md:h-[278px] w-full rounded-lg" alt="">
+                    <img src="https://flowbite.s3.amazonaws.com/docs/device-mockups/laptop-screen-dark.png"
+                        class="hidden dark:block h-[156px] md:h-[278px] w-full rounded-lg" alt="">
+                </div>
+            </div>
+            <div
+                class="relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm h-[17px] max-w-[351px] md:h-[21px] md:max-w-[597px]">
+                <div
+                    class="absolute left-1/2 top-0 -translate-x-1/2 rounded-b-xl w-[56px] h-[5px] md:w-[96px] md:h-[8px] bg-gray-800">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="my-4 py-12">
+        <!-- drawer init and toggle -->
+        <div class="text-center">
+            <button
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example"
+                aria-controls="drawer-example">
+                Show drawer
+            </button>
+        </div>
+
+        <div id="drawer-example"
+            class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-all duration-500 -translate-x-full bg-white w-80 dark:bg-gray-800"
+            tabindex="-1" aria-labelledby="drawer-label">
+            <h5 id="drawer-label"
+                class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400"><svg
+                    class="w-4 h-4 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                    viewBox="0 0 20 20">
+                    <path
+                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                </svg>Info</h5>
+            <button type="button" data-drawer-hide="drawer-example" aria-controls="drawer-example"
+                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white">
+                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 14 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                </svg>
+                <span class="sr-only">Close menu</span>
+            </button>
+
+            <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">Supercharge your hiring by taking advantage of our
+                <a href="#" class="text-blue-600 underline dark:text-blue-500 hover:no-underline">limited-time sale</a>
+                for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job
+                board.</p>
+            <div class="grid grid-cols-2 gap-4">
+                <a href="#"
+                    class="px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Learn
+                    more</a>
+                <a href="#"
+                    class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Get
+                    access <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 5h12m0 0L9 1m4 4L9 9" />
+                    </svg></a>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.querySelector('button[data-drawer-target]').addEventListener('click', function () {
+            let drawer = document.getElementById('drawer-example');
+            drawer.style.left = '320px';
+        });
+        document.querySelector('button[data-drawer-hide]').addEventListener('click', function () {
+            let drawer = document.getElementById('drawer-example');
+            drawer.style.left = '0px';
+        });
+    </script>
+</body>
+</html>

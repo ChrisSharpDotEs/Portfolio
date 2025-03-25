@@ -1,5 +1,5 @@
-import Swiper from 'swiper/bundle';
-import 'swiper/css/bundle';
+/*import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';*/
 
 class UIManager {
     constructor(config) {
@@ -20,6 +20,7 @@ class UIManager {
     }
     navbarToggler() {
         const navbarItems = document.querySelectorAll(".navbar-item");
+        if(!navbarItems) return null;
         navbarItems.forEach((item) => {
             item.addEventListener("click", () => {
                 navbarItems.forEach((el) => el.classList.remove("active"));
@@ -31,6 +32,8 @@ class UIManager {
         const menuButton = document.getElementById("menu-button");
         const mobileMenu = document.getElementById("mobile-menu");
 
+        if(!menuButton || !mobileMenu) return null;
+        
         menuButton.addEventListener("click", () => {
             mobileMenu.classList.toggle('hidden');
             mobileMenu.classList.toggle("max-h-0");
@@ -43,6 +46,22 @@ class UIManager {
             document.documentElement.classList.toggle('dark');
             console.log('clicked');
         })
+    }
+    static accordionHandler() {
+        document.querySelectorAll('button[data-accordion]').forEach(item => {
+            item.addEventListener('click', () => {
+                const content = document.getElementById(item.getAttribute('data-accordion'));
+                content.classList.toggle('max-h-0');
+
+                if (content.classList.contains('max-h-0')) {
+                    item.setAttribute('aria-expanded', 'false');
+                    content.classList.remove('py-2');
+                } else {
+                    item.setAttribute('aria-expanded', 'true');
+                    content.classList.add('py-2');
+                }
+            });
+        });
     }
 }
 class Modal {
@@ -184,9 +203,9 @@ class CountUp {
 
 function init() {
     document.documentElement.classList.toggle('dark');
-
+    UIManager.accordionHandler();
     try {
-        if(document.getElementById('miModal')) {
+        if (document.getElementById('miModal')) {
             const miModal = new CookieModal('miModal');
             miModal.init();
         }

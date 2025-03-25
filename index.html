@@ -147,6 +147,19 @@
                 </div>
             </div>
         </section>
+          <section class="container mx-auto px-4 py-8 min-h-screen">
+    <h1 class="text-3xl font-bold mb-6 text-center">Acordeón Simple + accesibilidad web</h1>
+    <div class="flex flex-col gap-3">
+      <div class="rounded-lg">
+        <button id="accordion-header" class="w-full text-left px-4 py-2 bg-blue-400 text-white font-semibold rounded focus:outline-none" data-accordion="content1" aria-expanded="false" aria-controls="section1">
+          Sección 1
+        </button>
+        <div id="content1" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out px-4 bg-white" role="region" aria-labelledby="accordion-header">
+          Este es el contenido de la sección 1.
+        </div>
+      </div>
+    </div>
+  </section>
         <section class="flex items-center min-h-screen">
             <div
                 class="bg-black p-8 md:px-20 md:py-12 mt-12 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center">
@@ -527,6 +540,24 @@
         window.addEventListener('load', checkVisibility);
         window.addEventListener('scroll', checkVisibility);
     </script>
+      <script>
+    document.querySelectorAll('button[data-accordion]').forEach(item => {
+      item.addEventListener('click', () => toggleAccordion(item, item.getAttribute('data-accordion')));
+    });
+
+    function toggleAccordion(item, id) {
+      const content = document.getElementById(id);
+      content.classList.toggle('max-h-0');
+      
+      if (content.classList.contains('max-h-0')) {
+        item.setAttribute('aria-expanded', 'false');
+        content.classList.remove('py-2');
+      } else {
+        item.setAttribute('aria-expanded', 'true');
+        content.classList.add('py-2');
+      }
+    }
+  </script>
 </body>
 
 </html>

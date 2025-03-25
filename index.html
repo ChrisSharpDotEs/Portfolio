@@ -58,12 +58,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-        .max-h-0 {
-    max-height: calc(var(--spacing)* 0);
-}
-        .py-2 {
-    padding-block: calc(var(--spacing) * 2);
-}
     </style>
 </head>
 
@@ -154,13 +148,13 @@
             </div>
         </section>
           <section class="container mx-auto px-4 py-8 min-h-screen">
-    <h1 class="text-3xl font-bold mb-6 text-center">Acordeón Simple + accesibilidad web</h1>
+    <h1 class="text-3xl font-bold mb-6 text-center mb-4">Acordeón Simple + accesibilidad web</h1>
     <div class="flex flex-col gap-3">
       <div class="rounded-lg">
         <button id="accordion-header" class="w-full text-left px-4 py-2 bg-blue-500 text-white font-semibold rounded focus:outline-none" data-accordion="content1" aria-expanded="false" aria-controls="section1">
           Sección 1
         </button>
-        <div id="content1" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out px-4 bg-white" role="region" aria-labelledby="accordion-header">
+        <div id="content1" class="overflow-hidden transition-all duration-500 ease-in-out px-4 bg-white max-h-0" role="region" aria-labelledby="accordion-header">
           Este es el contenido de la sección 1.
         </div>
       </div>

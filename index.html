@@ -26,20 +26,6 @@
             font-style: normal;
         }
 
-        .img-hover {
-            overflow: hidden;
-            position: relative;
-        }
-
-        .img-hover img {
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .img-hover:hover img {
-            transform: scale(1.1);
-        }
-
         .fade-in-out {
             opacity: 0;
             transition: opacity 1s ease-in-out;
@@ -226,7 +212,7 @@
                         </ul>
                         <div class="flex mt-8">
                             <a href="/"
-                                class="rounded-sm text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 w-full px-5 py-2.5 bg-white border-2 border-gray-500 hover:bg-gray-100 text-black ">
+                                class="rounded-sm text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 w-full px-5 py-2.5 bg-white border-2 border-gray-500  hover:bg-gray-100 text-black ">
                                 Get Started
                             </a>
                         </div>
@@ -398,99 +384,99 @@
                 <h3 class="text-4xl text-gray-800 fade-up">Book a room</h3>
             </article>
             <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
-                <div class="md:px-4 px-0 pt-2">
-                    <div class="md:mb-36 mb-10">
-                        <div
-                            class="flex items-center justify-center relative group cursor-pointer img-hover rounded-lg">
-                            <img class="rounded-lg cursor-pointer" src="./public/img/benijo.webp" alt="Benijo suite">
-                            <a href="#"
-                                class="absolute opacity-0 group-hover:opacity-100 btn btn-primary transition duration-300 ease-in-out">
-                                ¡Llámanos!
-                            </a>
-                        </div>
-                        <div class="flex justify-between items-end p-2">
-                            <h3 class="text-2xl">Suite metropolitan</h3>
-                            <div class="flex items-end">
-                                <span class="px-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="15">
-                                        <path
-                                            d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
-                                    </svg>
-                                </span>
-                                <span>2 people</span>
-                            </div>
-                        </div>
+                <div class="md:mb-12 mb-10 md:px-4 px-0">
+                    <div class="card card-center img-hover group">
+                        <img class="card-image" src="./public/img/benijo.webp" alt="Benijo suite">
+                        <a href="#" class="btn btn-primary btn-overlay">
+                            Reservar
+                        </a>
                     </div>
-                    <div class=" md:mb-36 mb-10">
-                        <div
-                            class="flex items-center justify-center relative group cursor-pointer img-hover rounded-lg">
-                            <img class="rounded-lg cursor-pointer" src="./public/img/coffee1.webp" alt="Benijo suite">
-                            <a href="#"
-                                class="absolute opacity-0 group-hover:opacity-100 bg-gray-800 hover:bg-gray-700 text-gray-100 font-bold px-4 py-2 rounded-full transition duration-300 ease-in-out">
-                                ¡Llámanos!
-                            </a>
-                        </div>
-                        <div class="flex justify-between items-end p-2">
-                            <h3 class="text-2xl">Suite metropolitan</h3>
-                            <div class="flex items-end">
-                                <span class="px-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="15">
-                                        <path
-                                            d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
-                                    </svg>
-                                </span>
-                                <span>2 people</span>
-                            </div>
+                    <div class="flex justify-between items-end p-2">
+                        <h3 class="text-2xl">Suite metropolitan</h3>
+                        <div class="flex items-end">
+                            <span class="px-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="15">
+                                    <path
+                                        d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
+                                </svg>
+                            </span>
+                            <span>2 people</span>
                         </div>
                     </div>
                 </div>
-                <div class="md:px-4 px-0 md:pt-36 pt-4 pb-4">
-                    <div class="md:mb-36 mb-10">
-                        <div
-                            class="flex items-center justify-center relative group cursor-pointer img-hover rounded-lg">
-                            <img class="rounded-lg cursor-pointer" src="./public/img/teide.webp" alt="Benijo suite">
-                            <a href="#"
-                                class="absolute opacity-0 group-hover:opacity-100 bg-gray-800 hover:bg-gray-700 text-gray-100 font-bold px-4 py-2 rounded-full transition duration-300 ease-in-out">
-                                ¡Llámanos!
-                            </a>
-                        </div>
-                        <div class="flex justify-between items-end p-2">
-                            <h3 class="text-2xl">Suite metropolitan</h3>
-                            <div class="flex items-end">
-                                <span class="px-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="15">
-                                        <path
-                                            d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
-                                    </svg>
-                                </span>
-                                <span>2 people</span>
-                            </div>
+                <div class=" md:mb-12 mb-10 md:px-4 px-0">
+                    <div class="card card-center img-hover group">
+                        <img class="card-image" src="./public/img/coffee1.webp" alt="Benijo suite">
+                        <a href="#" class="btn btn-primary btn-overlay">
+                            Reservar
+                        </a>
+                    </div>
+                    <div class="flex justify-between items-end p-2">
+                        <h3 class="text-2xl">Suite metropolitan</h3>
+                        <div class="flex items-end">
+                            <span class="px-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="15">
+                                    <path
+                                        d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
+                                </svg>
+                            </span>
+                            <span>2 people</span>
                         </div>
                     </div>
-                    <div class="md:mb-36 mb-10">
-                        <div
-                            class="flex items-center justify-center relative group cursor-pointer img-hover rounded-lg">
-                            <img class="rounded-lg cursor-pointer" src="./public/img/benijo.webp" alt="Benijo suite">
-                            <a href="#"
-                                class="absolute opacity-0 group-hover:opacity-100 bg-gray-800 hover:bg-gray-700 text-gray-100 font-bold px-4 py-2 rounded-full transition duration-300 ease-in-out">
-                                ¡Llámanos!
-                            </a>
+                </div>
+                <div class="md:mb-12 mb-10 md:px-4 px-0">
+                    <div class="card card-center img-hover group">
+                        <img class="card-image" src="./public/img/teide.webp" alt="Benijo suite">
+                        <a href="#" class="btn btn-primary btn-overlay">
+                            Reservar
+                        </a>
+                    </div>
+                    <div class="flex justify-between items-end p-2">
+                        <h3 class="text-2xl">Suite metropolitan</h3>
+                        <div class="flex items-end">
+                            <span class="px-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="15">
+                                    <path
+                                        d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
+                                </svg>
+                            </span>
+                            <span>2 people</span>
                         </div>
-                        <div class="flex justify-between items-end p-2">
-                            <h3 class="text-2xl">Suite metropolitan</h3>
-                            <div class="flex items-end">
-                                <span class="px-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="15">
-                                        <path
-                                            d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
-                                    </svg>
-                                </span>
-                                <span>2 people</span>
-                            </div>
+                    </div>
+                </div>
+                <div class="md:mb-12 mb-10 md:px-4 px-0">
+                    <div class="card card-center img-hover group">
+                        <img class="card-image" src="./public/img/benijo.webp" alt="Benijo suite">
+                        <a href="#" class="btn btn-primary btn-overlay">
+                            Reservar
+                        </a>
+                    </div>
+                    <div class="flex justify-between items-end p-2">
+                        <h3 class="text-2xl">Suite metropolitan</h3>
+                        <div class="flex items-end">
+                            <span class="px-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="15">
+                                    <path
+                                        d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
+                                </svg>
+                            </span>
+                            <span>2 people</span>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
+        <section class="min-h-screen pt-36 pb-4 md:px-16 px-4">
+            <div class="grid grid-cols-4 gap-4">
+                <div class="card">
+                    <div class="card-content bg-gray-200 p-4 h-40"></div>
+                </div>
+                <div class="card">
+                    <div class="card-content bg-gray-200 p-4 h-40"></div>
+                </div>
+                <div class="card">
+                    <div class="card-content bg-gray-200 p-4 h-40"></div>
+                </div>
             </div>
         </section>
     </main>

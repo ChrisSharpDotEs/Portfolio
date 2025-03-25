@@ -15,13 +15,14 @@
     --dark-color: theme('colors.gray.800');
 }
 
+/* Botones */
 @layer components {
     .btn {
         @apply w-full inline-flex justify-center rounded-full border shadow-sm px-4 py-2 text-base font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 sm:ml-3 sm:w-auto;
     }
 
     .btn-primary {
-        @apply border-[var(--primary-color)] bg-[var(--light-color)] hover:bg-[var(--light-hover-color)] text-[var(--dark-color)] focus:ring-[var(--primary-color)];
+        @apply border-[var(--primary-color)] bg-[var(--light-color)] hover:bg-[var(--light-hover-color)] text-[var(--primary-color)] focus:ring-[var(--primary-color)];
     }
 
     .btn-secondary {
@@ -31,6 +32,37 @@
     .btn-danger {
         @apply border-transparent bg-red-600 text-white hover:bg-red-700 focus:ring-red-500;
     }
+
+    .btn-overlay {
+        @apply absolute opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out;
+    }
+}
+
+/* Tarjeta */
+@layer components {
+    .card {
+        @apply rounded-lg;
+    }
+    .card-center {
+        @apply flex items-center justify-center relative cursor-pointer;
+    }
+    .card-image {
+        @apply rounded-lg cursor-pointer md:min-h-[30vw] min-h-[20vw];
+    }
+}
+
+.img-hover {
+    overflow: hidden;
+    position: relative;
+}
+
+.img-hover img {
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.img-hover:hover img {
+    transform: scale(1.1);
 }
 
 .modal-container {

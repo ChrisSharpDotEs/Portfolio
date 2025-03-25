@@ -41,7 +41,7 @@
 /* Tarjeta */
 @layer components {
     .card {
-        @apply rounded-lg;
+        @apply rounded-lg shadow;
     }
     .card-center {
         @apply flex items-center justify-center relative cursor-pointer;

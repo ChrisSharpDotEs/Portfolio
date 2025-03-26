@@ -20,7 +20,7 @@ class UIManager {
     }
     navbarToggler() {
         const navbarItems = document.querySelectorAll(".navbar-item");
-        if(!navbarItems) return null;
+        if (!navbarItems) return null;
         navbarItems.forEach((item) => {
             item.addEventListener("click", () => {
                 navbarItems.forEach((el) => el.classList.remove("active"));
@@ -29,15 +29,18 @@ class UIManager {
         });
     }
     menuHandler() {
-        const menuButton = document.getElementById("menu-button");
-        const mobileMenu = document.getElementById("mobile-menu");
-
-        if(!menuButton || !mobileMenu) return null;
-        
-        menuButton.addEventListener("click", () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle("max-h-0");
-            mobileMenu.classList.toggle("max-h-full");
+        document.querySelectorAll(".menu-button").forEach(item => {
+            item.addEventListener('click', () => {
+                const mobileMenu = item.parentElement.parentElement.parentElement.querySelector(".mobile-menu");
+                if (!item || !mobileMenu) return null;
+                if (mobileMenu.getAttribute('aria-expanded') == "true") {
+                    mobileMenu.setAttribute('aria-expanded', "false");
+                    mobileMenu.style.maxHeight = '0';
+                } else {
+                    mobileMenu.setAttribute('aria-expanded', "true");
+                    mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+                }
+            });
         });
     }
     toggler() {

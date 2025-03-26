@@ -23,6 +23,10 @@
 
 /* Botones */
 @layer components {
+    button {
+        @apply cursor-pointer transition-all;
+    }
+
     .btn {
         @apply w-full inline-flex justify-center rounded-full border shadow-sm px-4 py-2 text-base font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 sm:ml-3 sm:w-auto;
     }
@@ -82,6 +86,60 @@
     }
 }
 
+/* Navbar */
+.navbar {
+    @apply p-4;
+}
+
+.navbar-primary {
+    @apply bg-amber-700
+}
+
+.navbar-container {
+    @apply container mx-auto flex md:justify-start justify-between gap-4 items-center;
+}
+
+.navbar-brand {
+    @apply text-white text-xl font-bold transition duration-300 ml-4 mx-12;
+}
+
+.navbar-links {
+    @apply hidden md:flex space-x-4;
+}
+
+.navbar-item {
+    @apply text-white hover:text-white;
+}
+
+.navbar-item-sm {
+    @apply block px-4 py-2 text-sm;
+}
+
+.navbar-item {
+    position: relative;
+}
+
+.navbar-item::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: white;
+    transition: width 0.3s;
+}
+
+.navbar-item:hover::after {
+    width: 100%;
+}
+
+.navbar-item:hover::after,
+.navbar-item.active::after {
+    width: 100%;
+}
+
 .img-hover {
     overflow: hidden;
     position: relative;
@@ -124,28 +182,9 @@
     @apply px-4 py-3 sm:px-6 sm:flex sm:flex-row gap-3;
 }
 
-.navbar {
-    @apply bg-amber-700 p-4;
-}
-
-.navbar-container {
-    @apply container mx-auto flex justify-between items-center;
-}
-
-.navbar-links {
-    @apply hidden md:flex space-x-4;
-}
-
-.navbar-item {
-    @apply text-white hover:text-white px-3 py-2 rounded-md text-lg font-bold;
-}
 
 .mobile-menu {
     @apply overflow-hidden max-h-0 md:hidden;
-}
-
-button {
-    @apply cursor-pointer transition-all;
 }
 
 .card {
@@ -160,33 +199,8 @@ button {
     max-height: 150px;
 }
 
-.navbar-item {
-    position: relative;
-}
-
 .mh-80 {
     max-height: 50vh;
-}
-
-.navbar-item::after {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: white;
-    transition: width 0.3s;
-}
-
-.navbar-item:hover::after {
-    width: 100%;
-}
-
-.navbar-item:hover::after,
-.navbar-item.active::after {
-    width: 100%;
 }
 
 .transition-height {

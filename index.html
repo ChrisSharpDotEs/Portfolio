@@ -11,7 +11,7 @@
     <meta property="og:image" content="">
     <title>Mi portfolio</title>
     <link rel="shortcut icon" href="./public/icons/sunflower.svg" type="image/x-icon">
-    <link rel="stylesheet" href="./public/css/app.css">
+    <link rel="stylesheet" href="./public/css/app.min.css">
     <script src="./resources/index.js" type="module"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,7 +36,7 @@
                                 <a href="#" class="navbar-item hover:text-gray-300">Contacto</a>
                             </div>
                             <div class="md:hidden">
-                                <button class="focus:outline-none menu-button">
+                                <button class="focus:outline-none menu-button" aria-expanded="false" aria-controls="menu1" role="button">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -45,12 +45,12 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="md:hidden max-h-0 mx-7 mt-2 transition-all duration-500 mobile-menu" aria-expanded="false">
-                            <a href="#" class="block px-4 py-2 text-sm hover:text-gray-300">Inicio</a>
-                            <a href="#" class="block px-4 py-2 text-sm hover:text-gray-300">Acerca de</a>
-                            <a href="#" class="block px-4 py-2 text-sm hover:text-gray-300">Servicios</a>
-                            <a href="#" class="block px-4 py-2 text-sm hover:text-gray-300">Contacto</a>
-                        </div>
+                        <ul id="menu1" class="md:hidden max-h-0 mt-2 transition-all duration-500 mobile-menu">
+                            <li><a href="#" class="block px-4 py-2 text-sm hover:text-gray-300">Inicio</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-sm hover:text-gray-300">Acerca de</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-sm hover:text-gray-300">Servicios</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-sm hover:text-gray-300">Contacto</a></li>
+                        </ul>
                     </nav>
                 </header>
                 <div class="flex items-end min-h-[90vh]">
@@ -64,18 +64,6 @@
                         </p>
                     </article>
                 </div>
-            </div>
-        </section>
-        <section class="hidden min-h-screen relative">
-            <div>
-                <img src="./public/img/benijo.webp" alt="Imagen 1"
-                    class="absolute inset-0 w-full h-full object-cover fade-in-out active">
-                <img src="./public/img/developer.webp" alt="Imagen 2"
-                    class="absolute inset-0 w-full h-full object-cover fade-in-out">
-                <img src="./public/img/teide.webp" alt="Imagen 3"
-                    class="absolute inset-0 w-full h-full object-cover fade-in-out">
-                <img src="./public/img/office.webp" alt="Imagen 4"
-                    class="absolute inset-0 w-full h-full object-cover fade-in-out">
             </div>
         </section>
         <section class="flex flex-col justify-center items-center px-4 min-h-screen py-16">

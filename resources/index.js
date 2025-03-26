@@ -33,11 +33,11 @@ class UIManager {
             item.addEventListener('click', () => {
                 const mobileMenu = item.parentElement.parentElement.parentElement.querySelector(".mobile-menu");
                 if (!item || !mobileMenu) return null;
-                if (mobileMenu.getAttribute('aria-expanded') == "true") {
-                    mobileMenu.setAttribute('aria-expanded', "false");
+                if (item.getAttribute('aria-expanded') == "true") {
+                    item.setAttribute('aria-expanded', "false");
                     mobileMenu.style.maxHeight = '0';
                 } else {
-                    mobileMenu.setAttribute('aria-expanded', "true");
+                    item.setAttribute('aria-expanded', "true");
                     mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
                 }
             });

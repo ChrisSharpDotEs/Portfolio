@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descripción concisa de la página.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Mi portfolio">
+    <meta property="og:description" content="A small project for future pages">
+    <meta property="og:image" content="">
+    <title>Mi portfolio</title>
+    <link rel="shortcut icon" href="./public/icons/sunflower.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./public/css/app.css">
+    <link rel="stylesheet" href="./public/css/styles.css">
+    <script src="./resources/index.js" type="module"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="bg-transparent text-gray-800 p-4 shadow-lg">
+            <div class="container mx-auto flex md:justify-start justify-between gap-4 items-center">
+                <a href="#"
+                    class="text-xl font-bold hover:text-gray-500 transition duration-300 ml-4 mx-12">Mi
+                    Sitio</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#" class="hover:text-gray-500 transition duration-300">Inicio</a>
+                    <a href="#" class="hover:text-gray-500 transition duration-300">Acerca de</a>
+                    <a href="#" class="hover:text-gray-500 transition duration-300">Servicios</a>
+                    <a href="#" class="hover:text-gray-500 transition duration-300">Contacto</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-button" class="focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden max-h-0 hidden transition-all duration-500">
+                <a href="#" class="block px-4 py-2 text-sm hover:text-gray-500">Inicio</a>
+                <a href="#" class="block px-4 py-2 text-sm hover:text-gray-500">Acerca de</a>
+                <a href="#" class="block px-4 py-2 text-sm hover:text-gray-500">Servicios</a>
+                <a href="#" class="block px-4 py-2 text-sm hover:text-gray-500">Contacto</a>
+            </div>
+        </nav>
+    </header>
+</body>
+</html>

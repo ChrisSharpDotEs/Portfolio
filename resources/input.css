@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
 :root {
     --primary-color: theme('colors.gray.800');
     --primary-hover-color: theme('colors.gray.700');
@@ -43,11 +49,36 @@
     .card {
         @apply rounded-lg shadow;
     }
+
     .card-center {
         @apply flex items-center justify-center relative cursor-pointer;
     }
+
     .card-image {
         @apply rounded-lg cursor-pointer md:min-h-[30vw] min-h-[20vw];
+    }
+}
+
+/*Fade effects*/
+@layer components {
+    .fade-in-out {
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .fade-in-out.active {
+        opacity: 1;
+    }
+
+    .fade-up {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    .fade-up.active {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 

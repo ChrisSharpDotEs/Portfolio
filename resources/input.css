@@ -90,6 +90,9 @@
 .navbar {
     @apply p-4;
 }
+.blur-sm {
+    backdrop-filter: blur(5px);
+}
 
 .navbar-primary {
     @apply bg-amber-700
